@@ -3,7 +3,7 @@ Your project's description...
 
 ## Environments
 - Preview: https://main--eds--charles-x-chen.hlx.page/
-- Live: https://main--{eds--charles-x-chen.hlx.live/
+- Live: https://main--eds--charles-x-chen.hlx.live/
 
 ## Installation
 
