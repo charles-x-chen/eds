@@ -1,5 +1,9 @@
 # LoveSac on Edge Delivery Services
 
+## Sites
+-  Preview: https://main--eds--charles-x-chen.hlx.page/
+-  Live: https://main--eds--charles-x-chen.hlx.live/
+
 ## Dependencies
 
 ### 1. Code Dependencies
