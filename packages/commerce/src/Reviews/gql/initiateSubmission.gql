@@ -1,0 +1,28 @@
+mutation InitiateSubmission($sku: String, $excludeFamily: Boolean = false) {
+    initiatePostReview(sku: $sku, excludeFamily: $excludeFamily) {
+        errors {
+            code
+            message
+            field
+        }
+        userId
+        submissionId
+        submissionToken
+        productImage
+        categoryName
+        fields {
+            id
+            type
+            label
+            group
+            placeholder
+            required
+            minLength
+            maxLength
+            options {
+                value
+                label
+            }
+        }
+    }
+}

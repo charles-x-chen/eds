@@ -1,39 +1,79 @@
 [
-  {
-    "id": "main",
-    "components": [
-      "section"
-    ]
-  },
-  {
-    "id": "columns",
-    "components": []
-  },
-  {
-    "id": "column",
-    "components": [
-      "text",
-      "image",
-      "button",
-      "title"
-    ]
-  },
-  {
-    "id": "section",
-    "components": [
-      "text",
-      "image",
-      "button",
-      "title",
-      "hero",
-      "cards",
-      "columns"
-    ]
-  },
-  {
-    "id": "cards",
-    "components": [
-      "card"
-    ]
-  }
+    {
+        "id": "main",
+        "components": ["section"]
+    },
+    {
+        "id": "columns",
+        "components": []
+    },
+    {
+        "id": "column",
+        "components": ["text", "image", "button", "title"]
+    },
+    {
+        "id": "section",
+        "components": [
+            "text",
+            "image",
+            "button",
+            "title",
+            "hero",
+            "hero-video",
+            "cards",
+            "columns",
+            "grid",
+            "embed",
+            "teaser",
+            "image-overlay",
+            "carousel",
+            "navbar-menu-item",
+            "commerce-login",
+            "commerce-account",
+            "commerce-order-history",
+            "commerce-cart",
+            "commerce-checkout",
+            "configurator",
+            "reviews",
+            "product-list",
+            "product-details",
+            "products",
+            "alert",
+            "banner",
+            "form",
+            "accordion-group",
+            "ugc-gallery",
+            "cta-banner",
+            "cta",
+            "headline-fourImg"
+        ]
+    },
+    {
+        "id": "cards",
+        "components": ["card"]
+    },
+    {
+        "id": "teaser",
+        "components": ["teaser"]
+    },
+    {
+        "id": "navbar-menu",
+        "components": ["navbar-submenu-item"]
+    },
+    {
+        "id": "accordion",
+        "components": ["accordion"]
+    },
+    {
+        "id": "hero",
+        "components": ["hero-item"]
+    },
+    {
+        "id": "banner",
+        "components": ["banner-item"]
+    },
+    {
+        "id": "info-carousel",
+        "components": ["info-carousel-card"]
+    }
 ]

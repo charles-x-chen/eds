@@ -1,0 +1,139 @@
+/**
+ * @package     BlueAcorn/Reviews
+ * @author      Blue Acorn iCi <code@blueacorn.com>
+ * @copyright   Copyright © Blue Acorn iCi. All Rights Reserved.
+ */
+
+.review {
+    border-bottom: 1px solid #ccc;
+    padding: 30px 0 30px 52px;
+    display: flex;
+    flex-flow: column nowrap;
+    row-gap: 10px;
+}
+
+.anchor {
+    display: block;
+    position: relative;
+    top: -200px;
+}
+
+.header {
+    display: flex;
+    align-items: center;
+    margin-left: -52px;
+}
+
+.profileIcon {
+    position: relative;
+    width: 45px;
+    height: 45px;
+    margin-right: 8px;
+    letter-spacing: 0.25rem;
+    font-size: 2.5rem;
+    color: #0098a7;
+    text-align: center;
+    background: #f5f5f5;
+    border-radius: 50%;
+    font-weight: 300;
+}
+
+.profileIcon::before {
+    content: '';
+    display: block;
+    height: 10px;
+    width: 10px;
+    background-color: #22c55e;
+    border-radius: 50%;
+    margin-top: 4px;
+    margin-left: 1px;
+    position: absolute;
+    left: 31px;
+    top: 28px;
+}
+
+.headerElement {
+    padding-top: 2px;
+    display: inline-block;
+    vertical-align: top;
+    flex: 1 0 auto;
+}
+
+.username {
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 20px;
+}
+
+.username span {
+    font-weight: 300;
+    padding-left: 5px;
+}
+
+.rating {
+    display: flex;
+    flex-flow: row nowrap;
+    margin-top: 5px;
+    font-size: 18px;
+    margin-bottom: 5px;
+    color: var(--c-primary-color);
+    column-gap: 1px;
+}
+
+.attributes {
+    margin-bottom: 15px;
+    line-height: 1.5;
+}
+
+.attributeLabel {
+    font-weight: 400;
+    margin-right: 7px;
+}
+
+.attributeValue {
+    font-weight: 300;
+}
+
+.title {
+    font-weight: 600;
+    font-size: 18px;
+    line-height: 28px;
+    word-break: break-word;
+}
+
+.text {
+    font-size: 16px;
+    font-weight: 300;
+    line-height: 24px;
+    word-break: break-word;
+}
+
+.actions {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.thumbnails {
+    display: flex;
+    flex-flow: row wrap;
+    column-gap: 10px;
+
+    & img {
+        max-width: 100%;
+        max-height: 100px;
+        display: block;
+        height: auto;
+        border: 0;
+    }
+}
+
+@media (width <= 1023px) {
+    .review {
+        padding-left: 0;
+    }
+
+    .header {
+        margin-left: 0;
+    }
+}

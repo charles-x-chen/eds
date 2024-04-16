@@ -1,0 +1,135 @@
+/**
+ * @package     BlueAcorn/Configurator
+ * @author      Blue Acorn iCi <code@blueacorn.com>
+ * @copyright   Copyright © Blue Acorn iCi. All Rights Reserved.
+ */
+
+.priceContainer {
+    color: var(--text-color);
+    font-style: normal;
+    font-weight: var(--c-font-weight-light);
+    font-size: 1.8rem;
+    line-height: 28px;
+    display: flex;
+    justify-content: center;
+    align-items: baseline;
+
+    span {
+        order: 2;
+        padding-top: 1px;
+        font-size: 1.8rem;
+        font-weight: var(--c-font-weight-semibold);
+    }
+
+    s {
+        > span {
+            font-weight: var(--c-font-weight-light);
+        }
+    }
+}
+
+.header {
+    text-align: center;
+    margin: 1rem 2rem;
+    border-bottom: 1px solid var(--c-configurator-dark-white-3);
+
+    > div {
+        &:first-child {
+            display: flex;
+            justify-content: center;
+            align-items: baseline;
+
+            button {
+                cursor: pointer;
+
+                > div {
+                    display: inline-flex;
+                    margin-right: 0.5rem;
+
+                    label {
+                        font-size: 2rem;
+
+                        &:nth-child(even) {
+                            margin-right: -2.2rem;
+                        }
+                    }
+                }
+
+                span {
+                    display: inline-block;
+                    text-decoration: underline;
+                    color: var(--link-color);
+                }
+            }
+        }
+    }
+}
+
+.title {
+    font-family: var(--heading-font-family);
+    font-style: normal;
+    font-weight: var(--c-font-weight-regular);
+    font-size: 3.6rem;
+    line-height: 44px;
+    color: var(--text-color);
+}
+
+.specialFinancing {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 2.2rem 0 3.2rem;
+    flex-wrap: wrap;
+}
+
+div.affirmImage {
+    display: inline-block;
+    margin: 0 0.5rem;
+
+    &::before {
+        content: url('../../icons/financing-affirm.jpg');
+        width: 41px;
+        height: 16px;
+        vertical-align: middle;
+    }
+}
+
+.link {
+    text-decoration: underline;
+}
+
+@media only screen and (width < 1024px) {
+    .summaryPlayer {
+        position: relative;
+    }
+
+    .mobileLinksWrapper {
+        display: flex;
+        margin-top: 3.2rem;
+        flex-direction: column;
+
+        & > div {
+            margin: 0 1.6rem;
+            border-top: 1px solid var(--c-configurator-dark-white-3);
+            display: block;
+            width: 100%;
+            text-align: left;
+            font-style: normal;
+            font-weight: var(--c-font-weight-regular);
+            font-size: 1.6rem;
+            padding: 1.6rem 0;
+            line-height: 2.4rem;
+            color: var(--text-color);
+
+            &:last-child {
+                border-bottom: 1px solid var(--c-configurator-dark-white-3);
+            }
+        }
+    }
+}
+
+@media only screen and (width > 1024px) {
+    .mobileLinksWrapper {
+        display: none;
+    }
+}

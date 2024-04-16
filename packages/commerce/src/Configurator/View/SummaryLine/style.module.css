@@ -1,0 +1,59 @@
+/**
+ * @package     BlueAcorn/Configurator
+ * @author      Blue Acorn iCi <code@blueacorn.com>
+ * @copyright   Copyright © Blue Acorn iCi. All Rights Reserved.
+ */
+
+.line {
+    padding-top: 1rem;
+    margin: 1rem 2.6rem;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    border-top: 1px solid #d8d9da;
+
+    &:first-child {
+        border-top: none;
+    }
+}
+
+.title {
+    color: #56585a;
+    font-weight: 700;
+    margin-bottom: 5px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.options {
+    flex-basis: 100%;
+}
+
+.option {
+    display: flex;
+    justify-content: space-between;
+}
+
+.optionName {
+    color: #56585a;
+    font-weight: 300;
+    padding-bottom: 2px;
+}
+
+.optionPrice {
+    color: #56585a;
+    font-weight: 300;
+    padding-bottom: 2px;
+    margin-left: auto;
+}
+
+.editButton {
+    color: #00808c;
+    text-transform: uppercase;
+    border: unset;
+    text-align: right;
+    padding: 0;
+    font-weight: 700;
+    letter-spacing: 1px;
+    margin-bottom: 5px;
+}

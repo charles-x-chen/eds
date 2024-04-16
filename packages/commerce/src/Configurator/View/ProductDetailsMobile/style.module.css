@@ -1,0 +1,38 @@
+/**
+ * @package     BlueAcorn/Configurator
+ * @author      Blue Acorn iCi <code@blueacorn.com>
+ * @copyright   Copyright © Blue Acorn iCi. All Rights Reserved.
+ */
+
+.reviews {
+    display: flex;
+    justify-content: center;
+    align-items: baseline;
+}
+
+.action {
+    display: block;
+    width: 50%;
+    text-align: left;
+    border: 0;
+    font-style: normal;
+    font-weight: var(--c-font-weight-regular);
+    font-size: 1.6rem;
+    line-height: 2.4rem;
+    color: var(--text-color);
+}
+
+.rating {
+    display: flex;
+    justify-content: center;
+    width: 50%;
+}
+
+.reviewCount {
+    color: var(--c-color-blue-green-2);
+    font-size: 1.6rem;
+}
+
+.qty {
+    text-decoration: underline;
+}

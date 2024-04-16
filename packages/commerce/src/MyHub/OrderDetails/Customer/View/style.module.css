@@ -1,0 +1,11 @@
+/**
+ * @package     BlueAcorn/View
+ * @author      Blue Acorn iCi <code@blueacorn.com>
+ * @copyright   Copyright © Blue Acorn iCi. All Rights Reserved.
+ */
+
+@media only screen and (min-width: 1024px) and (max-width: 1440px) {
+    .galleryFullWidth {
+        width: 80vw;
+    }
+}

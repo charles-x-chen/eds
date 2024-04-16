@@ -1,0 +1,99 @@
+/**
+ * @package     BlueAcorn/View
+ * @author      Blue Acorn iCi <code@blueacorn.com>
+ * @copyright   Copyright © Blue Acorn iCi. All Rights Reserved.
+ */
+
+.productsWrapper > div {
+    margin-bottom: 4rem;
+}
+
+.productsWrapper h3 {
+    margin: 0 0 2rem 0;
+    font-family: var(--c-title-font);
+    font-size: 28px;
+    font-weight: 400;
+    line-height: 36px;
+    letter-spacing: -0.02em;
+    text-align: left;
+}
+
+.productsSliderLink,
+.productsSliderLink:hover {
+    text-decoration: none;
+}
+
+.productsName {
+    font-weight: var(--c-font-weight-regular);
+    color: var(--c-secondary-color);
+    margin-bottom: 1rem;
+    padding-top: 2rem;
+    font-size: 1.6rem;
+    line-height: 24px;
+    letter-spacing: 0;
+    text-align: left;
+    display: block;
+    width: 90%;
+}
+
+.productsPriceWrapper {
+    font-size: 1.8rem;
+    color: var(--c-secondary-color);
+    font-weight: var(--c-font-weight-semibold);
+    line-height: 28px;
+    letter-spacing: 0;
+}
+
+.productsOldPrice {
+    font-weight: var(--c-font-weight-light);
+    padding-right: 5px;
+    text-decoration: line-through;
+}
+
+.productsSliderImageWrapper {
+    width: 100%;
+    padding-bottom: 100%;
+    position: relative;
+}
+
+.productsSliderImage {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    object-fit: contain;
+}
+
+@media only screen and (max-width: 1023px) {
+    .productsWrapper {
+        margin-bottom: 6.4rem;
+    }
+
+    .productsWrapper h3 {
+        text-align: center;
+    }
+
+    .productsName,
+    .productsPriceWrapper {
+        text-align: center;
+        width: 100%;
+        display: block;
+    }
+
+    .productsPriceWrapper {
+        margin-bottom: 2rem;
+    }
+
+    .productsSliderImageWrapper {
+        margin: 0 auto;
+    }
+}
+
+@media only screen and (min-width: 1024px) {
+    .productsWrapper {
+        margin-bottom: 8rem;
+    }
+
+    .productsSliderImageWrapper img.productsSliderImage {
+        max-width: 250px;
+    }
+}

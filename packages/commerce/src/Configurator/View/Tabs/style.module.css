@@ -1,0 +1,99 @@
+/**
+ * @package     BlueAcorn/Configurator
+ * @author      Blue Acorn iCi <code@blueacorn.com>
+ * @copyright   Copyright © Blue Acorn iCi. All Rights Reserved.
+ */
+
+.sidebarTabs {
+    display: flex;
+    align-items: center;
+    gap: 3px;
+    padding: 0 0.5rem;
+    border-bottom: 1px solid var(--c-color-grey-2);
+    background-color: var(--c-color-white);
+}
+
+.tab {
+    background: var(--c-configurator-dark-white-3);
+    box-shadow: none;
+    line-height: inherit;
+    margin: 0;
+    padding: 1.7rem 0;
+    text-decoration: none;
+    text-shadow: none;
+    font-weight: var(--c-font-weight-regular);
+    flex: 1 0 auto;
+    text-align: center;
+    color: var(--text-color);
+    font-size: 1.3rem;
+    letter-spacing: 1px;
+    cursor: pointer;
+    text-transform: uppercase;
+    position: relative;
+    top: 1px;
+    border: 1px solid var(--c-color-grey-2);
+}
+
+.tabActive {
+    border-bottom: 1px solid var(--c-color-white);
+    font-size: 1.4rem;
+    font-weight: var(--c-font-weight-bold);
+    background: var(--c-color-white);
+}
+
+@media only screen and (width < 767px) {
+    .sidebarTabs {
+        width: calc(100% - 10px);
+        z-index: 1;
+        justify-content: center;
+        position: fixed;
+    }
+
+    .tabContent,
+    .customTab {
+        padding-top: 6rem;
+    }
+}
+
+@media only screen and (width < 1024px) {
+    .contentBar {
+        margin-top: 68vw;
+    }
+}
+
+@media only screen and (width > 1024px) {
+    .contentBar {
+        display: flex;
+        flex-direction: column;
+        height: 100%;
+        max-height: 55vh;
+        overflow-y: auto;
+
+        &::-webkit-scrollbar {
+            width: 7px;
+        }
+
+        &::-webkit-scrollbar-track {
+            background: var(--c-color-grey-14);
+            border-radius: 9px;
+        }
+
+        &::-webkit-scrollbar-thumb {
+            background: var(--c-configurator-scrollbar);
+            border-radius: 9px;
+        }
+    }
+
+    .sidebarTabs {
+        position: sticky;
+        top: 0;
+        z-index: 1;
+    }
+}
+
+@supports not (-webkit-appearance: none) {
+    .contentBar {
+        scrollbar-width: thin;
+        scrollbar-color: var(--c-configurator-scrollbar) var(--c-color-grey-14);
+    }
+}

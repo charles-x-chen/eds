@@ -1,0 +1,37 @@
+/**
+ * @package     BlueAcorn/Reviews
+ * @author      Blue Acorn iCi <code@blueacorn.com>
+ * @copyright   Copyright © Blue Acorn iCi. All Rights Reserved.
+ */
+
+.sortby {
+    display: flex;
+    align-items: center;
+    position: relative;
+    max-width: 200px;
+
+    & select {
+        padding: 5px 26px 5px 10px;
+        border: 1px solid #d8d9da;
+        font-size: 1.2rem;
+        border-radius: 4px;
+        background: var(--c-color-white);
+        color: var(--c-secondary-color);
+        line-height: 28px;
+        width: 100%;
+    }
+
+    & .icon {
+        position: absolute;
+        right: 7px;
+        top: 10px;
+        font-size: 15px;
+        pointer-events: none;
+    }
+}
+
+@media (max-width: 1023px) {
+    .sortby select {
+        font-size: 1.4rem;
+    }
+}

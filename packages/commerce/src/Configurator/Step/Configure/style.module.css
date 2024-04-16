@@ -1,0 +1,213 @@
+/**
+ * @package     BlueAcorn/Configurator
+ * @author      Blue Acorn iCi <code@blueacorn.com>
+ * @copyright   Copyright © Blue Acorn iCi. All Rights Reserved.
+ */
+
+.cyoModal {
+    > div {
+        &:first-child {
+            background: none;
+
+            h2 {
+                margin-left: 0;
+            }
+        }
+    }
+}
+
+.subtitle {
+    font-size: 1.6rem;
+    font-weight: var(--c-font-weight-regular);
+    line-height: 24px;
+    padding-top: 1.9rem;
+    display: flex;
+    justify-content: center;
+}
+
+.item .edit {
+    width: 100%;
+    position: absolute;
+    text-align: right;
+    left: 0.6rem;
+    top: -0.4rem;
+    display: none;
+
+    button {
+        font-size: 1rem;
+        background: var(--text-color);
+        font-style: normal;
+        font-weight: var(--c-font-weight-semibold);
+        line-height: 12px;
+        display: inline-block;
+        text-align: center;
+        color: var(--c-color-white);
+        border-radius: 500px;
+        position: relative;
+        width: auto;
+        padding: 4px 8px 4px 18px;
+
+        &::before {
+            content: '';
+            background-image: url('../../icons/wrench.svg');
+            background-repeat: no-repeat;
+            background-size: contain;
+            height: 10px;
+            width: 10px;
+            left: 0.5rem;
+            position: absolute;
+            vertical-align: middle;
+            top: 50%;
+            transform: translateY(-50%);
+        }
+    }
+}
+
+.item > input {
+    position: absolute;
+    opacity: 0;
+    width: 0;
+    height: 0;
+
+    &:checked {
+        + .edit {
+            display: block;
+            text-decoration: none;
+        }
+    }
+}
+
+.custom .item input {
+    position: absolute;
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+.custom .item img {
+    width: 100%;
+    border: 2px solid transparent;
+}
+
+.preBuilt .item > img {
+    width: 100%;
+    border: 2px solid transparent;
+}
+
+.item:has(input:checked) img {
+    border-color: var(--text-color);
+}
+
+.custom .item :has(input:checked) {
+    img {
+        border-color: var(--text-color);
+    }
+}
+
+.title {
+    text-transform: capitalize;
+    font-size: 1.4rem;
+    font-weight: var(--c-font-weight-semibold);
+    padding: 1.9rem 2.6rem 0;
+    display: inline-block;
+    width: 100%;
+    text-align: left;
+    box-sizing: border-box;
+}
+
+.qty {
+    color: var(--c-color-white);
+    background: var(--text-color);
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    font-weight: var(--c-font-weight-light);
+    font-size: 1.4rem;
+    line-height: 20px;
+    position: absolute;
+    right: -1rem;
+    top: -1rem;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1;
+}
+
+.sidebarItemTitleAction {
+    position: absolute;
+    border: 0;
+    box-shadow: none;
+    line-height: inherit;
+    margin: 0 0 0 4px;
+    padding: 0;
+    text-decoration: none;
+    text-shadow: none;
+    font-weight: var(--c-font-weight-regular);
+    background: url('../../icons/info-icon.svg') no-repeat;
+    height: 20px;
+    width: 20px;
+    bottom: 0;
+
+    span {
+        border: 0;
+        clip: rect(0, 0, 0, 0);
+        height: 1px;
+        margin: -1px;
+        overflow: hidden;
+        padding: 0;
+        position: absolute;
+        width: 1px;
+        top: 0;
+    }
+}
+
+.sidebarItemTitle {
+    display: inline-block;
+    position: relative;
+    font-weight: var(--c-font-weight-regular);
+    width: 80%;
+    text-align: left;
+}
+
+.items {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 1.8rem 0.7rem;
+    padding: 2.9rem 2.8rem;
+}
+
+.item {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    cursor: pointer;
+    font-weight: var(--c-font-weight-light);
+    position: relative;
+}
+
+@media only screen and (width <= 1023px) {
+    .items {
+        display: flex;
+        padding-top: 1.8rem;
+        visibility: visible;
+        width: auto;
+        flex-wrap: nowrap;
+        border-bottom: 1px solid var(--c-configurator-dark-white-3);
+        overflow-x: auto;
+    }
+
+    .item {
+        margin-right: 4px;
+        min-width: 154px;
+        width: 100%;
+    }
+
+    .preBuilt {
+        padding-top: 8rem;
+        text-align: center;
+    }
+
+    .qty {
+        z-index: 0;
+    }
+}

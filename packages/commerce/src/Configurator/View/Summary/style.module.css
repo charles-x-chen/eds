@@ -1,0 +1,104 @@
+/**
+ * @package     BlueAcorn/Configurator
+ * @author      Blue Acorn iCi <code@blueacorn.com>
+ * @copyright   Copyright © Blue Acorn iCi. All Rights Reserved.
+ */
+
+.sidebarHeaderAction {
+    background: 0 0;
+    border: 0;
+    margin: 0;
+    padding: 0 1rem 0 0;
+    flex: 1 0 auto;
+    font-size: 1.4rem;
+    color: var(--c-color-white);
+    text-align: right;
+    font-weight: var(--c-font-weight-bold);
+    text-transform: uppercase;
+
+    &::after {
+        content: url('../../icons/caret-down-white.svg');
+        position: relative;
+        top: -0.2rem;
+        left: 1rem;
+    }
+}
+
+.summaryExpanded {
+    display: flex;
+    flex-flow: column nowrap;
+    flex-grow: 1;
+    overflow: hidden;
+}
+
+.summary {
+    max-height: unset;
+    overflow: hidden scroll;
+    flex-grow: 1;
+}
+
+.header {
+    margin: 0 2.6rem;
+}
+
+.title {
+    padding: 1.8rem 0 2.1rem;
+    font-family: var(--heading-font-family);
+    font-style: normal;
+    font-weight: var(--c-font-weight-regular);
+    font-size: 2rem;
+    line-height: 28px;
+    text-align: center;
+    letter-spacing: -0.02em;
+    border-bottom: 1px solid var(--c-configurator-dark-white-3);
+}
+
+.total {
+    padding: 2rem 0;
+    margin: 1rem 2rem;
+    border-top: 2px solid var(--text-color);
+    display: flex;
+    justify-content: space-between;
+}
+
+.totalTitle {
+    font-weight: var(--c-font-weight-bold);
+    margin-bottom: 5px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.totalPrice {
+    line-height: 1;
+    font-size: 2.4rem;
+}
+
+.detailsMobile {
+    display: flex;
+    margin-top: 3.2rem;
+    flex-direction: column;
+
+    & > div {
+        margin: 0 1.6rem;
+        border-top: 1px solid var(--c-configurator-dark-white-3);
+        display: block;
+        width: 100%;
+        text-align: left;
+        font-style: normal;
+        font-weight: var(--c-font-weight-regular);
+        font-size: 1.6rem;
+        padding: 1.6rem 0;
+        line-height: 2.4rem;
+        color: var(--text-color);
+
+        &:last-child {
+            border-bottom: 1px solid var(--c-configurator-dark-white-3);
+        }
+    }
+}
+
+@media only screen and (width > 1024px) {
+    .detailsMobile {
+        display: none;
+    }
+}

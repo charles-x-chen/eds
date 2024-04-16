@@ -1,0 +1,138 @@
+.root {
+    position: relative;
+    overflow: hidden;
+}
+
+.slider {
+    display: flex;
+    flex-flow: row nowrap;
+    width: 100%;
+    position: relative;
+    transition: transform 0.5s ease-in-out;
+    color: var(--c-color-black);
+    font-size: 1.4rem;
+    font-weight: var(--c-font-weight-regular);
+    line-height: 24px;
+    cursor: pointer;
+    align-items: center;
+    height: 54px;
+
+    p {
+        margin: 0;
+    }
+
+    & > div {
+        min-width: 100%;
+    }
+
+    & .modalContent {
+        display: none;
+    }
+}
+
+.title {
+    font-family: var(--c-title-font);
+    font-style: normal;
+    font-size: 2.4rem;
+    font-weight: var(--c-font-weight-regular);
+    line-height: 36px;
+    color: var(--text-color);
+    letter-spacing: -0.02em;
+    text-align: center;
+    margin-top: 0;
+    padding-bottom: 2rem;
+    border-bottom: 1px solid var(--c-color-grey-9);
+}
+
+.content {
+    padding: 2rem 4rem;
+
+    > p {
+        font-family: var(--c-primary-font);
+        font-size: 1.2rem;
+        font-style: normal;
+        font-weight: var(--c-font-weight-light);
+        line-height: 20px;
+        color: var(--text-color);
+
+        strong {
+            display: block;
+        }
+
+        a {
+            color: var(--c-color-blue-green-2);
+            text-decoration: underline;
+        }
+    }
+
+    h6 {
+        font-family: var(--c-primary-font);
+        font-size: 1rem;
+        line-height: 10px;
+        color: var(--text-color);
+        font-weight: var(--c-font-weight-light);
+    }
+}
+
+:global .section.banner-container {
+    padding: 0;
+    display: flex;
+    flex-flow: row nowrap;
+    background: var(--light-color);
+    text-align: center;
+
+    & > div {
+        width: 100%;
+    }
+}
+
+.bannerModalWrapper {
+    margin: 5rem auto;
+    width: 43%;
+    max-height: 100vh;
+    overflow-y: auto;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+
+    button[name='close'] {
+        height: 32px;
+        width: 32px;
+        border-radius: 50%;
+        background: var(--text-color);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        span {
+            color: var(--c-color-white);
+            transform: scale(0.7);
+        }
+    }
+}
+
+@media (width < 769px) {
+    .bannerModalWrapper {
+        margin: 5rem 0 0;
+        width: 100%;
+        border-radius: 2rem 2rem 0 0;
+        position: fixed;
+        overflow: scroll;
+        height: calc(90%);
+        bottom: 0;
+    }
+
+    .content {
+        padding: 2rem;
+    }
+
+    .slider {
+        height: auto;
+    }
+}
+
+@media (width >= 769px) {
+    .title {
+        font-size: 2.8rem;
+    }
+}

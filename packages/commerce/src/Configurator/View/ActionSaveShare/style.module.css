@@ -1,0 +1,101 @@
+/**
+ * @package     BlueAcorn/Configurator
+ * @author      Blue Acorn iCi <code@blueacorn.com>
+ * @copyright   Copyright © Blue Acorn iCi. All Rights Reserved.
+ */
+
+.mail {
+    border: 2px solid var(--text-color);
+    padding: 0.6rem;
+    margin: 0 0.9rem;
+
+    &::before {
+        content: url('/packages/commerce/src/Configurator/icons/share-email.svg');
+        display: inline-block;
+        background: var(--c-color-white);
+        overflow: hidden;
+        height: 27px;
+        width: 36px;
+        position: relative;
+        top: 0.5rem;
+    }
+}
+
+.facebook {
+    border: 2px solid var(--text-color);
+    padding: 0.6rem;
+    margin: 0 0.9rem;
+
+    &::before {
+        content: url('/packages/commerce/src/Configurator/icons/share-fb.svg');
+        display: inline-block;
+        background: var(--c-color-white);
+        overflow: hidden;
+        height: 27px;
+        width: 36px;
+        position: relative;
+        top: 0.5rem;
+    }
+}
+
+.twitter {
+    border: 2px solid var(--text-color);
+    padding: 0.6rem;
+    margin: 0 0.9rem;
+
+    &::before {
+        content: url('/packages/commerce/src/Configurator/icons/share-twitter.svg');
+        display: inline-block;
+        background: var(--c-color-white);
+        overflow: hidden;
+        height: 27px;
+        width: 36px;
+        position: relative;
+        top: 0.5rem;
+    }
+}
+
+.pin {
+    border: 2px solid var(--text-color);
+    padding: 0.6rem;
+    margin: 0 0.9rem;
+
+    &::before {
+        content: url('/packages/commerce/src/Configurator/icons/share-pin.svg');
+        display: inline-block;
+        background: var(--c-color-white);
+        overflow: hidden;
+        height: 27px;
+        width: 36px;
+        position: relative;
+        top: 0.5rem;
+    }
+}
+
+.shareAction {
+    margin-bottom: 5.4rem;
+    line-height: 2.7;
+
+    button.shareButton {
+        padding: 1rem 3.6rem;
+        background: var(--c-color-blue-green-2);
+        color: var(--c-color-white);
+        letter-spacing: 0.1rem;
+        text-transform: uppercase;
+        font-weight: var(--c-font-weight-bold);
+        font-size: 1.4rem;
+        line-height: 2rem;
+        cursor: pointer;
+        text-decoration: none;
+
+        &::after {
+            content: url('/packages/commerce/src/Configurator/icons/share-copy-icon.svg');
+            display: inline-block;
+            overflow: hidden;
+            height: 18px;
+            width: 40px;
+            position: relative;
+            top: 0.5rem;
+        }
+    }
+}

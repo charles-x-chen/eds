@@ -1,0 +1,17 @@
+mutation AddToCart($cartId: String!, $sku: String!, $qty: Float!) {
+    addProductsToCart(cartId: $cartId, cartItems: [{ quantity: $qty, sku: $sku }]) {
+        cart {
+            items {
+                product {
+                    name
+                    sku
+                }
+                quantity
+            }
+        }
+        userErrors: user_errors {
+            code
+            message
+        }
+    }
+}

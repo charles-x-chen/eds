@@ -1,0 +1,60 @@
+/**
+ * @package     BlueAcorn/Configurator
+ * @author      Blue Acorn iCi <code@blueacorn.com>
+ * @copyright   Copyright © Blue Acorn iCi. All Rights Reserved.
+ */
+
+.wrapper {
+    margin: 0 auto;
+    max-width: 375px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    border: 1px solid #d8d9da;
+    background: #f5f5f5;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+
+    @media (width <= 1023px) {
+        max-width: 323px;
+    }
+}
+
+.shippingInfo {
+    background: #fff;
+    width: 100%;
+    display: block;
+    padding: 1.4rem 2rem;
+    margin: 0 auto;
+    max-width: 375px;
+}
+
+.title {
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 20px;
+    position: relative;
+    display: block;
+    margin-left: 7rem;
+
+    &::before {
+        content: '';
+        display: inline-block;
+        margin-right: 5px;
+        position: absolute;
+        left: -7rem;
+        top: -3px;
+        background-image: url('./shipping.svg');
+        background-repeat: no-repeat;
+        width: 58px;
+        height: 58px;
+    }
+}
+
+.description {
+    font-weight: 300;
+    font-size: 14px;
+    line-height: 20px;
+    margin-left: 7rem;
+}

@@ -1,0 +1,27 @@
+import { Meta, ColorPalette, ColorItem } from '@storybook/blocks';
+
+<Meta title="Colors" />
+
+# Colors
+
+<ColorPalette>
+    <ColorItem
+        title="primary"
+        subtitle="Primary"
+        colors={{ '--link-color': '#00808c', '--link-hover-color': '#00525a' }}
+    />
+    <ColorItem
+        title="dark"
+        subtitle="Dark"
+        colors={{
+            '--dark-color': '#56585a',
+        }}
+    />
+    <ColorItem
+        title="light"
+        subtitle="Light"
+        colors={{
+            '--light-color': '#f5f5f5',
+        }}
+    />
+</ColorPalette>

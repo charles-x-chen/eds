@@ -1,0 +1,490 @@
+/**
+ * @package     BlueAcorn/Configurator
+ * @author      Blue Acorn iCi <code@blueacorn.com>
+ * @copyright   Copyright © Blue Acorn iCi. All Rights Reserved.
+ */
+
+.player {
+    width: 100%;
+    position: relative;
+
+    &:empty {
+        display: block;
+    }
+}
+
+.threekitPlayer {
+    min-width: 100px;
+    min-height: 100px;
+
+    > div {
+        height: 100%;
+    }
+}
+
+.playerThumbnail span {
+    display: none;
+}
+
+.floorOptionsHeader span {
+    font-family: var(--heading-font-family);
+    font-weight: var(--c-font-weight-regular);
+    font-size: 2rem;
+}
+
+.playerButton span {
+    display: none;
+}
+
+.floorOptionsHeader button span {
+    display: none;
+}
+
+.playerButton {
+    background: var(--c-color-white);
+    box-sizing: content-box;
+    border: 2px solid var(--c-configurator-dark-white-3);
+    box-shadow: none;
+    line-height: inherit;
+    margin: 0 0 0.2rem;
+    padding: 0;
+    text-decoration: none;
+    text-shadow: none;
+    font-weight: var(--c-font-weight-regular);
+    height: 35px;
+    width: 35px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+
+    &::before {
+        display: inline-block;
+        content: '';
+    }
+
+    &:hover {
+        opacity: 0.9;
+        background: var(--text-color);
+        border: 2px solid var(--c-configurator-dark-white-3);
+
+        span {
+            position: absolute;
+            top: -0.2rem;
+            left: 102%;
+            height: 40px;
+            width: auto;
+            background: var(--c-color-white);
+            color: var(--text-color);
+            display: flex;
+            align-items: center;
+            white-space: nowrap;
+            font-size: 1.4rem;
+            padding: 0 2rem 0 0;
+        }
+    }
+}
+
+.active {
+    background: var(--text-color);
+}
+
+.measurement {
+    &.webglPlayerIcon {
+        order: 4;
+    }
+
+    &::before {
+        background-image: url('../../icons/measurement-icon.svg');
+        background-repeat: no-repeat;
+        background-size: contain;
+        height: 27px;
+        width: 27px;
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+    }
+
+    &:hover,
+    &.active {
+        &::before {
+            background-image: url('../../icons/measurement-icon-active.svg');
+        }
+    }
+}
+
+.floor {
+    &::before {
+        background-image: url('../../icons/floor-icon.svg');
+        background-repeat: no-repeat;
+        background-size: contain;
+        height: 20px;
+        width: 20px;
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+    }
+
+    &:hover,
+    &.active {
+        &::before {
+            background-image: url('../../icons/floor-icon-active.svg');
+        }
+    }
+}
+
+.floorOptionsWrapper {
+    position: absolute;
+    z-index: 1;
+    width: 256px;
+    background: var(--c-color-white);
+    top: 8rem;
+    left: 5.2rem;
+    border: 1px solid var(--c-configurator-dark-white-3);
+}
+
+.playerThumbnail {
+    background: var(--c-color-white);
+    box-sizing: content-box;
+    border: 2px solid var(--c-color-grey-4);
+    box-shadow: none;
+    line-height: inherit;
+    margin: 0 1rem 0 0;
+    padding: 0;
+    text-decoration: none;
+    text-shadow: none;
+    font-weight: var(--c-font-weight-regular);
+    height: 70px;
+    width: 80px;
+
+    &:hover {
+        background: var(--c-color-white);
+        border: 2px solid var(--text-color);
+    }
+
+    img {
+        max-height: 100%;
+        max-width: 100%;
+        vertical-align: middle;
+    }
+}
+
+.floorOptionsHeader {
+    background-color: var(--text-color);
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    color: var(--c-color-white);
+    padding: 1.3rem 1.6rem;
+
+    button {
+        &::after {
+            display: inline-block;
+            content: '\00d7';
+            font-size: 2.4rem;
+        }
+    }
+}
+
+.floorLabels {
+    display: grid;
+    grid-template-columns: 10% 78% 10%;
+    padding: 1.1rem 1.6rem 1.6rem;
+    font-weight: var(--c-font-weight-semibold);
+    font-size: 14px;
+    border-bottom: 1px solid var(--c-configurator-dark-white-3);
+    cursor: pointer;
+
+    img {
+        max-width: 24px;
+    }
+
+    input {
+        display: none;
+
+        &:checked {
+            + span {
+                background: var(--link-color);
+                border-color: var(--link-color);
+                position: relative;
+
+                &::after {
+                    content: '';
+                    display: inline-block;
+                    background-image: url('../../icons/checkmark-icon.svg');
+                    background-repeat: no-repeat;
+                    background-size: contain;
+                    height: 16px;
+                    width: 16px;
+                    position: absolute;
+                    top: 0.4rem;
+                    left: 0.3rem;
+                }
+            }
+        }
+    }
+}
+
+.floorName {
+    flex: 1 1 auto;
+    margin-left: 1.1rem;
+    text-align: left;
+}
+
+.floorSelectIcon {
+    width: 21px;
+    display: inline-block;
+    height: 21px;
+    background: var(--c-color-white);
+    border: 1.5px solid var(--c-color-grey-4);
+    margin: 0;
+}
+
+.zoom {
+    &::before {
+        background-image: url('../../icons/ar-icon.svg');
+        background-repeat: no-repeat;
+        background-size: contain;
+        height: 20px;
+        width: 20px;
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+    }
+
+    &:hover,
+    &.active {
+        &::before {
+            background-image: url('../../icons/ar-icon-active.svg');
+        }
+    }
+}
+
+.playerThumbnailsWrapper {
+    position: absolute;
+    bottom: 0;
+    left: 1.2rem;
+}
+
+.playerThumbnailActive {
+    background: var(--c-color-white);
+    border: 2px solid var(--text-color);
+}
+
+.dragVisible {
+    position: absolute;
+    margin-left: auto;
+    margin-right: auto;
+    right: 0;
+    font-family: var(--body-font-family);
+    font-size: 1.8rem;
+    line-height: 24px;
+    text-align: center;
+    color: var(--text-color);
+    left: 1.2rem;
+}
+
+@media only screen and (width <= 768px) {
+    .threekitPlayer {
+        height: 68vw;
+    }
+
+    .dragVisible {
+        bottom: 15px;
+        max-width: 41vw;
+    }
+}
+
+@media only screen and (width <= 1023px) {
+    body:has(.floorOptionsWrapper) {
+        [data-block-name='configurator'] {
+            > div > div {
+                > div:last-child {
+                    display: none;
+                }
+            }
+        }
+    }
+
+    .player {
+        background: var(--c-color-white);
+        position: fixed;
+        z-index: 2;
+        margin-top: 0;
+    }
+
+    body:has([data-modalactive='true']) {
+        .playerButton,
+        .player {
+            background: transparent;
+            z-index: 0;
+            border: none;
+        }
+    }
+
+    .floorOptionsWrapper {
+        max-height: 535px;
+        z-index: 12;
+        top: auto;
+        bottom: 0;
+        left: 0;
+        position: fixed;
+        width: 100vw;
+
+        &::before {
+            content: '';
+            background-color: rgb(0 0 0 / 55%);
+            inset: 0;
+            height: 100%;
+            width: 100%;
+            display: block;
+            position: fixed;
+            z-index: -1;
+        }
+    }
+
+    .floorOptionsHeader {
+        border-radius: 2rem 2rem 0 0;
+        background: var(--c-color-white);
+        border-bottom: 1px solid var(--c-configurator-dark-white-3);
+
+        span {
+            color: var(--text-color);
+            flex: 1 0 auto;
+            text-align: center;
+            font-size: 2.8rem;
+        }
+
+        button {
+            margin-left: 0;
+            right: 1rem;
+            left: auto;
+            height: 32px;
+            width: 32px;
+            background: var(--text-color);
+            border-radius: 50%;
+
+            &::after {
+                position: relative;
+                top: -0.5rem;
+            }
+        }
+    }
+
+    .floorOptionsList {
+        max-height: 360px;
+        overflow-y: auto;
+        background: var(--c-color-white);
+    }
+
+    .floorLabels {
+        grid-template-columns: 14% 76% 10%;
+        align-items: center;
+
+        img {
+            max-width: 48px;
+            width: 100%;
+        }
+
+        .floorSelectIcon {
+            border-radius: 50%;
+            border-color: var(--link-color);
+        }
+
+        input {
+            display: none;
+
+            &:checked {
+                + .floorSelectIcon {
+                    position: relative;
+                    background: none;
+
+                    &::after {
+                        content: '';
+                        height: 13px;
+                        width: 13px;
+                        background: var(--link-color);
+                        position: absolute;
+                        top: 4px;
+                        left: 4px;
+                        border-radius: 50%;
+                    }
+                }
+            }
+        }
+    }
+
+    .applyFloor {
+        padding: 2.6rem 3rem;
+        border-top: 1px solid var(--c-configurator-dark-white-3);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        bottom: 0;
+        width: 100vw;
+        box-sizing: border-box;
+        background: var(--c-color-white);
+        z-index: 2;
+    }
+
+    .primary {
+        width: 100%;
+        font-weight: var(--c-font-weight-bold);
+        font-size: 1.4rem;
+        letter-spacing: 1px;
+        text-transform: uppercase;
+        background: var(--c-color-blue-green-2);
+        border: none;
+        color: var(--c-color-white);
+        cursor: pointer;
+        padding: 1rem 2.1rem;
+        display: inline-block;
+        box-sizing: border-box;
+        vertical-align: middle;
+    }
+
+    .active {
+        span {
+            display: none;
+        }
+    }
+
+    .measurement:not(.active) {
+        span {
+            display: none;
+        }
+
+        &:hover {
+            background: none;
+            opacity: 1;
+
+            &::before {
+                background-image: url('../../icons/measurement-icon.svg');
+            }
+        }
+    }
+}
+
+@media only screen and (width >= 769px) {
+    .threekitPlayer {
+        height: 100%;
+    }
+
+    .dragVisible {
+        bottom: 8.5rem;
+        display: block;
+    }
+}
+
+@media only screen and (width >= 1024px) {
+    .player {
+        max-width: 65%;
+        margin-bottom: 5.6rem;
+    }
+}
+
+@media only screen and (width >= 1679px) {
+    .player {
+        max-width: inherit;
+    }
+}

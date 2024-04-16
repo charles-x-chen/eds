@@ -1,0 +1,31 @@
+# Expirable Storage
+
+It uses IndexedDB with columns (key, value, expiration) to store data.
+
+## Get Value
+
+```js
+import { get } from '~/Api/Storage';
+
+const value1 = await get('key1');
+```
+
+## Set Value
+
+Duration is 1 hour by default.
+
+```js
+import { set } from '~/Api/Storage';
+
+await set('key1', 'value1', 60 * 60 * 24);
+```
+
+## Remove Value
+
+Duration is 1 hour by default.
+
+```js
+import { remove } from '~/Api/Storage';
+
+await remove('key1');
+```

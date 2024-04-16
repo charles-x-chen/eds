@@ -1,0 +1,12 @@
+# @package     BlueAcorn/Configurator
+# @author      Blue Acorn iCi <code@blueacorn.com>
+# @copyright   Copyright © Blue Acorn iCi. All Rights Reserved.
+
+query Rating($sku: String!) {
+    rating: getBAReviews(filter: { sku: $sku }) {
+        stats {
+            reviewCount
+            rating
+        }
+    }
+}

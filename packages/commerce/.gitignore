@@ -1,0 +1,17 @@
+*
+!/.storybook
+!/.storybook/**
+!/schema
+!/schema/**
+!/.gitignore
+!/index.html
+!/package.json
+!/jsconfig.json
+!/vite.config.js
+!/src
+!/src/**
+!/docs
+!/docs/**
+!/test
+!/test/**
+.DS_Store

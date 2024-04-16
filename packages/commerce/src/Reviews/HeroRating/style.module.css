@@ -1,0 +1,54 @@
+/**
+ * @package     BlueAcorn/View
+ * @author      Blue Acorn iCi <code@blueacorn.com>
+ * @copyright   Copyright © Blue Acorn iCi. All Rights Reserved.
+ */
+
+.starRatingWrapper {
+    display: inline-flex;
+    gap: 5px;
+    margin-top: 1.6rem;
+
+    @media (width >= 900px) {
+        margin-top: auto;
+    }
+
+    & > span {
+        font-size: 14px;
+        line-height: 20px;
+        text-decoration: underline;
+    }
+
+    & > ul {
+        & > li {
+            margin-right: 0.25rem;
+        }
+
+        & > li:last-child {
+            margin-right: 0;
+        }
+    }
+
+    svg {
+        fill: var(--c-color-white);
+        color: var(--c-color-white);
+    }
+}
+
+@media only screen and (width <= 1023px) {
+    .starRatingWrapper {
+        & > span {
+            color: var(--c-primary-color);
+        }
+    }
+}
+
+.hero {
+    .starRatingWrapper {
+        color: var(--c-color-white);
+
+        svg {
+            fill: var(--color-white);
+        }
+    }
+}

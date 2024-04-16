@@ -1,0 +1,19 @@
+# Extole
+
+Display Extole block
+
+## Usage
+
+```jsx
+import { extoleCreateCustomerZone } from '~/Api/Extole';
+
+function ReferAFriendBlock({ customer }) {
+    const ref = useRef();
+
+    useEffect(() => {
+        extoleCreateCustomerZone(customer, ref.current);
+    }, [customer]);
+
+    return <div ref={ref} />;
+}
+```

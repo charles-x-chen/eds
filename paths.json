@@ -1,5 +1,26 @@
 {
-  "mappings": [
-    "/content/aem-boilerplate/:/"
-  ]
+    "mappings": [
+        "/content/lovesac/en-us/:/",
+        "/content/lovesac/en-us/metadata:/metadata.json",
+        "/content/lovesac/en-us/config:/config.json",
+        "/content/lovesac/helix/config:/.helix/config.json",
+        "/content/lovesac/helix/headers:/.helix/headers.json",
+        "/content/lovesac/en-us/sactionals/messages:/sactionals/messages.json",
+        "/content/lovesac/en-us/sactionals/steps:/sactionals/steps.json",
+        "/content/lovesac/en-us/sactionals/build/config:/sactionals/build/config.json",
+        "/content/lovesac/en-us/sactionals/inserts/config:/sactionals/inserts/config.json",
+        "/content/lovesac/en-us/sactionals/covers/select/config:/sactionals/covers/select/config.json",
+        "/content/lovesac/en-us/sactionals/covers/build/config:/sactionals/covers/build/config.json",
+        "/content/lovesac/en-us/sacs/messages:/sacs/messages.json",
+        "/content/lovesac/en-us/sacs/steps:/sacs/steps.json",
+        "/content/lovesac/en-us/sacs/build/config:/sacs/build/config.json",
+        "/content/lovesac/en-us/sacs/covers/config:/sacs/covers/config.json",
+        "/content/lovesac/en-us/squattomans/messages:/squattomans/messages.json",
+        "/content/lovesac/en-us/squattomans/build/config:/squattomans/build/config.json",
+        "/content/lovesac/en-us/squattomans/covers/config:/squattomans/covers/config.json",
+        "/content/lovesac/en-us/throw-pillows/messages:/throw-pillows/messages.json",
+        "/content/lovesac/en-us/throw-pillows/build/config:/throw-pillows/build/config.json",
+        "/content/lovesac/en-us/throw-pillows/covers/config:/throw-pillows/covers/config.json"
+    ],
+    "includes": ["/content/lovesac/"]
 }

@@ -1,0 +1,106 @@
+/**
+ * @package     BlueAcorn/MyHub
+ * @author      Blue Acorn iCi <code@blueacorn.com>
+ * @copyright   Copyright © Blue Acorn iCi. All Rights Reserved.
+ */
+
+.progressBarWrapper {
+    margin-bottom: 4rem;
+}
+
+.progressBar {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    text-align: center;
+    width: 100%;
+}
+
+.progressBarItem {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    width: 32%;
+}
+
+.progressBarItem::after {
+    content: '';
+    width: 100%;
+    height: 5px;
+    position: absolute;
+    left: 0;
+    top: 5px;
+    background: var(--c-color-grey-2);
+    z-index: 0;
+}
+
+.progressBarItem:first-child {
+    align-items: flex-start;
+    width: 18.5%;
+}
+
+.progressBarItem:first-child::after {
+    width: 100%;
+    left: 1px;
+    right: 0;
+}
+
+.progressBarItem:last-child {
+    align-items: flex-end;
+    width: 18.5%;
+}
+
+.progressBarItem:last-child::after {
+    width: 100%;
+    left: -1px;
+    right: 0;
+}
+
+.progressBarItem svg {
+    font-size: 1.4rem;
+    z-index: 1;
+    color: var(--c-color-grey-2);
+}
+
+.progressBarItem span {
+    font-size: 1.6rem;
+    font-weight: var(--c-font-weight-semibold);
+    line-height: 28px;
+    letter-spacing: -0.02em;
+    text-align: left;
+    padding-top: 3rem;
+}
+
+.progressBarComplete::after {
+    background: var(--c-primary-color);
+}
+
+.progressBarComplete svg {
+    color: var(--c-primary-color);
+}
+
+@media only screen and (max-width: 1023px) {
+    .progressBarItem span {
+        font-size: 10px;
+        line-height: 12px;
+        max-width: 53px;
+        word-break: keep-all;
+        padding-top: 1rem;
+    }
+}
+
+@media only screen and (min-width: 1024px) {
+    .progressBarItem svg {
+        font-size: 3.8rem;
+    }
+
+    .progressBarItem::after {
+        top: 1.6rem;
+        height: 8px;
+    }
+}

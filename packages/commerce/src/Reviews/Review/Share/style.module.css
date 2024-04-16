@@ -1,0 +1,105 @@
+/**
+ * @package     BlueAcorn/Reviews
+ * @author      Blue Acorn iCi <code@blueacorn.com>
+ * @copyright   Copyright © Blue Acorn iCi. All Rights Reserved.
+ */
+
+.shareButton {
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 20px;
+    display: flex;
+    flex-flow: row nowrap;
+    align-items: center;
+    margin-right: auto;
+    flex-grow: 0;
+
+    &,
+    &:hover,
+    &:focus {
+        color: var(--c-primary-color);
+    }
+
+    & .icon {
+        font-size: 18px;
+        margin-right: 10px;
+    }
+}
+
+.content {
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: center;
+    row-gap: 2rem;
+}
+
+.title {
+    font-weight: 400;
+    font-size: 2.4rem;
+    line-height: 3.2rem;
+    letter-spacing: -0.02em;
+    word-break: break-word;
+    font-family: var(--c-title-font);
+}
+
+.text {
+    font-weight: 300;
+    font-size: 1.6rem;
+    line-height: 2.4rem;
+    max-width: 300px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.social {
+    display: flex;
+    flex-flow: row nowrap;
+    column-gap: 1.8rem;
+}
+
+.social button {
+    width: 48px;
+    height: 48px;
+    padding: 0.5rem;
+    font-size: 30px;
+}
+
+.social button,
+.social button:hover,
+.social button:focus {
+    color: #000;
+    border: 2px solid var(--c-secondary-color);
+}
+
+.copy {
+    padding: 1rem 3rem;
+    letter-spacing: 0.1rem;
+    text-transform: uppercase;
+    font-weight: 700;
+    font-size: 1.4rem;
+    line-height: 2rem;
+}
+
+.copy,
+.copy:hover,
+.copy:focus {
+    background: var(--c-primary-color);
+    color: var(--c-color-white);
+}
+
+.copy:hover {
+    background: var(--c-primary-color);
+    color: var(--c-color-white);
+    border: 0;
+}
+
+.copy span {
+    width: 27px;
+    height: 28px;
+    display: inline-block;
+    vertical-align: middle;
+    content: '';
+    margin-left: 0.9rem;
+    font-size: 30px;
+}

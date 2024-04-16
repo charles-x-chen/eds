@@ -1,0 +1,15 @@
+# @package     BlueAcorn/Catalog
+# @author      Blue Acorn iCi <code@blueacorn.com>
+# @copyright   Copyright © Blue Acorn iCi. All Rights Reserved.
+
+mutation AddProductsToCart($cartId: String!, $cartItems: [CartItemInput!]!) {
+    addProductsToCart(cartId: $cartId, cartItems: $cartItems) {
+        cart {
+            id
+        }
+        errors: user_errors {
+            code
+            message
+        }
+    }
+}

@@ -1,5 +1,18 @@
 mountpoints:
-  /:
-    url: "https://author-p15404-e146221-cmstg.adobeaemcloud.com/bin/franklin.delivery/adobe-rnd/aem-boilerplate-xwalk/main"
-    type: "markup"
-    suffix: ".html"
+    /:
+        url: 'https://author-p134211-e1317444.adobeaemcloud.com/bin/franklin.delivery/BlueAcornInc/lovesac-build/main'
+        type: 'markup'
+        suffix: '.html?wcmmode=disabled'
+
+folders:
+    /products/: /products/default
+    /sactionals/build/: /sactionals/build
+    /sactionals/inserts/: /sactionals/inserts
+    /sactionals/covers/select/: /sactionals/covers/select
+    /sactionals/covers/build/: /sactionals/covers/build
+    /sacs/build/: /sacs/build
+    /sacs/covers/: /sacs/covers
+    /squattomans/build/: /squattomans/build
+    /squattomans/covers/: /squattomans/covers
+    /throw-pillows/build/: /throw-pillows/build
+    /throw-pillows/covers/: /throw-pillows/covers

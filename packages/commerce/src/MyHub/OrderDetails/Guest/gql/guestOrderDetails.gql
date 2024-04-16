@@ -1,0 +1,96 @@
+# @package     BlueAcorn/MyHub
+# @author      Blue Acorn iCi <code@blueacorn.com>
+# @copyright   Copyright © Blue Acorn iCi. All Rights Reserved.
+
+query GuestOrderDetails($email: String, $orderNumber: String) {
+    getGuestOrder(email: $email, number: $orderNumber) {
+        id
+        number
+        netsuite {
+            orderId
+            shippingMethod
+            paymentMethod
+            onlineOrder
+        }
+        narvarTrackingUrl
+        orderDate: order_date
+        status
+        items {
+            product {
+                thumbnail {
+                    label
+                    url
+                }
+            }
+            price: product_sale_price {
+                currency
+                value
+            }
+            discounts {
+                amount {
+                    currency
+                    value
+                }
+            }
+            name: product_name
+            sku: product_sku
+            qty: quantity_ordered
+        }
+        billingAddress: billing_address {
+            firstname
+            lastname
+            street
+            city
+            region
+            postcode
+            countryCode: country_code
+            telephone
+        }
+        shippingAddress: shipping_address {
+            firstname
+            lastname
+            street
+            city
+            region
+            postcode
+            countryCode: country_code
+            telephone
+        }
+        paymentMethods: payment_methods {
+            name
+            type
+        }
+        shippingMethod: shipping_method
+        total {
+            grandTotal: grand_total {
+                value
+                currency
+            }
+            totalTax: total_tax {
+                value
+                currency
+            }
+            subtotal {
+                value
+                currency
+            }
+            giftCard: total_giftcard {
+                value
+                currency
+            }
+            shippingHandling: shipping_handling {
+                totalAmount: total_amount {
+                    value
+                    currency
+                }
+            }
+            discounts {
+                amount {
+                    value
+                    currency
+                }
+                label
+            }
+        }
+    }
+}

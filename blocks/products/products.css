@@ -1,0 +1,12 @@
+.products-container {
+    h2 {
+        font-size: 26px;
+        text-align: center;
+        font-weight: 400;
+
+        @media (width >= 768px) {
+            font-size: 32px;
+            text-align: left;
+        }
+    }
+}

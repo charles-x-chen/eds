@@ -1,0 +1,20 @@
+mutation PostReview(
+    $sku: String
+    $userId: String
+    $submissionSessionToken: String
+    $submissionFields: [BASubmissionFieldInput]
+) {
+    submitProgressivePostReview(
+        sku: $sku
+        userId: $userId
+        submissionSessionToken: $submissionSessionToken
+        submissionFields: $submissionFields
+    ) {
+        errors {
+            code
+            message
+            field
+        }
+        submissionId
+    }
+}

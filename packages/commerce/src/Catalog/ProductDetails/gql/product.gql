@@ -1,0 +1,87 @@
+# @package     BlueAcorn/Catalog
+# @author      Blue Acorn iCi <code@blueacorn.com>
+# @copyright   Copyright © Blue Acorn iCi. All Rights Reserved.
+
+query Product($urlKey: String!) {
+    products: productSearch(
+        phrase: ""
+        page_size: 1
+        current_page: 1
+        filter: [{ attribute: "url_key", eq: $urlKey }]
+    ) {
+        items {
+            product: productView {
+                sku
+                name
+                urlKey
+                metaTitle
+                metaDescription
+                metaKeyword
+                description
+                shortDescription
+                addToCartAllowed
+                inStock
+                externalId
+                images {
+                    label
+                    url
+                    roles
+                }
+                attributes(roles: ["visible_in_pdp"]) {
+                    name
+                    label
+                    value
+                    roles
+                }
+                links {
+                    product {
+                        sku
+                    }
+                    linkTypes
+                }
+
+                ... on ComplexProductView {
+                    priceRange {
+                        maximum {
+                            ...ProductPrice
+                        }
+                        minimum {
+                            ...ProductPrice
+                        }
+                    }
+                    options {
+                        id
+                        multi
+                        required
+                        title
+                        values {
+                            id
+                            title
+                            inStock
+                        }
+                    }
+                }
+                ... on SimpleProductView {
+                    price {
+                        ...ProductPrice
+                    }
+                }
+            }
+        }
+    }
+}
+
+fragment ProductPrice on ProductViewPrice {
+    final {
+        amount {
+            value
+            currency
+        }
+    }
+    regular {
+        amount {
+            value
+            currency
+        }
+    }
+}

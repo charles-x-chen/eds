@@ -1,0 +1,5 @@
+query PassportCart {
+    cart: passportCart {
+        id
+    }
+}

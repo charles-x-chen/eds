@@ -1,0 +1,15 @@
+mutation Photo($base64Content: String, $contentType: String, $fileName: String) {
+    uploadReviewPhoto(base64Content: $base64Content, contentType: $contentType, fileName: $fileName) {
+        errors {
+            code
+            message
+            field
+        }
+        photo {
+            label
+            normal
+            thumbnail
+            large
+        }
+    }
+}

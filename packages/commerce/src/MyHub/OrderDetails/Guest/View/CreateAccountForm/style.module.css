@@ -1,0 +1,246 @@
+/**
+ * @package     BlueAcorn/MyHub
+ * @author      Blue Acorn iCi <code@blueacorn.com>
+ * @copyright   Copyright © Blue Acorn iCi. All Rights Reserved.
+ */
+
+.wrapper {
+    h3 {
+        font-size: 2.8rem;
+        font-weight: var(--c-font-weight-regular);
+        line-height: 36px;
+        letter-spacing: -0.02em;
+        text-align: left;
+        font-family: var(--c-title-font);
+    }
+
+    p {
+        font-size: 1.6rem;
+        font-weight: var(--c-font-weight-regular);
+        line-height: 24px;
+        letter-spacing: 0;
+        text-align: left;
+        margin-bottom: 1rem;
+    }
+
+    fieldset {
+        margin: 0;
+        padding: 0;
+        border: none;
+    }
+
+    .legend {
+        font-size: 2rem;
+        font-weight: var(--c-font-weight-light);
+        line-height: 28px;
+        letter-spacing: -0.02em;
+        border-bottom: 1px solid var(--c-color-grey-4);
+        padding-bottom: 1rem;
+        display: block;
+        width: 100%;
+    }
+
+    .field {
+        padding-top: 1.4rem;
+
+        label {
+            font-size: 1.6rem;
+            font-weight: var(--c-font-weight-regular);
+            line-height: 24px;
+            letter-spacing: 0;
+            text-align: left;
+            padding-bottom: 1rem;
+
+            &::after {
+                color: var(--color-error);
+                content: '*';
+                padding-left: 5px;
+                vertical-align: top;
+            }
+        }
+
+        input {
+            font-size: 1.6rem;
+            font-weight: var(--c-font-weight-regular);
+            line-height: 24px;
+            letter-spacing: 0;
+            text-align: left;
+            background: var(--c-color-grey-3);
+            border: 1px solid var(--c-color-grey-1);
+            padding-left: 1rem;
+        }
+    }
+}
+
+button.action:hover,
+button.action:active,
+button.action {
+    font-size: 1.4rem;
+    color: var(--c-color-white);
+    font-weight: var(--c-font-weight-bold);
+    line-height: 20px;
+    letter-spacing: 1px;
+    text-align: center;
+    padding: 10px 20px;
+    background: var(--c-primary-color);
+    text-transform: uppercase;
+    text-decoration: none;
+    margin-bottom: 4rem;
+}
+
+.requiredLabel {
+    font-size: 1.4rem;
+    font-weight: var(--c-font-weight-regular);
+    line-height: 20px;
+    display: block;
+    margin-top: 4rem;
+    margin-bottom: 4rem;
+    color: var(--color-error);
+
+    &::before {
+        content: '*';
+        vertical-align: top;
+    }
+}
+
+.modalFooter {
+    font-size: 1.4rem;
+    font-weight: var(--c-font-weight-regular);
+    line-height: 20px;
+    margin: 0;
+}
+
+.modalFooterLink {
+    font-size: 1.4rem;
+    font-weight: var(--c-font-weight-regular);
+    line-height: 20px;
+    letter-spacing: 0;
+    color: var(--c-primary-color);
+    text-decoration: underline;
+}
+
+.passwordStrength {
+    background: var(--c-color-grey-3);
+    height: 35px;
+    overflow: hidden;
+}
+
+.passwordStrengthBar {
+    font-size: 1.4rem;
+    font-weight: var(--c-font-weight-light);
+    line-height: 35px;
+    letter-spacing: 0;
+    height: 35px;
+    padding-left: 1rem;
+    white-space: nowrap;
+}
+
+.showPasswordLabel {
+    position: relative;
+    display: flex;
+    align-items: center;
+    margin-top: 2rem;
+}
+
+.showPasswordCheckbox {
+    display: none;
+}
+
+.showPasswordCheckbox:checked + .checkboxIcon {
+    background: var(--c-primary-color);
+    border-color: var(--c-primary-color);
+    padding-right: 0;
+}
+
+.checkboxIcon {
+    width: 24px;
+    display: inline-block;
+    height: 24px;
+    background: var(--c-color-white);
+    border: 1.5px solid var(--c-color-grey-4);
+    margin-right: 10px;
+    cursor: pointer;
+
+    + svg {
+        position: absolute;
+        left: -1px;
+        font-size: 28px;
+        color: var(--c-color-white);
+    }
+}
+
+.error,
+.passwordError {
+    margin: 2rem 0;
+    padding: 4px 20px 4px 40px;
+    display: block;
+    font-weight: var(--c-font-weight-light);
+    font-size: 1.6rem;
+    background: var(--color-error-background);
+    color: var(--c-secondary-color);
+    position: relative;
+
+    svg {
+        color: var(--color-error);
+        position: absolute;
+        top: 1rem;
+        left: 1.5rem;
+    }
+}
+
+.success {
+    margin: 2rem 0;
+    padding: 4px 20px 4px 40px;
+    display: block;
+    font-weight: var(--c-font-weight-light);
+    font-size: 1.6rem;
+    background: var(--color-success);
+    color: var(--c-secondary-color);
+    position: relative;
+
+    svg {
+        color: var(--color-success-2);
+        position: absolute;
+        top: 1rem;
+        left: 1.5rem;
+    }
+}
+
+.strong {
+    background: var(--color-success);
+}
+
+.weak {
+    background: var(--color-error-background);
+}
+
+@media only screen and (max-width: 1023px) {
+    .formWrapper {
+        padding: 20px;
+
+        h3 {
+            max-width: 80%;
+            word-break: break-word;
+        }
+    }
+}
+
+@media only screen and (min-width: 1024px) {
+    .wrapper {
+        min-width: 600px;
+    }
+
+    .modalFooter {
+        font-size: 1.6rem;
+    }
+
+    button.action:hover,
+    button.action:active,
+    button.action {
+        text-transform: capitalize;
+    }
+
+    .passwordStrengthBar {
+        font-size: 1.6rem;
+    }
+}

@@ -1,0 +1,12 @@
+# @package     BlueAcorn/Catalog
+# @author      Blue Acorn iCi <code@blueacorn.com>
+# @copyright   Copyright © Blue Acorn iCi. All Rights Reserved.
+
+query Rating($filter: BAReviewFilterInput) {
+    getBAReviews(filter: $filter) {
+        stats {
+            reviewCount
+            rating
+        }
+    }
+}

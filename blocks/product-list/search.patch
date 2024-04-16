@@ -1,0 +1,286 @@
+diff --git a/dev-template.html b/dev-template.html
+index 93a5f19..e39fa13 100644
+--- a/dev-template.html
++++ b/dev-template.html
+@@ -47,9 +47,9 @@
+     }
+   </style>
+ 
+-  <script type="text/javascript" src="search.js"></script>
++  <script type="module">
++    import LiveSearchPLP from './search.js';
+ 
+-  <script type="text/javascript">
+     const root = document.querySelector('div.search-plp-root');
+     const storeDetails = {
+       environmentId: '',
+@@ -87,6 +87,7 @@
+         customerGroup: '',
+       },
+       apiKey: '',
++      apiUrl: 'https://staging3.lovesac.com/graphql',
+       environmentType: '',
+       // searchQuery: 'search_query', // Optional: providing searchQuery will override 'q' query param
+       // route: ({ sku, urlKey  }) => {
+@@ -141,12 +142,6 @@
+       catalogExtensionVersion: '1.0.0',
+     });
+ 
+-    setTimeout(async () => {
+-      while (typeof window.LiveSearchPLP !== 'function') {
+-        console.log('waiting for window.LiveSearchPLP to be available');
+-        await new Promise((resolve) => setTimeout(resolve, 500));
+-      }
+-      window.LiveSearchPLP({ storeDetails, root });
+-    }, 1000);
++    LiveSearchPLP({ storeDetails, root });
+   </script>
+ </body>
+diff --git a/src/api/fragments.ts b/src/api/fragments.ts
+index 27d6e61..e9f753b 100644
+--- a/src/api/fragments.ts
++++ b/src/api/fragments.ts
+@@ -44,6 +44,7 @@ const ProductView = `
+             inStock
+             url
+             urlKey
++            externalId
+             images {
+                 label
+                 url
+@@ -124,12 +125,6 @@ const Product = `
+         product {
+             __typename
+             sku
+-            description {
+-                html
+-            }
+-            short_description{
+-                html
+-            }
+             name
+             canonical_url
+             small_image {
+diff --git a/src/api/search.ts b/src/api/search.ts
+index c221648..2893a12 100644
+--- a/src/api/search.ts
++++ b/src/api/search.ts
+@@ -119,14 +119,10 @@ const getProductSearch = async ({
+     magentoStorefrontEvtPublish.searchRequestSent(SEARCH_UNIT_ID);
+   // ======  end of data collection =====
+ 
+-  const response = await fetch(apiUrl, {
+-    method: 'POST',
+-    headers,
+-    body: JSON.stringify({
+-      query: PRODUCT_SEARCH_QUERY,
+-      variables: { ...variables },
+-    }),
+-  });
++  const response = await fetch(`${apiUrl}?${new URLSearchParams({
++    query: PRODUCT_SEARCH_QUERY.replace(/\s+/g, ' ').trim(),
++    variables: JSON.stringify(variables),
++  })}`);
+ 
+   const results = await response.json();
+   // ======  initialize data collection =====
+@@ -170,13 +166,9 @@ const getAttributeMetadata = async ({
+     customerGroup: '',
+   });
+ 
+-  const response = await fetch(apiUrl, {
+-    method: 'POST',
+-    headers,
+-    body: JSON.stringify({
+-      query: ATTRIBUTE_METADATA_QUERY,
+-    }),
+-  });
++  const response = await fetch(`${apiUrl}?${new URLSearchParams({
++    query: ATTRIBUTE_METADATA_QUERY.replace(/\s+/g, ' ').trim(),
++  })}`);
+   const results = await response.json();
+   return results?.data;
+ };
+@@ -208,14 +200,10 @@ const refineProductSearch = async ({
+     customerGroup: context?.customerGroup ?? '',
+   });
+ 
+-  const response = await fetch(apiUrl, {
+-    method: 'POST',
+-    headers,
+-    body: JSON.stringify({
+-      query: REFINE_PRODUCT_QUERY,
+-      variables: { ...variables },
+-    }),
+-  });
++  const response = await fetch(`${apiUrl}?${new URLSearchParams({
++    query: REFINE_PRODUCT_QUERY.replace(/\s+/g, ' ').trim(),
++    variables: JSON.stringify(variables),
++  })}`);
+   const results = await response.json();
+   return results?.data;
+ };
+diff --git a/src/components/ProductItem/MockData.ts b/src/components/ProductItem/MockData.ts
+index 2d6dbb7..5ef2405 100644
+--- a/src/components/ProductItem/MockData.ts
++++ b/src/components/ProductItem/MockData.ts
+@@ -54,6 +54,8 @@ export const sampleProductNoImage: Product = {
+   },
+   productView: {
+     __typename: 'SimpleProduct',
++    externalId: '21',
++    labels: [],
+     id: 21,
+     uid: '21',
+     name: 'Sprite Foam Yoga Brick',
+@@ -204,6 +206,8 @@ export const sampleProductDiscounted: Product = {
+   },
+   productView: {
+     __typename: 'SimpleProduct',
++    externalId: '21',
++    labels: [],
+     id: 21,
+     uid: '21',
+     name: 'Sprite Foam Yoga Brick',
+@@ -376,6 +380,8 @@ export const sampleProductNotDiscounted: Product = {
+   },
+   productView: {
+     __typename: 'SimpleProduct',
++    externalId: '21',
++    labels: [],
+     id: 21,
+     uid: '21',
+     name: 'Sprite Foam Yoga Brick',
+diff --git a/src/components/ProductItem/ProductItem.tsx b/src/components/ProductItem/ProductItem.tsx
+index 185c4a5..b7a698d 100644
+--- a/src/components/ProductItem/ProductItem.tsx
++++ b/src/components/ProductItem/ProductItem.tsx
+@@ -315,6 +315,9 @@ export const ProductItem: FunctionComponent<ProductProps> = ({
+                 className={`max-h-[45rem] w-full object-cover object-center lg:w-full`}
+               />
+             )}
++            {(productView.labels || []).map((label, index) => (<div className={`amlabel ${label.position}`} key={index}>
++              <img src={label.image} alt={label.alt_tag} />
++            </div>))}
+           </div>
+           <div className="flex flex-row">
+             <div className="flex flex-col">
+diff --git a/src/context/products.tsx b/src/context/products.tsx
+index a7c8fbc..697f23f 100644
+--- a/src/context/products.tsx
++++ b/src/context/products.tsx
+@@ -271,6 +271,41 @@ const ProductsContextProvider = ({ children }: WithChildrenProps) => {
+           data?.productSearch?.total_count,
+           data?.productSearch?.page_info?.total_pages
+         );
++
++        const productItems = (data?.productSearch?.items || []).map(item => item.productView);
++        const productIds = productItems.map(item => item.externalId).map(id => Number(id)).filter(Boolean);
++        if (productIds.length) {
++          setLoading(false);
++          setPageLoading(false);
++
++          const additonal: any = await (await fetch(`${storeCtx.apiUrl}?${new URLSearchParams({
++            query: 'query Labels($ids:[Int!]!){amLabelProvider(productIds:$ids,mode:CATEGORY){items{image,is_visible,name,position,style,alt_tag,size,txt,product_id}}}',
++            variables: JSON.stringify({ids: productIds}),
++          })}`)).json();
++          const labels = (additonal?.data?.amLabelProvider || []).flatMap((data: any) => data.items || []).reduce((acc: any, item: any) => {
++            acc[item.product_id] = acc[item.product_id] || [];
++            acc[item.product_id].push({
++              ...item,
++              image: (new URL(item.image, storeCtx.apiUrl)).href,
++            });
++            return acc;
++          }, {});
++
++          const items = (data?.productSearch?.items || []).map(
++            item => ({
++              ...item,
++              productView: {
++                ...(item.productView || {}),
++                labels: labels[item.productView.externalId] || []
++              }
++            })
++          );
++
++          setItems(items);
++
++          return;
++        }
++
+       }
+       setLoading(false);
+       setPageLoading(false);
+diff --git a/src/context/store.tsx b/src/context/store.tsx
+index 2ceac90..1414fa6 100644
+--- a/src/context/store.tsx
++++ b/src/context/store.tsx
+@@ -58,6 +58,7 @@ const StoreContextProvider = ({
+   config,
+   context,
+   apiKey,
++  apiUrl,
+   route,
+   searchQuery,
+ }: StoreDetailsProps) => {
+@@ -73,7 +74,7 @@ const StoreContextProvider = ({
+         customerGroup: context?.customerGroup ?? '',
+         userViewHistory: context?.userViewHistory ?? [],
+       },
+-      apiUrl: environmentType?.toLowerCase() === 'testing' ? TEST_URL : API_URL,
++      apiUrl,
+       apiKey:
+         environmentType?.toLowerCase() === 'testing' && !apiKey
+           ? SANDBOX_KEY
+@@ -81,7 +82,7 @@ const StoreContextProvider = ({
+       route,
+       searchQuery,
+     }),
+-    [environmentId, websiteCode, storeCode, storeViewCode]
++    [environmentId, websiteCode, storeCode, storeViewCode, apiUrl]
+   );
+ 
+   const storeContext = {
+diff --git a/src/index.tsx b/src/index.tsx
+index 930a594..8843f2b 100644
+--- a/src/index.tsx
++++ b/src/index.tsx
+@@ -68,6 +68,4 @@ const LiveSearchPLP = ({ storeDetails, root }: MountSearchPlpProps) => {
+   );
+ };
+ 
+-if (typeof window !== 'undefined' && !window.LiveSearchPLP) {
+-  window.LiveSearchPLP = LiveSearchPLP;
+-}
++export default LiveSearchPLP;
+diff --git a/src/types/interface.ts b/src/types/interface.ts
+index d956ccf..afa49a9 100644
+--- a/src/types/interface.ts
++++ b/src/types/interface.ts
+@@ -199,10 +199,12 @@ export interface Product {
+   };
+   productView: {
+     __typename: string;
++    externalId: string;
+     id: number;
+     uid: string;
+     name: string;
+     sku: string;
++    labels: null | any[];
+     description: null | ComplexTextValue;
+     short_description: null | ComplexTextValue;
+     attribute_set_id: null | number;
+diff --git a/src/utils/validateStoreDetails.ts b/src/utils/validateStoreDetails.ts
+index a971044..fbf7427 100644
+--- a/src/utils/validateStoreDetails.ts
++++ b/src/utils/validateStoreDetails.ts
+@@ -35,6 +35,9 @@ export const validateStoreDetailsKeys = (
+       delete (storeDetails as any)[key];
+       return;
+     }
++    if (key === 'apiUrl') {
++      return;
++    }
+     (storeDetails as any)[key] = sanitizeString((storeDetails as any)[key]);
+   });
+   return storeDetails;

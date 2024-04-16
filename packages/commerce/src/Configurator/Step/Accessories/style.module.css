@@ -1,0 +1,218 @@
+/**
+ * @package     BlueAcorn/Configurator
+ * @author      Blue Acorn iCi <code@blueacorn.com>
+ * @copyright   Copyright © Blue Acorn iCi. All Rights Reserved.
+ */
+
+.contentWrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.titleWrapper {
+    margin: 18px 0 8px;
+}
+
+.title {
+    font-family: var(--heading-font-family);
+    font-style: normal;
+    font-weight: var(--c-font-weight-regular);
+    font-size: 2.8rem;
+    line-height: 36px;
+    letter-spacing: -0.02em;
+    color: var(--text-color);
+}
+
+.subtitleWrapper {
+    margin: 0 7.5rem;
+    text-align: center;
+}
+
+.subtitle {
+    font-style: normal;
+    font-weight: var(--c-font-weight-light);
+    font-size: 1.6rem;
+    line-height: 24px;
+    text-align: center;
+    color: var(--text-color);
+}
+
+.accessoryContentWrapper {
+    display: flex;
+    flex-direction: column;
+    margin: 0 10%;
+}
+
+.accessory {
+    display: flex;
+    flex-flow: row nowrap;
+    align-items: center;
+    margin: 2.3rem 0;
+    background: var(--light-color);
+}
+
+.qtyInput {
+    display: flex;
+    flex-flow: row nowrap;
+    width: 100px;
+
+    button {
+        padding: 0;
+        height: 26px;
+        width: 30px;
+        color: var(--c-color-blue-green-2);
+        font-size: 1.8rem;
+        line-height: 1;
+    }
+
+    input {
+        height: 24px;
+        width: calc(36%);
+        background: var(--c-color-blue-green-2);
+        color: var(--c-color-white);
+        letter-spacing: -0.25px;
+        font-weight: var(--c-font-weight-semibold);
+        font-size: 1.4rem;
+        line-height: 18px;
+        text-align: center;
+        outline: 0;
+        border: 2px solid var(--c-color-blue-green-2);
+        border-radius: unset;
+        padding: 1px 2px;
+    }
+}
+
+.image {
+    width: 100%;
+    max-height: 210px;
+    max-width: 210px;
+
+    img {
+        max-height: 210px !important;
+        max-width: 210px !important;
+        object-fit: contain;
+    }
+
+    button {
+        svg {
+            transform: translateY(-1.5rem);
+        }
+
+        &[data-action='prev'] {
+            + div {
+                bottom: 2rem !important;
+
+                button {
+                    width: 6px !important;
+                    height: 6px !important;
+                }
+            }
+        }
+    }
+}
+
+.content {
+    display: flex;
+    flex-flow: row wrap;
+    text-align: left;
+}
+
+.accessoryTitle {
+    margin: 2rem 1.3rem 0.7rem 1.8rem;
+}
+
+.accessoryDetailsLink {
+    font-style: normal;
+    font-weight: var(--c-font-weight-semibold);
+    font-size: 1.4rem;
+    line-height: 20px;
+    color: var(--text-color);
+    text-align: left;
+
+    &::after {
+        content: url('../../icons/info-icon.svg');
+        height: 18px;
+        width: 24px;
+        vertical-align: middle;
+        display: inline-block;
+        margin-left: 0.5rem;
+    }
+}
+
+.variants {
+    margin: 0 1.3rem 2.1rem 1.8rem;
+    flex-basis: 100%;
+
+    input {
+        opacity: 0;
+        cursor: pointer;
+        height: 0;
+        width: 0;
+    }
+}
+
+.optSelect {
+    display: inline-block;
+    border: 1px solid transparent;
+    border-radius: 50%;
+    height: 19px;
+    width: 19px;
+    text-align: center;
+    line-height: 23px;
+}
+
+.checked {
+    .optSelect {
+        border-color: var(--text-color);
+    }
+}
+
+.optImage {
+    height: 13px;
+    width: 13px;
+    border-radius: 50%;
+    display: inline-block;
+}
+
+.optTitle {
+    display: none;
+}
+
+.actions {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-between;
+    margin: 0 1.3rem 1.7rem 1.8rem;
+    flex-basis: 100%;
+}
+
+.price {
+    flex-basis: auto;
+    font-style: normal;
+    font-weight: var(--c-font-weight-light);
+    font-size: 1.6rem;
+    line-height: 24px;
+    color: var(--text-color);
+    align-self: center;
+}
+
+.decrease {
+    border-top: 2px solid var(--c-color-blue-green-2);
+    border-left: 2px solid var(--c-color-blue-green-2);
+    border-bottom: 2px solid var(--c-color-blue-green-2);
+    border-right: 0;
+}
+
+.increase {
+    border-top: 2px solid var(--c-color-blue-green-2);
+    border-left: 0;
+    border-bottom: 2px solid var(--c-color-blue-green-2);
+    border-right: 2px solid var(--c-color-blue-green-2);
+}
+
+@media only screen and (width < 1024px) {
+    .accessoryContentWrapper {
+        margin: 0 5%;
+    }
+}

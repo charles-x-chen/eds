@@ -1,0 +1,191 @@
+/**
+ * @package     BlueAcorn/MyHub
+ * @author      Blue Acorn iCi <code@blueacorn.com>
+ * @copyright   Copyright © Blue Acorn iCi. All Rights Reserved.
+ */
+
+:root {
+    --c-orders-title-color: #707375;
+}
+
+.orderHistoryWrapper {
+    border: 2px solid var(--c-configurator-dark-white-3);
+    padding: 2rem 0;
+    max-width: 1280px;
+}
+
+.orderHistoryTitleWrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 4rem 0 2rem;
+}
+
+.orderHistoryTitle {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.orderHistoryTitleWrapper h2 {
+    font-size: 2rem;
+    font-family: var(--c-primary-font);
+    font-weight: var(--c-font-weight-regular);
+    line-height: 32px;
+    margin: 0 0 0 1rem;
+    letter-spacing: -0.02em;
+    text-align: left;
+}
+
+a.orderHistoryTitleLink {
+    font-size: 1.8rem;
+    font-weight: var(--c-font-weight-regular);
+    line-height: 28px;
+    letter-spacing: 0;
+    text-align: right;
+    color: var(--c-primary-color);
+    text-decoration: underline;
+}
+
+.orderHistoryItems {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-bottom: 1px solid var(--c-configurator-dark-white-3);
+    padding: 2rem 4rem;
+    flex-wrap: wrap;
+}
+
+.orderHistoryItems:first-child {
+    padding-top: 0;
+}
+
+.orderHistoryItems:last-child {
+    border: none;
+    padding-bottom: 0;
+}
+
+.orderHistoryItem {
+    display: flex;
+    flex-direction: column;
+}
+
+.orderHistoryItemTitle {
+    font-size: 1.6rem;
+    font-weight: var(--c-font-weight-regular);
+    line-height: 24px;
+    letter-spacing: 0;
+    text-align: center;
+    color: var(--c-orders-title-color);
+}
+
+.orderHistoryItemDesc {
+    font-size: 1.8rem;
+    font-weight: var(--c-font-weight-semibold);
+    line-height: 28px;
+    letter-spacing: 0;
+    text-align: center;
+}
+
+a.orderHistoryItemLink {
+    display: block;
+    background: var(--c-primary-color);
+    color: var(--c-color-white);
+    padding: 8px 18px 8px 18px;
+    font-size: 1.4rem;
+    font-weight: var(--c-font-weight-bold);
+    line-height: 20px;
+    letter-spacing: 1px;
+    text-decoration: none;
+    text-transform: uppercase;
+    text-align: center;
+}
+
+.dashboardLinksWrapper {
+    align-items: center;
+    margin-top: 4rem;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-column-gap: 2rem;
+    grid-row-gap: 2rem;
+}
+
+a.dashboardLink {
+    padding: 2rem;
+    border: 2px solid var(--c-configurator-dark-white-3);
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+}
+
+.dashboardLinkText {
+    display: flex;
+    flex-direction: column;
+    margin-left: 1.4rem;
+}
+
+.dashboardLinkText span:first-child {
+    font-size: 2rem;
+    font-weight: var(--c-font-weight-regular);
+    line-height: 32px;
+    letter-spacing: -0.02em;
+    text-align: left;
+    color: var(--c-secondary-color);
+}
+
+.dashboardLinkText span:last-child {
+    font-size: 1.6rem;
+    font-weight: var(--c-font-weight-light);
+    line-height: 24px;
+    letter-spacing: 0;
+    text-align: left;
+    color: var(--c-secondary-color);
+}
+
+@media only screen and (max-width: 1023px) {
+    .orderHistoryTitleWrapper {
+        padding-right: 2rem;
+    }
+
+    .orderHistoryTitleWrapper h2 {
+        margin-top: 0;
+        margin-bottom: 0;
+    }
+
+    .orderHistoryItems {
+        padding: 2rem;
+    }
+
+    .orderHistoryItem:first-child {
+        display: none;
+    }
+
+    .orderHistoryItemTitle,
+    .orderHistoryItemDesc {
+        font-size: 14px;
+        line-height: 20px;
+    }
+
+    a.orderHistoryItemLink {
+        margin-top: 2rem;
+    }
+}
+
+@media only screen and (min-width: 1024px) {
+    .orderHistoryItems {
+        display: grid;
+        grid-template-columns: repeat(5, 1fr);
+        width: 100%;
+        box-sizing: border-box;
+    }
+
+    .orderHistoryItem:first-child {
+        margin-right: auto;
+    }
+
+    a.orderHistoryItemLink {
+        margin-left: auto;
+        max-width: 148px;
+        box-sizing: border-box;
+    }
+}

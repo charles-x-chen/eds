@@ -1,0 +1,26 @@
+/**
+ * @package     BlueAcorn/Configurator
+ * @author      Blue Acorn iCi <code@blueacorn.com>
+ * @copyright   Copyright © Blue Acorn iCi. All Rights Reserved.
+ */
+
+.hide {
+    display: none;
+}
+
+.priceWrapper {
+    > div {
+        > div {
+            &:nth-child(2) {
+                padding-left: 2rem;
+                line-height: 1.5;
+            }
+        }
+    }
+}
+
+body {
+    > .financingContent {
+        display: none;
+    }
+}

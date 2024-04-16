@@ -1,0 +1,274 @@
+/**
+ * @package     BlueAcorn/Configurator
+ * @author      Blue Acorn iCi <code@blueacorn.com>
+ * @copyright   Copyright © Blue Acorn iCi. All Rights Reserved.
+ */
+
+.playerToolbar {
+    position: absolute;
+    top: 0.8rem;
+    z-index: 1;
+}
+
+.playerButton span {
+    display: none;
+}
+
+.playerButton {
+    background: var(--c-color-white);
+    box-sizing: content-box;
+    border: 2px solid var(--c-configurator-dark-white-3);
+    box-shadow: none;
+    line-height: inherit;
+    margin: 0 0 0.2rem;
+    padding: 0;
+    text-decoration: none;
+    text-shadow: none;
+    font-weight: var(--c-font-weight-regular);
+    height: 35px;
+    width: 35px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+
+    &::before {
+        display: inline-block;
+        content: '';
+    }
+
+    &:hover {
+        opacity: 0.9;
+        background: var(--text-color);
+        border: 2px solid var(--c-configurator-dark-white-3);
+
+        span {
+            position: absolute;
+            top: -0.2rem;
+            left: 102%;
+            height: 40px;
+            width: auto;
+            background: var(--c-color-white);
+            color: var(--text-color);
+            display: flex;
+            align-items: center;
+            white-space: nowrap;
+            font-size: 1.4rem;
+            padding: 0 2rem 0 0;
+        }
+    }
+}
+
+.active {
+    background: var(--text-color);
+}
+
+.help {
+    &::before {
+        content: url('../../../icons/help-icon.svg');
+        height: 22px;
+        width: 24px;
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+    }
+
+    &:hover,
+    &.active {
+        &::before {
+            content: url('../../../icons/help-icon-active.svg');
+        }
+    }
+}
+
+.rotate {
+    &.webglPlayerIcon {
+        order: 3;
+    }
+
+    &::before {
+        content: url('../../../icons/rotate-icon.svg');
+        height: 22px;
+        width: 24px;
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+    }
+
+    &:hover {
+        &::before {
+            content: url('../../../icons/rotate-icon-active.svg');
+            height: 21px;
+        }
+    }
+}
+
+.rotateActive {
+    background: var(--text-color);
+
+    &::before {
+        content: url('../../../icons/rotate-icon-active.svg');
+        height: 21px;
+    }
+}
+
+.undo {
+    &::before {
+        content: url('../../../icons/reset-icon.svg');
+        height: 22px;
+        width: 24px;
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+    }
+
+    &:hover {
+        opacity: 1;
+        background: none;
+
+        &::before {
+            content: url('../../../icons/reset-icon.svg');
+        }
+    }
+
+    &.resetting {
+        opacity: 0.9;
+        background: var(--text-color);
+        border: 2px solid var(--c-configurator-dark-white-3);
+
+        &::before {
+            content: url('../../../icons/reset-icon-active.svg');
+        }
+    }
+}
+
+.vray {
+    &::before {
+        content: url('../../../icons/detailed-view-icon.svg');
+        height: 22px;
+        width: 24px;
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+    }
+
+    &:hover,
+    &.active {
+        &::before {
+            content: url('../../../icons/detailed-view-icon-active.svg');
+        }
+    }
+}
+
+.toolbarBottom {
+    position: absolute;
+    bottom: 4rem;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 1;
+
+    button {
+        border: 2px solid var(--text-color);
+        color: var(--text-color);
+        font-size: 1.2rem;
+        font-weight: var(--c-font-weight-semibold);
+        background: var(--c-color-white);
+        padding: 0.8rem 1.8rem;
+    }
+}
+
+.bottomRotate {
+    margin-right: 2rem;
+
+    &::before {
+        content: url('../../../icons/rotate-icon-bottom.svg');
+        vertical-align: middle;
+        margin-right: 0.5rem;
+        position: relative;
+        top: 0.2rem;
+    }
+}
+
+.bottomRemove {
+    &::before {
+        content: '';
+        background: url('../../../icons/remove-icon-bottom.svg') no-repeat;
+        vertical-align: middle;
+        margin-right: 0.5rem;
+        height: 14px;
+        width: 14px;
+        background-size: 14px;
+        display: inline-block;
+        position: relative;
+        top: -0.2rem;
+    }
+}
+
+@media only screen and (width <= 1023px) {
+    .playerToolbar {
+        display: grid;
+        grid-template-columns: 1fr 6fr 1fr 1fr;
+        grid-column-gap: 0.4rem;
+        padding: 0 1.6rem;
+    }
+
+    .playerButton {
+        &:hover {
+            > span {
+                display: none;
+            }
+        }
+    }
+
+    .webgl {
+        grid-template-columns: 1fr 6fr 1fr 1fr 1fr 1fr;
+
+        .playerButton {
+            pointer-events: initial;
+        }
+    }
+
+    .vray {
+        order: 5;
+    }
+
+    .rotateActive {
+        order: 3;
+    }
+
+    .undo {
+        position: absolute;
+        bottom: 7px;
+        z-index: 1;
+        left: 12px;
+    }
+
+    .toolbarBottom {
+        display: flex;
+        justify-content: center;
+        width: 100%;
+
+        button {
+            padding: 6px 10px;
+        }
+    }
+
+    body:has([data-modalactive='true']) {
+        .playerToolbar,
+        .playerButton {
+            background: transparent;
+            z-index: 0;
+            border: none;
+        }
+    }
+}
+
+@media only screen and (width >= 1024px) {
+    .playerToolbar {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        left: 1.2rem;
+        top: 1.2rem;
+    }
+}

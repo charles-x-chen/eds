@@ -1,0 +1,39 @@
+/**
+ * @package     BlueAcorn/MyHub
+ * @author      Blue Acorn iCi <code@blueacorn.com>
+ * @copyright   Copyright © Blue Acorn iCi. All Rights Reserved.
+ */
+
+.myAccount {
+    padding: 0 2rem;
+}
+
+.myAccountTitle {
+    font-size: 3.6rem;
+    font-weight: var(--c-font-weight-regular);
+    line-height: 44px;
+    letter-spacing: -0.02em;
+    text-align: left;
+    text-transform: capitalize;
+}
+
+@media only screen and (max-width: 1024px) {
+    .myAccount {
+        padding: 0;
+        flex-direction: column;
+    }
+
+    .myAccountTitle {
+        margin-bottom: 2.4rem;
+    }
+}
+
+@media only screen and (min-width: 1024px) {
+    .myAccount {
+        justify-content: space-between;
+    }
+
+    .myAccountTitle {
+        margin-bottom: 4rem;
+    }
+}

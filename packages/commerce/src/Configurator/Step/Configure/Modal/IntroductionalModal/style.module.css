@@ -1,0 +1,144 @@
+/**
+ * @package     BlueAcorn/Configurator
+ * @author      Blue Acorn iCi <code@blueacorn.com>
+ * @copyright   Copyright © Blue Acorn iCi. All Rights Reserved.
+ */
+
+.modal {
+    max-width: 335px;
+    border-radius: 8px;
+    border: 0;
+    padding-top: 0.5rem;
+    padding-right: 0.5rem;
+
+    &::backdrop {
+        background: rgb(0 0 0 / 55%);
+    }
+
+    body:has(&) {
+        overflow: hidden;
+    }
+}
+
+.modalHeader {
+    text-align: right;
+}
+
+.content {
+    padding-top: 0;
+    text-align: center;
+    padding-left: 2.5rem;
+    padding-right: 2.5rem;
+    color: var(--c-secondary-color);
+
+    [data-image-type='single'] {
+        background: var(--c-color-white);
+        vertical-align: middle;
+        display: flex;
+        place-content: center center;
+        align-items: center;
+        height: auto;
+
+        > img {
+            max-height: 100%;
+            max-width: 100%;
+            display: block;
+            object-fit: contain;
+        }
+    }
+
+    p {
+        font-weight: var(--c-font-weight-light);
+        font-size: 1.4rem;
+        line-height: 20px;
+        margin-bottom: 7rem;
+        margin-top: 1rem;
+    }
+
+    button {
+        border: 1px solid var(--c-color-grey-2);
+        width: 12px;
+        height: 12px;
+        background: var(--c-color-grey-2);
+    }
+}
+
+.galleryContainer {
+    > div {
+        div {
+            & [data-image-type] {
+                height: auto !important;
+            }
+
+            > button[data-action] {
+                display: none;
+
+                + div {
+                    bottom: 3rem;
+
+                    > button {
+                        border: 1px solid var(--c-color-grey-2);
+                        width: 12px;
+                        height: 12px;
+                        background: var(--c-color-grey-2);
+
+                        &:hover {
+                            background: var(--c-color-grey-6);
+                        }
+
+                        &:disabled {
+                            display: inline-block;
+                            border-color: var(--c-color-grey-2);
+                            background: var(--c-color-white);
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+.actionClose {
+    padding: 0;
+
+    span {
+        display: none;
+    }
+
+    svg {
+        font-size: 2.2rem;
+    }
+}
+
+.galleryTitle {
+    text-align: center;
+    font-family: var(--heading-font-family);
+    font-weight: var(--c-font-weight-regular);
+    line-height: 1.2;
+    font-size: 2.2rem;
+    letter-spacing: -0.44px;
+    word-break: break-word;
+    margin-top: 2.5rem;
+    margin-bottom: 2rem;
+}
+
+p.galleryDesc {
+    font-weight: var(--c-font-weight-light);
+    font-size: 1.4rem;
+    line-height: 20px;
+    max-width: 335px;
+    text-align: center;
+    margin: 0 auto 2.5rem;
+}
+
+@media only screen and (width < 1024px) {
+    .modalHeader {
+        z-index: 1;
+    }
+}
+
+@media only screen and (width > 1023px) {
+    .galleryTitle {
+        font-size: 2.4rem;
+    }
+}

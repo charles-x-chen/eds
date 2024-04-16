@@ -1,0 +1,91 @@
+/**
+ * @package     BlueAcorn/Configurator
+ * @author      Blue Acorn iCi <code@blueacorn.com>
+ * @copyright   Copyright © Blue Acorn iCi. All Rights Reserved.
+ */
+
+@media only screen and (width < 1024px) {
+    .summaryActionsToolbar {
+        display: none;
+    }
+
+    .comfort {
+        display: none;
+    }
+}
+
+@media only screen and (width > 1024px) {
+    .summaryFooter {
+        margin-top: auto;
+    }
+
+    body:has([data-modalactive='true']) {
+        .summaryFooter {
+            display: none;
+        }
+    }
+
+    .summaryActionsToolbar {
+        padding-top: 1rem;
+        padding-bottom: 1rem;
+        text-align: center;
+        font-size: 1.6rem;
+        justify-content: center;
+        display: flex;
+        align-items: center;
+
+        a,
+        button {
+            color: var(--c-color-blue-green-2);
+            font-weight: var(--c-font-weight-semibold);
+        }
+    }
+
+    .saveAction {
+        &::before {
+            display: inline-block;
+            vertical-align: middle;
+            content: url('../../icons/save-icon.svg');
+            position: relative;
+            top: 0.3rem;
+            margin-right: 0.5rem;
+        }
+    }
+
+    .shareAction {
+        margin: 0 2rem;
+
+        &::before {
+            display: inline-block;
+            vertical-align: middle;
+            content: url('../../icons/share-icon.svg');
+            position: relative;
+            top: 0.3rem;
+            margin-right: 0.5rem;
+        }
+    }
+
+    .showroomAction {
+        &::before {
+            display: inline-block;
+            vertical-align: middle;
+            content: url('../../icons/find-showroom-icon.svg');
+            position: relative;
+            top: 0.3rem;
+            margin-right: 0.5rem;
+        }
+    }
+
+    .comfort {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border-top: 1px solid var(--c-configurator-dark-white-3);
+        padding: 1.6rem;
+
+        a {
+            color: var(--c-color-blue-green-2);
+            font-weight: var(--c-font-weight-semibold);
+        }
+    }
+}

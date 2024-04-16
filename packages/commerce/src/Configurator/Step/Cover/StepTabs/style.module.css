@@ -1,0 +1,76 @@
+/**
+ * @package     BlueAcorn/Configurator
+ * @author      Blue Acorn iCi <code@blueacorn.com>
+ * @copyright   Copyright © Blue Acorn iCi. All Rights Reserved.
+ */
+
+.sidebarItems {
+    height: 100%;
+}
+
+.description {
+    font-size: 1.4rem;
+    font-weight: var(--c-font-weight-regular);
+    padding-top: 1.8rem;
+    padding-bottom: 2.6rem;
+    text-align: center;
+    line-height: 20px;
+    max-width: 300px;
+    margin: 0 auto;
+}
+
+.coverDescription {
+    font-size: 1.6rem;
+    font-weight: var(--c-font-weight-semibold);
+    line-height: 20px;
+    letter-spacing: 0;
+    text-align: center;
+    padding-bottom: 0;
+    max-width: 250px;
+    margin: 0 auto;
+    padding-top: 1.8rem;
+}
+
+.itemsActionsWrapper {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-column-gap: 1.2rem;
+    padding-left: 2.6rem;
+    padding-right: 2.6rem;
+
+    button {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border: 2px solid var(--text-color);
+        width: 100%;
+        font-weight: var(--c-font-weight-regular);
+        background: var(--c-color-white);
+        color: var(--text-color);
+        padding: 11px 0;
+        font-size: 1.3rem;
+
+        svg {
+            font-size: 2.2rem;
+            margin-right: 0.5rem;
+        }
+    }
+}
+
+@media only screen and (width <= 768px) {
+    .sidebarItems > div {
+        overflow-x: hidden;
+    }
+}
+
+@media only screen and (width > 768px) {
+    .sidebarItems > div {
+        overflow: auto hidden;
+    }
+}
+
+@media only screen and (width > 1024px) {
+    .sidebarItems {
+        min-height: 500px;
+    }
+}

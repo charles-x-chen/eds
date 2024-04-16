@@ -1,0 +1,95 @@
+/**
+ * @package     BlueAcorn/MyHub
+ * @author      Blue Acorn iCi <code@blueacorn.com>
+ * @copyright   Copyright © Blue Acorn iCi. All Rights Reserved.
+ */
+
+.dashboardLinksWrapper {
+    align-items: center;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-column-gap: 4rem;
+    grid-row-gap: 4rem;
+    margin: 4rem auto;
+}
+
+a.dashboardLink {
+    padding: 2rem;
+    border: 2px solid var(--c-configurator-dark-white-3);
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    position: relative;
+}
+
+div.dashboardIcon {
+    color: var(--c-secondary-color);
+    position: absolute;
+    right: 2rem;
+    font-size: 1.8rem;
+    top: 3.5rem;
+}
+
+.dashboardLinkText {
+    display: flex;
+    flex-direction: column;
+    margin-left: 1.4rem;
+}
+
+.dashboardLinkText span:first-child {
+    font-size: 2rem;
+    font-weight: var(--c-font-weight-regular);
+    line-height: 32px;
+    letter-spacing: -0.02em;
+    text-align: left;
+    color: var(--c-secondary-color);
+}
+
+.dashboardLinkDetails {
+    font-size: 1.6rem;
+    font-weight: var(--c-font-weight-light);
+    line-height: 24px;
+    letter-spacing: 0;
+    text-align: left;
+    color: var(--c-secondary-color);
+}
+
+@media only screen and (max-width: 1024px) {
+    .dashboardLinksWrapper {
+        display: flex;
+        flex-direction: column;
+        margin-top: 3rem;
+        grid-row-gap: 3rem;
+    }
+
+    a.dashboardLink {
+        width: 100%;
+        box-sizing: border-box;
+        padding: 0 1.4rem;
+        min-height: 80px;
+    }
+
+    .dashboardLinkText {
+        width: 100%;
+    }
+
+    .dashboardLinkText span:first-child {
+        font-size: 1.6rem;
+        line-height: 20px;
+    }
+
+    .dashboardLinkText span:last-child {
+        font-size: 1.4rem;
+        line-height: 20px;
+        max-width: 90%;
+        word-break: break-word;
+    }
+
+    .dashboardLinkDetails {
+        max-width: 80%;
+    }
+
+    div.dashboardIcon {
+        top: 2.5rem;
+    }
+}

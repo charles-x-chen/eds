@@ -1,0 +1,120 @@
+.headlineFourImgSection {
+    background-color: var(--light-color);
+    padding: 0 !important;
+}
+
+.headlineFourImgSection > div {
+    padding: 0;
+    max-width: 100%;
+    margin: 0;
+}
+
+.headlineFourImgBlock {
+    padding: 0;
+
+    @media (width >= 767px) {
+        padding: 0 55px;
+    }
+}
+
+.parentContainer {
+    font-family: var(--body-font-family);
+    font-style: normal;
+    font-weight: 400;
+    font-size: 1.4rem;
+    line-height: 1.714;
+    box-sizing: border-box;
+    background-position: left top;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: scroll;
+    justify-content: flex-start;
+    display: flex;
+    flex-direction: column;
+    background-color: var(--light-color);
+    margin: 0;
+    padding: 10px 0;
+}
+
+.headline {
+    color: #56585a;
+    font-style: normal;
+    word-wrap: break-word;
+    font-family: var(--heading-font-family);
+    font-weight: 400;
+    line-height: 1.2;
+    letter-spacing: -0.44px;
+    word-break: break-word;
+    margin-top: 2.5rem;
+    margin-bottom: 2rem;
+    font-size: 26px;
+    text-align: center;
+
+    @media (width >= 767px) {
+        font-size: 32px;
+    }
+}
+
+.imagesContainer {
+    color: var(--link-hover-color);
+    font-family: var(--body-font-family);
+    font-style: normal;
+    font-weight: 400;
+    line-height: 1.714;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+
+    @media (width >= 767px) {
+        flex-direction: row;
+    }
+}
+
+.imagesDiv {
+    display: flex;
+}
+
+.imageBlock {
+    color: var(--link-hover-color);
+    font-family: var(--body-font-family);
+    font-style: normal;
+    font-weight: 400;
+    line-height: 1.714;
+    box-sizing: border-box;
+    justify-content: flex-start;
+    display: flex;
+    flex-direction: column;
+    background-position: left top;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: scroll;
+    margin: 0;
+    padding: 10px;
+    align-self: stretch;
+
+    @media (width >= 767px) {
+        padding: 0 15px;
+    }
+
+    p {
+        margin-bottom: 0;
+    }
+}
+
+.link {
+    font-family: var(--body-font-family);
+    font-style: normal;
+    font-weight: 400;
+    word-wrap: break-word;
+    line-height: 1.5;
+    font-size: var(--body-font-size-s);
+    text-align: center;
+    text-decoration: none;
+    color: var(--link-hover-color) !important;
+    margin-bottom: 10px;
+    padding-top: 5px;
+
+    @media (width >= 767px) {
+        color: var(--c-color-blue-green-2) !important;
+    }
+}

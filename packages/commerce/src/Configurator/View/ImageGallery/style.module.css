@@ -1,0 +1,66 @@
+/**
+ * @package     BlueAcorn/Configurator
+ * @author      Blue Acorn iCi <code@blueacorn.com>
+ * @copyright   Copyright © Blue Acorn iCi. All Rights Reserved.
+ */
+
+.reactCarousel {
+    position: relative;
+
+    > div {
+        div {
+            > button[data-action] {
+                padding: 0;
+                border-radius: 50%;
+                height: 40px;
+                width: 40px;
+                background: var(--c-color-white);
+
+                svg {
+                    position: relative;
+                    top: -4px;
+                    font-size: 16px;
+                    font-weight: bold;
+                }
+
+                &:hover {
+                    box-shadow: 0 0 6px 0 rgba(0, 0, 0, 0.2);
+                }
+
+                &:disabled {
+                    display: none;
+                }
+
+                + div {
+                    bottom: 20px;
+                    > button {
+                        transition: background 0.25s ease-in;
+                        background: var(--c-color-white);
+                        border-radius: 50%;
+                        width: 8px;
+                        height: 8px;
+                        cursor: pointer;
+                        display: inline-block;
+                        margin: 0 7px;
+                        border: 1px solid var(--c-color-white);
+
+                        &:hover {
+                            background: var(--c-color-grey-6);
+                        }
+
+                        &:disabled {
+                            display: inline-block;
+                            background: var(--c-color-grey-6);
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media only screen and (max-width: 1023px) {
+}
+
+@media only screen and (min-width: 1023px) {
+}

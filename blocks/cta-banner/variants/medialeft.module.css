@@ -1,0 +1,12 @@
+.block {
+    display: flex;
+    flex-flow: row nowrap;
+
+    .media {
+        flex-basis: 60%;
+    }
+
+    .content {
+        flex-basis: 40%;
+    }
+}

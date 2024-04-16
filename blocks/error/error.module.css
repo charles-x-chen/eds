@@ -1,0 +1,10 @@
+.error {
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: center;
+    text-align: center;
+
+    & img {
+        max-width: 150px;
+    }
+}

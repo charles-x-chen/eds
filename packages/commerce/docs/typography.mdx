@@ -1,0 +1,78 @@
+import { Meta, Typeset } from '@storybook/blocks';
+
+<Meta title="Typography" />
+
+export const typography = {
+    type: {
+        body: "museo-sans, 'Helvetica Neue', Helvetica, Arial, sans-serif",
+        heading: "miller-display, Georgia, 'Times New Roman', Times, serif",
+    },
+    weight: {
+        100: '100',
+        300: '300',
+        400: '400',
+        500: '500',
+        700: '700',
+    },
+    size: {
+        s1: 12,
+        s2: 14,
+        s3: 16,
+        m1: 20,
+        m2: 24,
+        m3: 28,
+        l1: 32,
+        l2: 40,
+        l3: 48,
+    },
+};
+
+export const SampleText = 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.';
+
+# Typography
+
+## Body
+
+-   **Font:** Museo Sans
+-   **Weights:** 100, 300, 500, 700
+-   **Variable:** --body-font-family
+
+<Typeset
+    fontSizes={[
+        Number(typography.size.s1),
+        Number(typography.size.s2),
+        Number(typography.size.s3),
+        Number(typography.size.m1),
+        Number(typography.size.m2),
+        Number(typography.size.m3),
+        Number(typography.size.l1),
+        Number(typography.size.l2),
+        Number(typography.size.l3),
+    ]}
+    fontWeight={typography.weight[300]}
+    sampleText={SampleText}
+    fontFamily={typography.type.body}
+/>
+
+## Heading
+
+-   **Font:** Miller Display
+-   **Weights:** 400
+-   **Variable:** --heading-font-family
+
+<Typeset
+    fontSizes={[
+        Number(typography.size.s1),
+        Number(typography.size.s2),
+        Number(typography.size.s3),
+        Number(typography.size.m1),
+        Number(typography.size.m2),
+        Number(typography.size.m3),
+        Number(typography.size.l1),
+        Number(typography.size.l2),
+        Number(typography.size.l3),
+    ]}
+    fontWeight={typography.weight[400]}
+    sampleText={SampleText}
+    fontFamily={typography.type.heading}
+/>

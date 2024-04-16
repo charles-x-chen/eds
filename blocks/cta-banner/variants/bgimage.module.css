@@ -1,0 +1,10 @@
+.block {
+    position: relative;
+    overflow: hidden;
+}
+
+.content {
+    position: absolute;
+    top: 10px;
+    left: 140px;
+}

@@ -1,0 +1,26 @@
+/**
+ * @package     BlueAcorn/Configurator
+ * @author      Blue Acorn iCi <code@blueacorn.com>
+ * @copyright   Copyright © Blue Acorn iCi. All Rights Reserved.
+ */
+
+.ratingLabel {
+    cursor: pointer;
+    padding: 0 0.1em;
+    font-size: 1.6rem;
+
+    &:first-child {
+        display: none;
+    }
+
+    svg {
+        color: #00808c;
+        pointer-events: none;
+    }
+}
+
+.half {
+    padding-right: 0;
+    margin-right: -1.8rem;
+    z-index: 1;
+}

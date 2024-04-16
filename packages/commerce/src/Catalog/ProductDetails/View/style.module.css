@@ -1,0 +1,29 @@
+/**
+ * @package     BlueAcorn/Catalog
+ * @author      Blue Acorn iCi <code@blueacorn.com>
+ * @copyright   Copyright © Blue Acorn iCi. All Rights Reserved.
+ */
+
+.rootMobile {
+    display: flex;
+    flex-flow: column nowrap;
+}
+
+.rootDesktop {
+    display: flex;
+    flex-flow: row nowrap;
+}
+
+.main {
+    flex: 0 0 60%;
+}
+
+.info {
+    flex: 0 0 40%;
+    text-align: center;
+    background: var(--light-color);
+
+    h1 {
+        font-size: 2em;
+    }
+}

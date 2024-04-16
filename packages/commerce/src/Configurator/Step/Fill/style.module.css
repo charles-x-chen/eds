@@ -1,0 +1,186 @@
+/**
+ * @package     BlueAcorn/Configurator
+ * @author      Blue Acorn iCi <code@blueacorn.com>
+ * @copyright   Copyright © Blue Acorn iCi. All Rights Reserved.
+ */
+
+.contentWrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 1.8rem 2.6rem 2.4rem;
+}
+
+.titleWrapper {
+    margin-bottom: 2.6rem;
+    color: var(--text-color);
+}
+
+.title {
+    font-family: var(--heading-font-family);
+    font-size: 2.8rem;
+    line-height: 36px;
+    text-align: center;
+    letter-spacing: -0.02em;
+}
+
+.signature {
+    font-family: var(--body-font-family);
+    font-size: 1.6rem;
+    line-height: 24px;
+    text-align: center;
+    font-weight: var(--c-font-weight-light);
+}
+
+.contentFill {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 0;
+}
+
+.image {
+    position: relative;
+}
+
+.fillOption {
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 2rem;
+    background: var(--light-color);
+    margin: 0;
+
+    &:not(:last-child) {
+        margin: 0 0 2.6rem;
+    }
+
+    &.fillOptionChecked {
+        border: 2px solid var(--link-color);
+        box-shadow: 0 4px 20px rgb(0 0 0 / 25%);
+    }
+
+    &:first-child {
+        .image {
+            top: 1rem;
+
+            &::before {
+                content: url('../../icons/foam-icon.svg');
+                display: inline-block;
+                vertical-align: middle;
+                margin-right: 1rem;
+            }
+        }
+    }
+
+    &:last-child {
+        .image {
+            top: 0.8rem;
+
+            &::before {
+                content: url('../../icons/lovesoft-icon.svg');
+                display: inline-block;
+                vertical-align: middle;
+                margin-right: 1rem;
+            }
+        }
+    }
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 0;
+    align-self: stretch;
+}
+
+.top {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-start;
+    width: 100%;
+    border-bottom: 1px solid var(--c-configurator-dark-white-3);
+    padding: 0 0 1.4rem;
+    margin-bottom: 1.4rem;
+
+    div {
+        display: flex;
+    }
+}
+
+.totalTitle {
+    flex-direction: column;
+    font-family: var(--body-font-family);
+    font-size: 16px;
+    line-height: 24px;
+}
+
+.titleName {
+    font-weight: var(--c-font-weight-semibold);
+    color: var(--text-color);
+}
+
+.totalPrice {
+    font-weight: var(--c-font-weight-light);
+    color: var(--text-color);
+}
+
+.checkboxContainer {
+    flex-direction: row-reverse;
+    align-items: center;
+}
+
+.fillCheckboxNew {
+    width: 24px;
+    height: 24px;
+    background: var(--c-color-white);
+    border: 1.5px solid var(--c-color-grey-4);
+    margin: 0;
+}
+
+.fillCheckbox {
+    opacity: 0;
+    cursor: pointer;
+    height: 0;
+    width: 0;
+
+    &:checked {
+        ~ .fillCheckboxNew {
+            background-color: var(--link-color);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            &::after {
+                display: block;
+                content: url('../../icons/checkmark-icon.svg');
+            }
+        }
+    }
+}
+
+.bottom {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 0;
+
+    div {
+        font-family: var(--body-font-family);
+        font-weight: var(--c-font-weight-light);
+        font-size: 1.4rem;
+        line-height: 20px;
+        color: var(--text-color);
+        text-align: left;
+    }
+}
+
+@media only screen and (width < 1024px) {
+    .fillOptionChecked {
+        border: 2px solid var(--text-color);
+    }
+}

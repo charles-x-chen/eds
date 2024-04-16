@@ -1,0 +1,282 @@
+/**
+ * @package     BlueAcorn/MyHub
+ * @author      Blue Acorn iCi <code@blueacorn.com>
+ * @copyright   Copyright © Blue Acorn iCi. All Rights Reserved.
+ */
+
+.wrapper {
+    display: flex;
+    flex-direction: column;
+}
+
+.tableHeader {
+    display: none;
+}
+
+.tableItems {
+    border-width: 0 1px 1px 1px;
+    border-style: solid;
+    border-color: var(--c-configurator-dark-white-3);
+    padding: 2rem;
+}
+
+.productData {
+    display: flex;
+    align-items: center;
+
+    span {
+        display: block;
+        max-width: 264px;
+        word-break: break-word;
+        margin-left: 10px;
+        font-size: 1.6rem;
+        font-weight: var(--c-font-weight-regular);
+        line-height: 22px;
+        letter-spacing: 0;
+        text-align: left;
+    }
+}
+
+.tableItem {
+    text-align: center;
+    font-size: 1.6rem;
+    font-weight: var(--c-font-weight-regular);
+    line-height: 24px;
+    letter-spacing: 0;
+}
+
+.orginalPrice {
+    padding-right: 1rem;
+    text-decoration: line-through;
+}
+
+.tableFooterItems {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.tableFooterItem {
+    display: flex;
+    justify-content: space-between;
+    font-size: 1.6rem;
+    font-weight: var(--c-font-weight-regular);
+    line-height: 36px;
+    letter-spacing: 0;
+    width: 100%;
+}
+
+.grandTotal {
+    font-size: 1.6rem;
+    font-weight: var(--c-font-weight-semibold);
+    line-height: 36px;
+    letter-spacing: 0;
+}
+
+.addressWrapper {
+    display: flex;
+    justify-content: space-between;
+    border-top: 2px solid var(--c-color-grey-1);
+    border-bottom: 2px solid var(--c-color-grey-1);
+}
+
+.address {
+    display: flex;
+    flex-direction: column;
+
+    span {
+        font-size: 1.6rem;
+        font-weight: 300;
+        line-height: 24px;
+        letter-spacing: 0;
+    }
+}
+
+span.addressTitle {
+    font-size: 1.6rem;
+    font-weight: 600;
+    line-height: 24px;
+    letter-spacing: 0;
+    margin-bottom: 1rem;
+}
+
+.paymentMethod {
+    display: flex;
+    flex-direction: column;
+
+    span:not(.addressTitle) {
+        font-size: 1.6rem;
+        font-weight: 300;
+        line-height: 24px;
+        letter-spacing: 0;
+    }
+}
+
+@media only screen and (max-width: 1023px) {
+    .wrapper {
+        border-top: 2px solid var(--c-configurator-dark-white-3);
+        margin-bottom: 6.4rem;
+    }
+
+    .tableItems {
+        border-width: 0 2px 2px 2px;
+    }
+
+    .productData :global span {
+        margin-left: 2rem;
+    }
+
+    .tableItem {
+        margin-left: 110px;
+        text-align: left;
+        margin-bottom: 1rem;
+    }
+
+    .tableFooter {
+        margin-bottom: 4rem;
+        margin-top: 6.3rem;
+    }
+
+    .addressWrapper {
+        flex-direction: column;
+        padding: 2rem 0;
+    }
+
+    .address {
+        margin-bottom: 2rem;
+    }
+
+    .tableItem::before {
+        content: attr(data-th);
+        font-size: 1.6rem;
+        font-weight: var(--c-font-weight-semibold);
+        line-height: 24px;
+        letter-spacing: 0;
+        text-transform: uppercase;
+        padding-right: 5px;
+    }
+
+    .orderHistoryAddressWrapper {
+        flex-direction: column;
+        margin-bottom: 4rem;
+    }
+
+    .orderHistoryAddress {
+        margin-bottom: 2rem;
+    }
+
+    .productData {
+        span {
+            max-width: 65%;
+        }
+    }
+
+    .tableItems.noImage {
+        .productData :global span {
+            margin-left: 0;
+            max-width: 100%;
+            margin-bottom: 1rem;
+        }
+
+        .tableItem {
+            margin-left: 0;
+        }
+    }
+}
+
+@media only screen and (min-width: 1024px) {
+    .wrapper {
+        margin-bottom: 7.4rem;
+    }
+
+    .tableHeader {
+        display: grid;
+        grid-template-columns: 0.3968fr 0.136fr 0.142fr 0.213fr 0.112fr;
+        background: var(--c-color-grey-3);
+        border: 1px solid var(--c-configurator-dark-white-3);
+        padding: 11px 40px 9px 27px;
+
+        span {
+            font-size: 1.6rem;
+            font-weight: var(--c-font-weight-semibold);
+            line-height: 24px;
+            letter-spacing: 0;
+            text-transform: uppercase;
+            text-align: center;
+
+            &:first-child {
+                text-align: left;
+            }
+        }
+
+        .tableHeaderSku {
+            max-width: 104px;
+        }
+
+        .tableHeaderQty {
+            max-width: 104px;
+        }
+
+        .tableHeaderPrice {
+            max-width: 148px;
+        }
+
+        .tableHeaderSubtotal {
+            justify-self: end;
+        }
+    }
+
+    .tableItems {
+        display: grid;
+        grid-template-columns: 0.3968fr 0.136fr 0.142fr 0.213fr 0.112fr;
+        padding: 2rem 4rem 2rem 2.7rem;
+        align-items: center;
+
+        .tableItemName {
+            max-width: 361px;
+        }
+
+        .tableItemSku {
+            max-width: 104px;
+        }
+
+        .tableItemQty {
+            max-width: 104px;
+        }
+
+        .tableItemPrice {
+            max-width: 148px;
+        }
+
+        .tableItemSubtotal {
+            justify-self: end;
+        }
+    }
+
+    .tableFooterItems {
+        max-width: 33%;
+    }
+
+    .tableFooter {
+        display: flex;
+        justify-content: flex-end;
+        margin-bottom: 6rem;
+        margin-top: 2rem;
+        padding-right: 4rem;
+    }
+
+    .orderHistoryAddress {
+        max-width: 215px;
+    }
+
+    .addressWrapper {
+        padding: 2.4rem 0;
+    }
+
+    span.addressTitle {
+        font-size: 1.8rem;
+    }
+}

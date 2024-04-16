@@ -1,0 +1,43 @@
+/**
+ * @package     BlueAcorn/View
+ * @author      Blue Acorn iCi <code@blueacorn.com>
+ * @copyright   Copyright © Blue Acorn iCi. All Rights Reserved.
+ */
+
+.pagination {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+    color: var(--c-secondary-color);
+
+    & button,
+    & span {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 14px;
+        font-weight: 300;
+        line-height: 2rem;
+        padding: 8px;
+    }
+
+    & button {
+        padding: 8px 18px;
+        cursor: pointer;
+
+        &:disabled {
+            cursor: default;
+        }
+
+        &.active {
+            color: var(--c-color-white);
+            background: var(--c-secondary-color);
+            font-weight: 300;
+            cursor: default;
+        }
+    }
+
+    & span {
+        cursor: default;
+    }
+}

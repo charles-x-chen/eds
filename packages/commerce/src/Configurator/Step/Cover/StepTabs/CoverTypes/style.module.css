@@ -1,0 +1,195 @@
+/**
+ * @package     BlueAcorn/Configurator
+ * @author      Blue Acorn iCi <code@blueacorn.com>
+ * @copyright   Copyright © Blue Acorn iCi. All Rights Reserved.
+ */
+
+.coverTypes {
+    display: flex;
+    flex-flow: column nowrap;
+}
+
+.coverType {
+    display: flex;
+    flex-flow: column nowrap;
+}
+
+.coverTypeTitle {
+    font-size: 1.4rem;
+    font-weight: var(--c-font-weight-semibold);
+    padding: 1.9rem 2.6rem 0;
+    display: inline-block;
+}
+
+.covers {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    grid-gap: 0.5rem 0.9rem;
+    padding-top: 0;
+}
+
+.cover {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    cursor: pointer;
+    flex: 1 0 auto;
+    font-weight: var(--c-font-weight-light);
+    position: relative;
+    height: 78px;
+    width: 78px;
+
+    &.disabled {
+        filter: grayscale(1);
+        opacity: 0.2;
+    }
+
+    img {
+        padding: 1px;
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        border: 2px solid transparent;
+        max-height: 78px;
+        max-width: 78px;
+    }
+
+    .coverInput:checked + img {
+        border-color: var(--text-color);
+    }
+}
+
+.coverName {
+    position: relative;
+    top: 10rem;
+    max-width: 75%;
+    line-height: 20px;
+    padding-top: 6px;
+    display: inline;
+    word-break: break-word;
+}
+
+.coverTypeTitleWrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+}
+
+.coverInput {
+    position: absolute;
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+.moreInfo {
+    position: absolute;
+    right: 0;
+    top: 0;
+    transform: translate(9px, -4px);
+
+    span {
+        border: 0;
+        clip: rect(0, 0, 0, 0);
+        height: 1px;
+        margin: -1px;
+        overflow: hidden;
+        padding: 0;
+        position: absolute;
+        width: 1px;
+    }
+
+    &::after {
+        content: url('../../../../icons/info-icon.svg');
+        display: inline-block;
+        background: var(--c-color-white);
+        overflow: hidden;
+        height: 16px;
+        width: 16px;
+        border-radius: 50%;
+    }
+}
+
+.coverInfoModal {
+    z-index: 1;
+
+    > div {
+        &:first-child {
+            background: none;
+        }
+    }
+}
+
+@media only screen and (width < 1024px) {
+    .covers {
+        display: flex;
+        padding: 1.8rem 2rem 0;
+        visibility: visible;
+        width: auto;
+        overflow: auto visible;
+        min-height: 200px;
+    }
+
+    .cover {
+        margin-right: 1.2rem;
+        max-width: 95px;
+        width: 100%;
+
+        img {
+            max-height: 91px;
+        }
+    }
+
+    .coverTypeWrapper {
+        padding-bottom: 0;
+        border-bottom: 1px solid #d8d9da;
+    }
+
+    .coverInfoModal {
+        overflow-y: auto;
+
+        > div {
+            &:first-child {
+                background: none;
+
+                button {
+                    display: none;
+                }
+            }
+        }
+    }
+}
+
+@media only screen and (width > 768px) {
+    .covers {
+        overflow: visible;
+        padding: 0 2.8rem 2.9rem;
+    }
+
+    .moreInfo {
+        display: none;
+    }
+
+    .cover {
+        &:hover {
+            .moreInfo {
+                display: inline-block;
+            }
+        }
+    }
+
+    .coverName {
+        display: none;
+    }
+
+    .coverTypeWrapper {
+        margin-bottom: 5rem;
+    }
+}
+
+@media only screen and (width > 1024px) {
+    .covers {
+        grid-row-gap: 85px;
+    }
+}

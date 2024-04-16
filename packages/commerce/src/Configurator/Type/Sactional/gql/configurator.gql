@@ -1,0 +1,153 @@
+# @package     BlueAcorn/Configurator
+# @author      Blue Acorn iCi <code@blueacorn.com>
+# @copyright   Copyright © Blue Acorn iCi. All Rights Reserved.
+
+query Configurator {
+    options: configurator(type: "sactional") {
+        priceRules {
+            name
+            priority
+            action
+            skus
+            minQty
+            discount
+            categoryIds
+        }
+        armStyles {
+            ...SideStyle
+        }
+        backStyles {
+            ...SideStyle
+        }
+        preBuilt {
+            name
+            items {
+                code
+                name
+                image
+                vrayId
+                webglId
+                stealthtech
+                pieces {
+                    key
+                    type
+                    qty
+                }
+            }
+        }
+        createYourOwn {
+            key
+            type
+            name
+            image
+            tag {
+                text
+                color
+                background
+            }
+        }
+        pieceInfo {
+            key
+            type
+            name
+            description
+            includes
+        }
+        options {
+            piece {
+                ...Piece
+            }
+            name
+            shortDescription
+            description
+            includes
+            images
+        }
+        inserts {
+            code
+            name
+            image
+            description
+            pieces {
+                ...Piece
+            }
+        }
+        stealthtech {
+            piece {
+                ...Piece
+            }
+            name
+            description
+            options {
+                piece {
+                    ...Piece
+                }
+                qty
+                position
+            }
+        }
+        accessories {
+            piece {
+                ...Piece
+            }
+            name
+            description
+            images
+            group
+            swatch
+        }
+        fabrics {
+            code
+            name
+            description
+            shipping
+            groups {
+                name
+                items {
+                    id
+                    name
+                    image
+                    color
+                    fabric
+                    composition
+                    description
+                    features {
+                        name
+                        image
+                    }
+                    stealthtech
+                    pieces {
+                        ...Piece
+                    }
+                }
+            }
+        }
+        assets {
+            label
+            large
+            thumb
+            tags
+        }
+    }
+}
+
+fragment SideStyle on C_SideStyle {
+    code
+    name
+    image
+    tag {
+        text
+        color
+        background
+    }
+}
+
+fragment Piece on C_Piece {
+    key
+    type
+    categoryIds
+    leadTime
+    price
+    msrp
+    sku
+}

@@ -1,0 +1,87 @@
+/**
+ * @package     BlueAcorn/Headless
+ * @author      Blue Acorn iCi <code@blueacorn.com>
+ * @copyright   Copyright © Blue Acorn iCi. All Rights Reserved.
+ */
+
+:root {
+    --c-primary-font: museo-sans, 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    --c-title-font: miller-display, Georgia, 'Times New Roman', Times, serif;
+    --c-primary-color: #00808c;
+    --c-secondary-color: #56585a;
+    --c-color-grey-1: #cccccc;
+    --c-color-grey-2: #d9d9d9;
+    --c-color-grey-3: #f5f5f5;
+    --c-color-grey-4: #a4a6a8;
+    --c-color-grey-5: #707375;
+    --c-color-grey-6: #9f9f9f;
+    --c-color-white: #ffffff;
+    --color-error: #e02b27;
+    --color-error-2: #b60038;
+    --color-error-background: #fae5e5;
+    --color-success: #e5efe5;
+    --color-success-2: #006400;
+    --c-font-weight-light: 300;
+    --c-font-weight-regular: 400;
+    --c-font-weight-semibold: 600;
+    --c-font-weight-bold: 700;
+    --c-configurator-dark-white-3: #d8d9da;
+    --c-configurator-dark-green-blue-dark: #00525a;
+}
+
+c-reset-css {
+    display: block;
+    margin: 0;
+    padding: 0;
+    color: var(--c-secondary-color);
+    font-family: var(--c-primary-font);
+    font-style: normal;
+    font-weight: var(--c-font-weight-regular);
+    font-size: 1.4rem;
+    line-height: 1.71428571;
+    background-color: var(--c-color-white);
+
+    & :focus-visible {
+        outline: 2px solid var(--c-primary-color);
+    }
+
+    & fieldset {
+        display: block;
+        margin: 0;
+        padding: 0;
+        border: 0;
+    }
+
+    & button,
+    & select,
+    & input {
+        appearance: none;
+        background: transparent;
+        border: 0;
+        cursor: pointer;
+        width: auto;
+        height: auto;
+        display: inline-block;
+        line-height: inherit;
+        font: inherit;
+        color: inherit;
+        box-sizing: content-box;
+        box-shadow: none;
+        vertical-align: middle;
+        padding: 0;
+        margin: 0;
+        text-align: left;
+        outline: none;
+    }
+
+    & button {
+        text-align: center;
+
+        &:hover,
+        &:focus {
+            border: 0;
+            background: transparent;
+            color: inherit;
+        }
+    }
+}

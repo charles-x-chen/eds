@@ -1,0 +1,301 @@
+/**
+ * @package     BlueAcorn/Reviews
+ * @author      Blue Acorn iCi <code@blueacorn.com>
+ * @copyright   Copyright © Blue Acorn iCi. All Rights Reserved.
+ */
+
+.wrapper {
+    padding-top: 3.2rem;
+}
+
+.title {
+    display: inline;
+    float: left;
+    padding: 11px 1rem 11px 0;
+    cursor: default;
+}
+
+.title .icon {
+    display: none;
+}
+
+.title,
+.filterTitle {
+    font-weight: 300;
+    font-size: 14px;
+    line-height: 24px;
+    box-sizing: border-box;
+    position: relative;
+    color: var(--c-secondary-color);
+    margin-top: 0;
+    border-radius: 4px;
+    text-align: left;
+}
+
+.optionsWrapper {
+    display: flex;
+    flex-flow: row nowrap;
+    overflow: visible;
+}
+
+.optionsContent {
+    display: flex;
+    flex-flow: row wrap;
+    column-gap: 2.8rem;
+    row-gap: 2.8rem;
+}
+
+.filter {
+    position: relative;
+}
+
+.filterTitle {
+    display: inline-block;
+    padding: 11px 3rem 11px 15px;
+    cursor: pointer;
+}
+
+.filterTitle,
+.filterTitle:hover,
+.filterTitle:focus {
+    border: 1px solid #a4a6a8;
+    background: var(--c-color-white);
+}
+
+.filterTitle .icon {
+    position: absolute;
+    top: 15px;
+    right: 4px;
+    font-size: 18px;
+}
+
+.options {
+    padding: 15px 25px;
+    background: var(--c-color-white);
+    border: 1px solid #a4a6a8;
+    border-radius: 4px;
+    display: block;
+    position: absolute;
+    top: 50px;
+    max-height: 305px;
+    overflow: auto;
+    white-space: nowrap;
+    width: auto;
+    z-index: 1;
+    margin: 0;
+}
+
+.option {
+    padding-top: 7px;
+    padding-bottom: 7px;
+}
+
+.option label {
+    font-size: 14px;
+    font-weight: 400;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    color: #6b6d76;
+}
+
+.option input {
+    font-size: 16px;
+    font-weight: 300;
+    margin: 0 8px 2px 0;
+    height: auto;
+    opacity: 1;
+    position: relative;
+    width: auto;
+    top: 0;
+    appearance: auto;
+}
+
+.optionsHeader,
+.optionsFooter {
+    display: none;
+}
+
+.activeFilters {
+    margin-top: 10px;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    font-size: 14px;
+    color: var(--c-secondary-color);
+    margin-bottom: 2rem;
+}
+
+.activeFilter {
+    display: flex;
+    align-items: center;
+    margin-right: 10px;
+    margin-bottom: 0;
+    font-weight: 700;
+    text-transform: uppercase;
+}
+
+.activeFilter button {
+    font-size: 16px;
+    color: var(--c-secondary-color);
+    padding: 10px;
+    height: 22px;
+}
+
+.activeFilters .clearAll {
+    border: none;
+    background-color: transparent;
+    font-size: 14px;
+    color: var(--c-secondary-color);
+    cursor: pointer;
+    font-weight: 400;
+    text-decoration: none;
+    box-shadow: none;
+    width: auto;
+    padding: 1rem;
+}
+
+@media (max-width: 1023px) {
+    .title {
+        float: none;
+        display: inline-flex;
+        flex-flow: row nowrap;
+        justify-content: center;
+        align-items: center;
+        min-width: 152px;
+        font-weight: 400;
+        border-radius: 0;
+        padding: 11px 3rem 11px 15px;
+        cursor: pointer;
+    }
+
+    .title,
+    .title:hover,
+    .title:focus {
+        background: var(--c-color-white);
+        border: 1px solid var(--c-secondary-color);
+    }
+
+    .title .icon {
+        margin-right: 5px;
+        display: inline-block;
+        font-size: 19px;
+        height: 19px;
+    }
+
+    .optionsWrapper {
+        position: fixed;
+        top: 0;
+        left: 0;
+        background: var(--c-color-white);
+        z-index: 999;
+        height: 100%;
+        width: 100%;
+        flex-flow: column nowrap;
+        display: none;
+    }
+
+    .optionsWrapper.active {
+        display: flex;
+    }
+
+    body:has(.optionsWrapper.active) {
+        overflow: hidden;
+    }
+
+    .optionsHeader {
+        width: 100%;
+        padding: 16px;
+        text-align: left;
+        position: relative;
+        display: flex;
+        box-sizing: border-box;
+        justify-content: space-between;
+    }
+
+    .optionsHeaderTitle {
+        font-size: 16px;
+        font-weight: 600;
+        color: var(--c-secondary-color);
+    }
+
+    .optionsContent {
+        overflow-x: hidden;
+        overflow-y: auto;
+        overscroll-behavior: none;
+        flex-flow: column nowrap;
+        row-gap: 0;
+    }
+
+    .filter {
+        padding: 0 16px;
+        margin: 0;
+    }
+
+    .options {
+        position: relative;
+        top: 0;
+        border: none;
+        max-height: none;
+    }
+
+    .filterTitle {
+        width: 100%;
+        border-radius: 0;
+    }
+
+    .filterTitle,
+    .filterTitle:hover,
+    .filterTitle:focus {
+        border-left: none;
+        border-right: none;
+        border-bottom: none;
+    }
+
+    .optionsHeaderClose {
+        color: var(--c-secondary-color);
+        font-size: 2rem;
+        line-height: 1;
+    }
+
+    .optionsFooter {
+        bottom: 0;
+        left: 0;
+        right: 0;
+        z-index: 1;
+        width: 100%;
+        box-sizing: border-box;
+        margin-top: auto;
+        padding: 2.4rem 2.2rem;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .optionsFooter button {
+        max-width: 36%;
+        letter-spacing: 1px;
+        padding: 14px;
+        font-weight: 700;
+        font-size: 14px;
+        line-height: 20px;
+        text-transform: uppercase;
+        width: 100%;
+        white-space: nowrap;
+    }
+
+    .optionsFooter button,
+    .optionsFooter button:hover,
+    .optionsFooter button:focus {
+        background: var(--c-primary-color);
+        color: var(--c-color-white);
+    }
+
+    .optionsFooter button.clearAll {
+        border: 1px solid #d8d9da;
+        box-shadow: 0 1px 2px rgba(16, 24, 40, 0.05);
+        color: var(--c-secondary-color);
+        background: var(--c-color-white);
+    }
+}

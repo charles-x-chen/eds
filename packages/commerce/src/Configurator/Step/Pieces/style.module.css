@@ -1,0 +1,170 @@
+/**
+ * @package     BlueAcorn/Configurator
+ * @author      Blue Acorn iCi <code@blueacorn.com>
+ * @copyright   Copyright © Blue Acorn iCi. All Rights Reserved.
+ */
+
+.subtitle {
+    display: flex;
+    justify-content: center;
+    font-size: 1.4rem;
+    font-weight: var(--c-font-weight-regular);
+    padding-top: 1.8rem;
+    text-align: center;
+    line-height: 20px;
+    max-width: 300px;
+    margin: 0 auto;
+    padding-bottom: 1rem;
+}
+
+.actionsWrapper {
+    display: flex;
+    align-items: center;
+
+    button {
+        width: 28px;
+        height: 28px;
+        box-shadow: none;
+        line-height: inherit;
+        margin: 0;
+        padding: 0;
+        text-decoration: none;
+        text-shadow: none;
+        font-weight: var(--c-font-weight-regular);
+        cursor: pointer;
+        border: 2px solid var(--text-color);
+        position: relative;
+
+        &:disabled {
+            pointer-events: none;
+            opacity: 0.5;
+        }
+
+        span {
+            display: none;
+        }
+
+        svg {
+            font-size: 2.4rem;
+            vertical-align: middle;
+            color: var(--c-color-black);
+        }
+    }
+
+    input {
+        background: var(--text-color);
+        color: var(--c-color-white);
+        letter-spacing: -0.25px;
+        font-weight: var(--c-font-weight-semibold);
+        font-size: 1.4rem;
+        line-height: 18px;
+        text-align: center;
+        border: 2px solid var(--text-color);
+        width: 41px;
+        padding: 0;
+        vertical-align: baseline;
+        appearance: none;
+        height: 32px;
+        margin: 0;
+
+        &::-webkit-outer-spin-button,
+        &::-webkit-inner-spin-button {
+            appearance: none;
+            margin: 0;
+        }
+    }
+}
+
+.item > input {
+    position: absolute;
+    opacity: 0;
+    width: 0;
+    height: 0;
+
+    &:checked {
+        + .edit {
+            display: block;
+            text-decoration: none;
+        }
+    }
+}
+
+.wrapper .item > img {
+    width: 100%;
+    border: 2px solid transparent;
+}
+
+.item:has(input:checked) img {
+    border-color: var(--text-color);
+}
+
+.title {
+    text-transform: capitalize;
+    font-size: 1.4rem;
+    font-weight: var(--c-font-weight-semibold);
+    padding: 1.9rem 2.6rem 0;
+    display: inline-block;
+    width: 100%;
+    text-align: left;
+    box-sizing: border-box;
+}
+
+.sidebarItemTitle {
+    display: inline-block;
+    position: relative;
+    font-weight: var(--c-font-weight-regular);
+    text-align: left;
+    text-transform: capitalize;
+    padding: 5px 0;
+}
+
+.items {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 1.8rem 0.7rem;
+    padding: 2.9rem 2.8rem;
+}
+
+.item {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    cursor: pointer;
+    font-weight: var(--c-font-weight-light);
+    position: relative;
+}
+
+.qtyWrapper {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+@media only screen and (width <= 1023px) {
+    .items {
+        display: flex;
+        padding-top: 1.8rem;
+        visibility: visible;
+        width: auto;
+        flex-wrap: nowrap;
+        border-bottom: 1px solid var(--c-configurator-dark-white-3);
+        overflow-x: auto;
+    }
+
+    .item {
+        margin-right: 4px;
+        min-width: 154px;
+        width: 100%;
+    }
+
+    .wrapper {
+        text-align: center;
+    }
+
+    .qtyWrapper {
+        margin-bottom: 1rem;
+    }
+}

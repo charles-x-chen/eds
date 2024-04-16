@@ -1,0 +1,14 @@
+/**
+ * @package     BlueAcorn/View
+ * @author      Blue Acorn iCi <code@blueacorn.com>
+ * @copyright   Copyright © Blue Acorn iCi. All Rights Reserved.
+ */
+
+.description {
+    word-break: break-word;
+
+    ul {
+        flex-direction: column;
+        gap: 0;
+    }
+}

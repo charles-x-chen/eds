@@ -1,0 +1,27 @@
+/**
+ * @package     BlueAcorn/Configurator
+ * @author      Blue Acorn iCi <code@blueacorn.com>
+ * @copyright   Copyright © Blue Acorn iCi. All Rights Reserved.
+ */
+
+.wrapper {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.button {
+    width: 60%;
+    margin: 0 2rem;
+    padding: 1.4rem 1.6rem;
+    font-size: 1.4rem;
+    text-transform: uppercase;
+    background: #00808c;
+    border: none;
+    color: #fff;
+    cursor: pointer;
+    display: inline-block;
+    box-sizing: border-box;
+    vertical-align: middle;
+}

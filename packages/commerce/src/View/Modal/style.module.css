@@ -1,0 +1,175 @@
+/**
+ * @package     BlueAcorn/View
+ * @author      Blue Acorn iCi <code@blueacorn.com>
+ * @copyright   Copyright © Blue Acorn iCi. All Rights Reserved.
+ */
+
+.modal {
+    position: fixed;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    overflow: hidden;
+    background: rgba(0, 0, 0, 0.4);
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: center;
+    justify-content: center;
+    z-index: 1500;
+}
+
+body:has(.modal) {
+    overflow: hidden;
+
+    header {
+        z-index: 1;
+    }
+}
+.inner {
+    max-height: 80%;
+    max-width: 80%;
+    min-width: 40%;
+    min-height: 40%;
+    display: flex;
+    flex-flow: column nowrap;
+    background: var(--c-color-white);
+    color: var(--c-secondary-color);
+}
+
+.header {
+    padding: 20px;
+    flex-grow: 0;
+    flex-shrink: 0;
+    border-bottom: 0.1rem solid #d8d9da;
+    display: flex;
+    flex-flow: row nowrap;
+}
+
+.title {
+    flex-grow: 1;
+    display: flex;
+    font-weight: 400;
+    font-size: 2.8rem;
+    line-height: 3.6rem;
+    letter-spacing: -0.02em;
+    justify-content: center;
+    border-bottom: none;
+    padding: 0;
+    text-align: center;
+    font-family: var(--c-title-font);
+}
+
+.closeButton {
+    font-size: 25px;
+    width: 36px;
+    height: 36px;
+    display: block;
+    cursor: pointer;
+}
+
+.content {
+    overflow-y: auto;
+    overflow-x: hidden;
+    overscroll-behavior: contain;
+    padding: 20px;
+    display: flex;
+    flex-grow: 1;
+    flex-flow: column nowrap;
+}
+
+.classic {
+    .header {
+        border: none;
+        padding-bottom: 0;
+        position: relative;
+    }
+
+    .title {
+        display: none;
+    }
+
+    .closeButton {
+        position: absolute;
+        top: 1rem;
+        right: 2rem;
+    }
+}
+
+.submitReview {
+    .header {
+        border: none;
+        padding-bottom: 0;
+    }
+
+    .title {
+        justify-content: flex-start;
+        padding-left: 2rem;
+    }
+}
+
+@media (max-width: 1023px) {
+    .modal {
+        justify-content: flex-end;
+    }
+
+    .inner {
+        width: 100%;
+        max-width: 97vw;
+
+        &.roundBorder {
+            border-radius: 2rem;
+        }
+    }
+
+    .classic {
+        justify-content: center;
+        padding: 0;
+
+        .header {
+            justify-content: right;
+            height: 0;
+            z-index: 1;
+            padding-top: 0;
+        }
+
+        .content {
+            padding: 0 0 20px 0;
+            border-radius: 2rem;
+        }
+
+        .closeButton {
+            position: relative;
+            top: 2rem;
+            right: 0;
+
+            svg {
+                background: var(--c-color-white);
+                border-radius: 50%;
+            }
+        }
+    }
+
+    .submitReview {
+        .title {
+            padding-left: 1.2rem;
+            text-align: left;
+            max-width: 80%;
+            margin-right: auto;
+        }
+    }
+}
+
+@media only screen and (min-width: 1024px) {
+    .classic {
+        .inner {
+            border-radius: 10px;
+        }
+
+        .content {
+            padding-top: 0;
+            padding-left: 15rem;
+            padding-right: 15rem;
+        }
+    }
+}

@@ -1,0 +1,126 @@
+/**
+ * @package     BlueAcorn/Configurator
+ * @author      Blue Acorn iCi <code@blueacorn.com>
+ * @copyright   Copyright © Blue Acorn iCi. All Rights Reserved.
+ */
+
+.summaryAction {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.6rem 2rem;
+    border-top: 1px solid var(--c-configurator-dark-white-3);
+    border-bottom: 1px solid var(--c-configurator-dark-white-3);
+}
+
+.summaryActionsActionWrapper {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.priceSummaryPriceWrapper {
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    font-weight: var(--c-font-weight-light);
+    font-size: 2.4rem;
+    line-height: 3.2rem;
+    letter-spacing: -0.02em;
+    justify-content: center;
+
+    span {
+        + span {
+            display: flex;
+            justify-content: center;
+            font-size: 1.4rem;
+            line-height: 1;
+            font-style: italic;
+            font-weight: var(--c-font-weight-light);
+
+            &::before {
+                content: '*';
+                vertical-align: super;
+            }
+        }
+
+        &:first-child {
+            display: flex;
+            align-items: baseline;
+            justify-content: center;
+
+            > span {
+                &::after {
+                    content: '*';
+                    vertical-align: super;
+                }
+            }
+
+            span {
+                order: 2;
+                font-weight: var(--c-font-weight-semibold);
+            }
+
+            s {
+                order: 1;
+
+                span {
+                    opacity: 0.7;
+                    padding-right: 0.5rem;
+                }
+            }
+        }
+    }
+}
+
+.actionTrigger {
+    font-size: 1.4rem;
+    text-transform: uppercase;
+    width: 50%;
+    padding: 1.4rem 1.6rem;
+    margin-left: 5%;
+    background: var(--c-color-blue-green-2);
+    border: none;
+    color: var(--c-color-white);
+    cursor: pointer;
+    display: inline-block;
+    font-weight: var(--c-font-weight-bold);
+    box-sizing: border-box;
+    vertical-align: middle;
+}
+
+body:has([data-step='pieces']) {
+    .priceSummaryPriceWrapper {
+        display: none;
+    }
+
+    .actionTrigger {
+        width: 100%;
+    }
+}
+
+@media only screen and (width < 1024px) {
+    .summaryAction {
+        bottom: 0;
+        width: 100%;
+        background-color: var(--c-color-white);
+        max-height: 6.5rem;
+        z-index: 3;
+        padding: 0;
+    }
+
+    .priceSummaryPriceWrapper {
+        width: 40%;
+        padding: 1.4rem 0;
+        margin: 0 0 0 2rem;
+        font-size: 1.6rem;
+    }
+
+    .actionTrigger {
+        width: 60%;
+        margin: 0 2rem;
+        padding: 1.4rem 1.6rem;
+        font-size: 1.4rem;
+    }
+}

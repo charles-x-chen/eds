@@ -1,0 +1,30 @@
+/**
+ * @package     BlueAcorn/Reviews
+ * @author      Blue Acorn iCi <code@blueacorn.com>
+ * @copyright   Copyright © Blue Acorn iCi. All Rights Reserved.
+ */
+
+.feedback {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    align-items: center;
+    column-gap: 5px;
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 20px;
+    max-width: 280px;
+    text-align: center;
+
+    & button {
+        margin: 0 0.5rem;
+        position: relative;
+        font-size: 1.4rem;
+    }
+}
+
+@media (max-width: 1023px) {
+    .feedback {
+        max-width: 200px;
+    }
+}

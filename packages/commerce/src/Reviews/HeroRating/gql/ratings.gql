@@ -1,0 +1,8 @@
+query Rating($filter: BAReviewFilterInput) {
+    getBAReviews(filter: $filter) {
+        stats {
+            reviewCount
+            rating
+        }
+    }
+}

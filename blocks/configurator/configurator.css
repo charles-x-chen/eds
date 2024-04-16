@@ -1,0 +1,22 @@
+/**
+ * @package     BlueAcorn/Configurator
+ * @author      Blue Acorn iCi <code@blueacorn.com>
+ * @copyright   Copyright © Blue Acorn iCi. All Rights Reserved.
+ */
+
+.section.configurator-container {
+    padding: 0;
+
+    & > div {
+        max-width: 100%;
+    }
+}
+
+@media only screen and (width < 1024px) {
+    body:has(.configurator-container) {
+        header,
+        footer {
+            display: none;
+        }
+    }
+}

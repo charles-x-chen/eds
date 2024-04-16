@@ -1,0 +1,286 @@
+/* Navbar Submenu Item block */
+.navbar-submenu-item {
+    background: white;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+}
+
+.navbar-submenu-item h2 {
+    font-size: 2rem;
+    margin-top: 0;
+}
+
+.navbar-submenu-item p {
+    margin: 0;
+    font-weight: var(--c-font-weight-light);
+    font-size: 1.4rem;
+    line-height: 20px;
+    white-space: normal;
+}
+
+.navbar-submenu-item .bg-image {
+    display: block;
+    color: white;
+    background-size: cover;
+    box-shadow: inset 0 0 0 2000px rgb(0 0 0 / 60%);
+    width: 100%;
+    margin: 0;
+    height: 100%;
+}
+
+.navbar-submenu-item .bg-image > div p {
+    color: var(--c-color-white);
+    max-width: 301px;
+    white-space: normal;
+    margin: 0 auto;
+    font-weight: var(--c-font-weight-light);
+    font-size: 1.4rem;
+    line-height: 20px;
+}
+
+.navbar-submenu-item .bg-image > div:first-child {
+    display: grid;
+}
+
+.navbar-submenu-item .bg-image a.button {
+    text-transform: uppercase;
+    color: var(--c-color-white);
+    font-size: 1.4rem;
+    line-height: 20px;
+    background: 0 0;
+    border: 1px solid var(--c-color-white);
+    padding: 1.2rem 2.3rem;
+    cursor: pointer;
+}
+
+.navbar-submenu-item .bg-image img {
+    display: none;
+}
+
+.navbar-submenu-item .submenu-content .row {
+    display: flex;
+    justify-content: center;
+}
+
+.navbar-submenu-item .submenu-content > div:first-child {
+    padding-bottom: 2.5rem;
+}
+
+.navbar-submenu-item .submenu-content .row > div {
+    padding: 0.4rem;
+}
+
+.navbar-submenu-item .submenu-content .row > div > a {
+    font-size: 1.6rem;
+    font-weight: var(--c-font-weight-semibold);
+    letter-spacing: normal;
+}
+
+.navbar-submenu-item .submenu-content .row > div > a.button {
+    font-size: 1.4rem;
+}
+
+.navbar-submenu-item .submenu-content ul li {
+    text-align: left;
+}
+
+.navbar-submenu-item .submenu-content ul li :where(h1, h2, h3, h4, h5, h6) {
+    border-bottom: 1px solid var(--c-color-grey-1);
+    width: 25rem;
+    height: 3rem;
+}
+
+.navbar-submenu-item .submenu-content ul > li > ul {
+    display: block;
+    padding: 0;
+}
+
+.navbar-submenu-item .submenu-content ul > li > ul > li {
+    display: block;
+    padding: 1rem 0;
+    font-size: 1.4rem;
+    font-weight: var(--c-font-weight-bold) !important;
+}
+
+@media (width < 769px) {
+    .navbar-submenu-item {
+        background: var(--light-color);
+        display: block;
+    }
+
+    .navbar-submenu-item .bg-image {
+        background-image: none !important;
+        box-shadow: none;
+        color: var(--text-color);
+        min-width: inherit;
+    }
+
+    .navbar-submenu-item .bg-image > div:first-child :where(h1, h2, h3, h4, h5, h6) {
+        background-color: transparent;
+        font-size: 1.4rem;
+        font-weight: var(--c-font-weight-light);
+        margin: 0;
+        padding: 3.4rem 0 0 2.4rem;
+        position: absolute;
+        width: 50%;
+    }
+
+    .navbar-submenu-item .bg-image a.button {
+        border: 0;
+        color: var(--text-color);
+        width: 100%;
+        text-align: left;
+        padding: 0;
+        margin: 0;
+        text-transform: capitalize;
+    }
+
+    .navbar-submenu-item .bg-image img {
+        display: block;
+    }
+
+    .navbar-submenu-item .submenu-content ul {
+        display: block;
+        margin: 0;
+    }
+
+    .navbar-submenu-item .submenu-content ul li :where(h1, h2, h3, h4, h5, h6) {
+        border: 0;
+        margin: 0;
+        width: auto;
+        height: auto;
+    }
+
+    .navbar-submenu-item .submenu-content ul > li > ul > li {
+        font-size: 1.4rem;
+        font-weight: var(--c-font-weight-semibold) !important;
+        padding: 1.2rem 2.4rem;
+    }
+
+    .navbar-submenu-item .submenu-content > div h2 {
+        background-color: var(--c-configurator-dark-white-3);
+        font-size: 1.2rem;
+        margin: 0;
+        padding: 0.6rem 2.4rem;
+        font-weight: var(--c-font-weight-semibold);
+        font-family: var(--body-font-family);
+    }
+
+    .navbar-submenu-item .submenu-content > div p {
+        display: none;
+    }
+
+    .navbar-submenu-item .submenu-content > div:first-child {
+        padding-bottom: 1px;
+    }
+
+    .navbar-submenu-item .submenu-content .row {
+        display: block;
+        padding: 0.8rem 2.4rem;
+    }
+
+    .navbar-submenu-item .submenu-content .row > div {
+        width: 100%;
+        padding: 0;
+    }
+
+    .navbar-submenu-item .submenu-content .row > div > a {
+        display: block;
+        font-size: 1.4rem;
+        height: 8rem;
+        position: relative;
+        z-index: 1;
+    }
+
+    .navbar-submenu-item .submenu-content .row > div > a > div:last-child {
+        padding-top: 3rem;
+    }
+
+    .navbar-submenu-item .submenu-content.bg-image .row > div > a > div:last-child {
+        padding: 0;
+    }
+
+    .navbar-submenu-item .submenu-content .row > div img {
+        width: 40%;
+        height: 72px;
+        float: right;
+        object-fit: cover;
+    }
+}
+
+@media (width > 769px) {
+    .navbar-submenu-item {
+        h2,
+        p {
+            text-align: center;
+        }
+    }
+
+    [data-menu-title='inspiration'] .navbar-submenu-item {
+        width: 30%;
+        justify-content: center;
+    }
+
+    .submenu-content {
+        & a:any-link {
+            > div:last-child {
+                font-size: 1.6rem;
+                font-weight: var(--c-font-weight-semibold);
+                line-height: 24px;
+                max-width: 100%;
+                text-align: center;
+                text-transform: none;
+                padding: 0;
+                white-space: pre-line;
+                word-wrap: normal;
+                word-break: normal;
+            }
+        }
+    }
+
+    [data-menu-title='inspiration'] .navbar-submenu-item .submenu-content ul > li > ul > li {
+        padding: 0;
+        margin-bottom: 2.5rem;
+
+        &:first-child {
+            padding-top: 1rem;
+        }
+
+        & a:any-link {
+            font-weight: var(--c-font-weight-bold);
+            font-size: 1.4rem;
+            letter-spacing: 0;
+            line-height: 20px;
+            white-space: normal;
+        }
+    }
+
+    [data-menu-title='inspiration'] h2 {
+        font-weight: var(--c-font-weight-regular);
+        font-size: 2.4rem;
+        line-height: 32px;
+        margin: 0;
+        padding: 0 0 1.6rem;
+        max-width: 240px;
+        height: auto;
+    }
+
+    .navbar-submenu-item .bg-image {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .navbar-submenu-item:has(> .bg-image) {
+        margin: 0;
+        width: 23%;
+        position: relative;
+        min-width: 360px;
+    }
+
+    [data-menu-title='stealthtech'] .navbar-submenu-item:has(> .bg-image) {
+        width: 30%;
+    }
+}

@@ -1,0 +1,34 @@
+/**
+ * @package     BlueAcorn/Configurator
+ * @author      Blue Acorn iCi <code@blueacorn.com>
+ * @copyright   Copyright © Blue Acorn iCi. All Rights Reserved.
+ */
+
+.playerToolbar {
+    position: absolute;
+    top: 0.8rem;
+    z-index: 1;
+}
+
+.playerButton span {
+    display: none;
+}
+
+@media only screen and (width <= 1023px) {
+    .playerToolbar {
+        display: grid;
+        grid-template-columns: 1fr 6fr 1fr 1fr;
+        grid-column-gap: 0.4rem;
+        padding: 0 1.6rem;
+    }
+}
+
+@media only screen and (width >= 1024px) {
+    .playerToolbar {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        left: 1.2rem;
+        top: 1.2rem;
+    }
+}

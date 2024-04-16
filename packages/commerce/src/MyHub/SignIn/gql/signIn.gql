@@ -1,0 +1,10 @@
+# @package     BlueAcorn/MyHub
+# @author      Blue Acorn iCi <code@blueacorn.com>
+# @copyright   Copyright © Blue Acorn iCi. All Rights Reserved.
+
+mutation SignIn($email: String!, $password: String!) {
+    passportSignIn(email: $email, password: $password) {
+        message
+        success
+    }
+}

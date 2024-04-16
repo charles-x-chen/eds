@@ -1,0 +1,108 @@
+/**
+ * @package     BlueAcorn/Configurator
+ * @author      Blue Acorn iCi <code@blueacorn.com>
+ * @copyright   Copyright © Blue Acorn iCi. All Rights Reserved.
+ */
+
+.titleBarWrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    padding: 1rem 2rem;
+    border-bottom: 1px solid var(--c-configurator-dark-white-3);
+
+    button {
+        font-family: var(--body-font-family);
+        background: 0 0;
+        border: 0;
+        box-shadow: none;
+        margin: 0;
+        padding: 0;
+        text-decoration: none;
+        text-shadow: none;
+        font-size: 1.4rem;
+        font-weight: var(--c-font-weight-bold);
+        color: var(--text-color);
+        position: relative;
+        text-transform: uppercase;
+        font-style: normal;
+        line-height: 20px;
+        align-items: center;
+        letter-spacing: 1px;
+    }
+
+    &[data-index='8'] {
+        > div {
+            flex: 1 0 auto;
+            text-align: center;
+            position: relative;
+            left: 50%;
+            transform: translateX(-50%);
+            z-index: -1;
+        }
+    }
+}
+
+.title {
+    font-size: 1.8rem;
+    color: var(--text-color);
+    font-weight: var(--c-font-weight-semibold);
+    padding-right: 1rem;
+}
+
+.pageNumber {
+    font-size: 1.8rem;
+    font-weight: var(--c-font-weight-light);
+}
+
+.stepNext {
+    position: relative;
+
+    &::after {
+        content: '';
+        position: absolute;
+        background-image: url('../../icons/forward-arrow.svg');
+        background-repeat: no-repeat;
+        background-size: contain;
+        height: 50px;
+        width: 50px;
+        background-position: center;
+        top: -3rem;
+        left: -3.5rem;
+    }
+}
+
+.stepPrev {
+    position: relative;
+
+    &::after {
+        content: '';
+        position: absolute;
+        background-image: url('../../icons/back-arrow.svg');
+        background-repeat: no-repeat;
+        background-size: contain;
+        height: 50px;
+        width: 50px;
+        background-position: center;
+        top: -3rem;
+        left: 0;
+    }
+}
+
+@media only screen and (width < 1024px) {
+    .titleBarWrapper {
+        height: 52px;
+        top: 4.5rem;
+        width: 100%;
+        background: var(--c-color-white);
+        box-sizing: border-box;
+    }
+}
+
+@media only screen and (width > 1024px) {
+    body:has([data-modalActive='true']) {
+        .titleBarWrapper {
+            display: none;
+        }
+    }
+}

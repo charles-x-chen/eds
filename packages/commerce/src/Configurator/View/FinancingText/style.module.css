@@ -1,0 +1,39 @@
+/**
+ * @package     BlueAcorn/Configurator
+ * @author      Blue Acorn iCi <code@blueacorn.com>
+ * @copyright   Copyright © Blue Acorn iCi. All Rights Reserved.
+ */
+
+.wrapper {
+    font-weight: var(--c-font-weight-regular);
+    line-height: 20px;
+    font-size: 1.1rem;
+}
+
+.content {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    padding-top: 0.5rem;
+}
+
+a.link {
+    font-weight: var(--c-font-weight-semibold);
+    color: var(--c-color-blue-green-2);
+
+    &::after {
+        content: url('/packages/commerce/src/Configurator/icons/financing-image.svg');
+        height: 20px;
+        width: 32px;
+        vertical-align: middle;
+        display: inline-block;
+        margin-left: 1rem;
+    }
+}
+
+@media only screen and (width < 768px) {
+    .wrapper {
+        position: relative;
+        bottom: 0.5rem;
+    }
+}

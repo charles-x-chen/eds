@@ -1,0 +1,421 @@
+/**
+ * @package     BlueAcorn/Reviews
+ * @author      Blue Acorn iCi <code@blueacorn.com>
+ * @copyright   Copyright © Blue Acorn iCi. All Rights Reserved.
+ */
+
+.modalWrapper {
+    max-width: 800px;
+    max-height: 90vh;
+}
+
+.formWrapper {
+    padding: 20px;
+    overflow: auto;
+    max-width: 100%;
+
+    .form {
+        > div {
+            text-align: left;
+        }
+
+        img {
+            max-width: 107px;
+            margin-bottom: 24px;
+            display: block;
+        }
+
+        label {
+            font-size: 18px;
+            font-weight: var(--c-font-weight-regular);
+            line-height: 28px;
+            display: inline-block;
+            margin-bottom: 10px;
+            text-transform: capitalize;
+        }
+
+        input[type='file'] {
+            display: none;
+        }
+
+        label.reviewsFormLabel {
+            font-size: 16px;
+            text-transform: none;
+            align-items: center;
+            display: flex;
+            position: relative;
+
+            svg {
+                position: absolute;
+                left: -1px;
+                font-size: 28px;
+                color: var(--c-color-white);
+            }
+        }
+    }
+
+    .group-review .field:last-child {
+        margin: 0;
+    }
+
+    .group-rating {
+        padding-bottom: 30px;
+    }
+
+    label[for='review-rating'] {
+        display: block;
+        width: 100%;
+    }
+
+    label {
+        cursor: pointer;
+    }
+
+    input[type='radio'] {
+        position: absolute;
+        appearance: auto;
+        opacity: 0;
+        top: 0;
+    }
+}
+
+.photosList {
+    list-style: none;
+    padding: 0;
+    margin: 20px 0;
+}
+
+.photosListItem {
+    display: flex;
+    align-items: center;
+
+    span {
+        padding-left: 20px;
+    }
+}
+
+.field {
+    margin-bottom: 30px;
+}
+
+.uploadTitle {
+    font-size: 18px;
+    font-weight: var(--c-font-weight-regular);
+    line-height: 28px;
+    margin-bottom: 10px;
+    text-transform: capitalize;
+    display: block;
+}
+
+.uploadButton {
+    display: inline-flex;
+    border-radius: 8px;
+    border: 1px dashed var(--c-secondary-color);
+    color: var(--c-secondary-color);
+    height: 76px;
+    width: 76px;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+}
+
+.groupTitle {
+    display: none;
+}
+
+.group {
+    padding: 30px 0 10px;
+    border-top: 2px solid var(--c-configurator-dark-white-3);
+}
+
+.input,
+.select,
+.textarea {
+    border-radius: 8px;
+    background: 0 0;
+    background: padding-box var(--c-color-white);
+    border: 1px solid var(--c-color-grey-1);
+    font-size: 14px;
+    height: auto;
+    line-height: 1.42857143;
+    margin: 0;
+    padding: 10px;
+    vertical-align: baseline;
+    width: 100%;
+    box-sizing: border-box;
+    resize: none;
+}
+
+.input::placeholder,
+.select::placeholder,
+.textarea::placeholder {
+    color: var(--c-color-grey-5);
+    font-weight: var(--c-font-weight-light);
+}
+
+.select {
+    font-weight: var(--c-font-weight-light);
+    display: block;
+    border-radius: 8px;
+    background: 0 0;
+    font-size: 14px;
+    font-style: normal;
+    color: var(--c-secondary-color);
+    border: 1px solid var(--c-color-grey-1);
+    height: 40px;
+    line-height: 1.42857143;
+    padding: 9px 0 9px 10px;
+    vertical-align: baseline;
+    width: 100%;
+    box-sizing: border-box;
+    text-decoration: none;
+    overflow: hidden;
+}
+
+.ratingIconLabel {
+    position: relative;
+
+    svg {
+        color: var(--c-primary-color);
+        padding-right: 5px;
+        font-size: 28px;
+    }
+}
+
+.checkboxIcon {
+    width: 24px;
+    display: inline-block;
+    height: 24px;
+    background: var(--c-color-white);
+    border: 1.5px solid var(--c-color-grey-4);
+    margin-right: 10px;
+    cursor: pointer;
+}
+
+.reviewsFormCheckbox {
+    display: none;
+}
+
+.reviewsFormCheckbox:checked + .checkboxIcon {
+    background: var(--c-primary-color);
+    border-color: var(--c-primary-color);
+    padding-right: 0;
+}
+
+.reviewsFormCheckbox:checked + .checkboxIcon::after {
+    width: 25px;
+    height: 22px;
+    display: inline-block;
+    margin: 0;
+    padding: 0;
+    content: '';
+}
+
+.submitWrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.submitWrapper a {
+    text-decoration: underline;
+    color: var(--c-secondary-color);
+    padding-left: 5px;
+}
+
+button.submitReviewButton {
+    background: var(--c-primary-color);
+    border: none;
+    color: var(--c-color-white);
+    cursor: pointer;
+    display: inline-block;
+    font-weight: var(--c-font-weight-bold);
+    box-sizing: border-box;
+    font-size: 14px;
+    line-height: 20px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    padding: 14px 36px;
+
+    &:hover,
+    &:focus {
+        background: var(--c-configurator-dark-green-blue-dark);
+        border: none;
+        color: var(--c-color-white);
+    }
+}
+
+button.submitReviewButton:disabled {
+    opacity: 0.5;
+    cursor: default;
+    pointer-events: none;
+}
+
+.removePhotoButton {
+    padding-left: 1rem;
+    position: relative;
+    top: 3px;
+}
+
+.submitMsg {
+    font-size: 14px;
+    font-style: normal;
+    font-weight: var(--c-font-weight-light);
+    line-height: 20px;
+    max-width: 420px;
+    padding-bottom: 2.4rem;
+}
+
+.review-messages {
+    display: block;
+    text-align: center;
+    padding: 4rem 0;
+}
+
+.multichoiceWrapper {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+}
+
+.multichoiceGroupName {
+    display: block;
+    padding: 9px;
+    font-size: 14px;
+    font-weight: var(--c-font-weight-regular);
+    border-bottom: 1px solid var(--c-color-grey-4);
+}
+
+.multichoiceItemsWrapper {
+    position: absolute;
+    top: 50px;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    max-height: 250px;
+    height: auto;
+    overflow-y: auto;
+    border: 1px solid var(--c-color-grey-1);
+    border-radius: 4px;
+    background: var(--c-color-white);
+    z-index: 1;
+}
+
+.formWrapper .form label.reviewsFormLabelFilter {
+    border-bottom: 1px solid var(--c-color-grey-1);
+    padding: 9px;
+    margin: 0;
+    font-size: 14px;
+    font-weight: var(--c-font-weight-regular);
+    display: flex;
+    align-items: center;
+    text-transform: none;
+    position: relative;
+
+    svg {
+        position: absolute;
+        left: 7px;
+        font-size: 28px;
+        color: var(--c-color-white);
+    }
+}
+
+button.multichoiceTrigger {
+    display: block;
+    border-radius: 8px;
+    background: 0 0;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: var(--c-font-weight-light);
+    color: var(--c-secondary-color);
+    border: 1px solid var(--c-color-grey-1);
+    height: 40px;
+    line-height: 1.42857143;
+    padding: 9px 0;
+    vertical-align: baseline;
+    width: 100%;
+    box-sizing: border-box;
+    text-decoration: none;
+    overflow: hidden;
+    position: relative;
+    text-align: left;
+
+    &:hover,
+    &:focus,
+    &:active {
+        color: var(--c-secondary-color);
+        border: 1px solid var(--c-color-grey-1);
+    }
+
+    svg {
+        position: absolute;
+        right: 10px;
+        top: 10px;
+        font-weight: var(--c-font-weight-bold);
+        font-size: 18px;
+    }
+
+    span {
+        padding-left: 1rem;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        max-width: 80%;
+        display: block;
+    }
+}
+
+.selectWrapper {
+    position: relative;
+
+    svg {
+        position: absolute;
+        right: 10px;
+        top: 10px;
+        font-weight: var(--c-font-weight-bold);
+        font-size: 18px;
+    }
+}
+
+@media only screen and (max-width: 1023px) {
+    .formWrapper {
+        padding: 2rem 1rem;
+    }
+}
+
+@media only screen and (min-width: 1024px) {
+    .formWrapper {
+        [data-code='group-filter'] {
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+
+            .field {
+                max-width: 45%;
+                width: 100%;
+            }
+        }
+
+        [data-code='group-sacSize'] {
+            .field {
+                max-width: 45%;
+                width: 100%;
+            }
+        }
+
+        [data-code='group-userInfo'] {
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+
+            .field {
+                max-width: 45%;
+                width: 100%;
+
+                &:last-child {
+                    max-width: 100%;
+                }
+            }
+        }
+    }
+}

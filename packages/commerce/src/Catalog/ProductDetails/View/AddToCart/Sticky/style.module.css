@@ -1,0 +1,17 @@
+/**
+ * @package     BlueAcorn/Catalog
+ * @author      Blue Acorn iCi <code@blueacorn.com>
+ * @copyright   Copyright © Blue Acorn iCi. All Rights Reserved.
+ */
+
+.sticky {
+    position: fixed;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    display: flex;
+    flex-flow: row nowrap;
+    background: var(--c-color-white);
+    padding: 2rem;
+    z-index: 1;
+}

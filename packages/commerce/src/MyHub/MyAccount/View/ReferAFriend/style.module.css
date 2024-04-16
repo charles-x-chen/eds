@@ -1,0 +1,244 @@
+/**
+ * @package     BlueAcorn/MyHub
+ * @author      Blue Acorn iCi <code@blueacorn.com>
+ * @copyright   Copyright © Blue Acorn iCi. All Rights Reserved.
+ */
+
+.referFriendWrapper {
+    display: flex;
+    justify-content: space-between;
+    column-gap: 40px;
+    margin-bottom: 4rem;
+}
+
+.quickLinksWrapper {
+    border: 2px solid var(--c-configurator-dark-white-3);
+    width: 100%;
+    padding: 3rem;
+    box-sizing: border-box;
+}
+
+.quickLinksWrapper h3 {
+    font-size: 20px;
+    font-weight: var(--c-font-weight-regular);
+    line-height: 32px;
+    letter-spacing: -0.02em;
+    margin-bottom: 3rem;
+}
+
+.quickLinksWrapper :global .pagebuilder-column-group p {
+    font-size: 16px;
+    font-weight: var(--c-font-weight-regular);
+    line-height: 24px;
+    letter-spacing: 0;
+}
+
+.quickLinksWrapper :global .pagebuilder-column-group p a {
+    color: var(--c-primary-color);
+    text-decoration: none;
+}
+
+.referalBlockWrapper {
+    border: 2px solid var(--c-configurator-dark-white-3);
+    width: 100%;
+    padding: 3rem;
+    box-sizing: border-box;
+}
+
+.referalBlockTitle {
+    font-size: 2rem;
+    font-weight: var(--c-font-weight-regular);
+    line-height: 32px;
+    letter-spacing: -0.02em;
+    margin-bottom: 2rem;
+}
+
+.referalBlockContent {
+    position: relative;
+}
+
+.referalBlockContent :global .extole-screen-header {
+    display: none;
+}
+
+.referalBlockContent :global .extole-share-channel-section {
+    padding: 0 !important;
+    max-width: 100% !important;
+    margin: 0 !important;
+}
+
+.referalBlockContent :global .extole-share-channel-section p {
+    font-size: 1.6rem;
+    font-weight: var(--c-font-weight-light);
+    line-height: 24px;
+}
+
+.referalBlockContent :global .extole-share-link.extole-dotted-border {
+    border: 1px solid var(--c-configurator-dark-white-3) !important;
+    background: #f5f5f5;
+    justify-content: center !important;
+    font-size: 16px;
+    font-weight: var(--c-font-weight-regular);
+    line-height: 24px;
+    min-height: 37px !important;
+    max-width: 370px;
+    position: relative;
+    color: var(--c-primary-color);
+}
+
+.referalBlockContent :global .extole-copy-button {
+    position: absolute;
+    right: 2rem;
+}
+
+.referalBlockContent :global .extole-screen-content {
+    margin-top: 2rem !important;
+    margin-bottom: 2rem !important;
+    padding: 0 !important;
+    text-align: left;
+}
+
+.referalBlockContent :global .extole-message {
+    font-size: 1.6rem !important;
+    font-weight: var(--c-font-weight-light);
+    line-height: 24px;
+}
+
+.referalBlockContent :global .extole-button {
+    background: var(--c-primary-color);
+    height: 50px !important;
+    min-width: 200px;
+}
+
+.referalBlockContent :global .extole-button span {
+    font-size: 1.4rem !important;
+    font-weight: var(--c-font-weight-bold);
+    color: var(--c-color-white);
+    line-height: 20px;
+    letter-spacing: 1px;
+    text-align: center;
+}
+
+.manageReferralsBtn {
+    min-width: 230px;
+    min-height: 48px;
+    color: var(--c-secondary-color);
+    border: 1px solid var(--c-configurator-dark-white-3);
+    text-decoration: none;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.manageReferralsBtnText {
+    font-size: 1.4rem;
+    font-weight: var(--c-font-weight-bold);
+    text-decoration: none;
+    line-height: 20px;
+    letter-spacing: 1px;
+    padding: 14px 36px 14px 36px;
+    text-transform: uppercase;
+    text-decoration: none;
+}
+
+.referalBlockContent :global .extole-footer {
+    display: none;
+}
+
+@media only screen and (max-width: 1024px) {
+    .referFriendWrapper {
+        flex-direction: column;
+    }
+
+    .quickLinksWrapper {
+        padding: 5px 0;
+    }
+
+    .quickLinksWrapper :global h3 {
+        text-align: center;
+        font-size: 16px;
+    }
+
+    .quickLinksWrapper :global .pagebuilder-column-line {
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .quickLinksWrapper :global .pagebuilder-column {
+        width: 100% !important;
+    }
+
+    .quickLinksWrapper {
+        margin-bottom: 2rem;
+    }
+
+    .quickLinksWrapper :global .pagebuilder-column-group p {
+        text-align: center;
+    }
+
+    .referalBlockWrapper {
+        padding: 2rem 1.4rem;
+    }
+
+    .referalBlockTitle {
+        text-align: center;
+    }
+
+    .referalBlockContent :global .extole-button {
+        max-width: 241px !important;
+        width: 100%;
+    }
+
+    .manageReferralsBtn {
+        max-width: 230px;
+        margin: 0 auto;
+    }
+
+    .referalBlockContent :global .extole-screen-content {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+}
+
+@media only screen and (min-width: 768px) {
+    .quickLinksWrapper :global .pagebuilder-column-group p {
+        margin-bottom: 0;
+    }
+
+    .quickLinksWrapper :global .pagebuilder-column {
+        flex-wrap: wrap;
+    }
+
+    .quickLinksWrapper :global .pagebuilder-column > div {
+        flex: 0 0 25%;
+        order: 3;
+    }
+
+    .quickLinksWrapper :global .pagebuilder-column > div:last-child {
+        order: 2;
+    }
+
+    .quickLinksWrapper :global .pagebuilder-column > div:first-child,
+    .quickLinksWrapper :global .pagebuilder-column > div:nth-child(2),
+    .quickLinksWrapper :global .pagebuilder-column > div:nth-child(3) {
+        order: 1;
+    }
+
+    .referalBlockContent :global .extole-share-channel-section {
+        text-align: left;
+    }
+
+    .manageReferralsBtn {
+        position: absolute;
+        right: 8rem;
+        bottom: 0;
+    }
+
+    .referalBlockContent :global .extole-screen-content {
+        margin-bottom: 0 !important;
+    }
+}

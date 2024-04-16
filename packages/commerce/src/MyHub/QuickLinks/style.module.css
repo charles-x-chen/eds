@@ -1,0 +1,59 @@
+/**
+ * @package     BlueAcorn/MyHub
+ * @author      Blue Acorn iCi <code@blueacorn.com>
+ * @copyright   Copyright © Blue Acorn iCi. All Rights Reserved.
+ */
+
+.quickLinksWrapper :global .quick-link-title h3 {
+    font-family: var(--c-title-font);
+    font-size: 28px;
+    font-weight: 400;
+    line-height: 36px;
+    letter-spacing: -0.02em;
+    margin-bottom: 3rem;
+}
+
+.quickLinksWrapper :global .pagebuilder-column-group p {
+    font-size: 16px;
+    font-weight: var(--c-font-weight-regular);
+    line-height: 24px;
+    letter-spacing: 0;
+    margin: 0;
+}
+
+.quickLinksWrapper :global .pagebuilder-column-group p a {
+    color: var(--c-primary-color);
+    text-decoration: none;
+}
+
+@media only screen and (max-width: 1023px) {
+    .quickLinksWrapper {
+        margin-bottom: 6.4rem;
+    }
+
+    .quickLinksWrapper :global .quick-link-title h3 {
+        text-align: center;
+    }
+
+    .quickLinksWrapper :global .pagebuilder-column {
+        text-align: center;
+    }
+
+    .quickLinksWrapper :global .pagebuilder-column > div {
+        margin-bottom: 2.4rem;
+    }
+}
+
+@media only screen and (min-width: 1024px) {
+    .quickLinksWrapper {
+        margin-bottom: 8rem;
+    }
+
+    .quickLinksWrapper :global .pagebuilder-column {
+        flex-wrap: wrap;
+    }
+
+    .quickLinksWrapper :global .pagebuilder-column > div {
+        flex: 1 0 33%;
+    }
+}

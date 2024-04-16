@@ -1,0 +1,98 @@
+/**
+ * @package     BlueAcorn/Configurator
+ * @author      Blue Acorn iCi <code@blueacorn.com>
+ * @copyright   Copyright © Blue Acorn iCi. All Rights Reserved.
+ */
+
+.wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    margin: 0 0 1.7rem;
+    box-sizing: border-box;
+}
+
+.title {
+    text-align: left;
+}
+
+.actionsWrapper {
+    display: flex;
+    align-items: center;
+
+    button {
+        width: 28px;
+        height: 28px;
+        box-shadow: none;
+        line-height: inherit;
+        margin: 0;
+        padding: 0;
+        text-decoration: none;
+        text-shadow: none;
+        font-weight: var(--c-font-weight-regular);
+        cursor: pointer;
+        border: 2px solid var(--text-color);
+        position: relative;
+
+        &:disabled {
+            pointer-events: none;
+            opacity: 0.5;
+        }
+
+        span {
+            display: none;
+        }
+
+        svg {
+            font-size: 2.4rem;
+            vertical-align: middle;
+            color: var(--c-color-black);
+        }
+    }
+
+    input {
+        background: var(--text-color);
+        color: var(--c-color-white);
+        letter-spacing: -0.25px;
+        font-weight: var(--c-font-weight-semibold);
+        font-size: 1.4rem;
+        line-height: 18px;
+        text-align: center;
+        border: 2px solid var(--text-color);
+        width: 41px;
+        padding: 0;
+        vertical-align: baseline;
+        appearance: none;
+        height: 32px;
+        margin: 0;
+
+        &::-webkit-outer-spin-button,
+        &::-webkit-inner-spin-button {
+            appearance: none;
+            margin: 0;
+        }
+    }
+}
+
+@media only screen and (width < 1024px) {
+    .wrapper {
+        margin-bottom: 1rem;
+    }
+
+    .title {
+        font-weight: var(--c-font-weight-semibold);
+        font-size: 1.6rem;
+        line-height: 21px;
+    }
+}
+
+@media only screen and (width > 1024px) {
+    .title {
+        display: block;
+        font-weight: var(--c-font-weight-semibold);
+        font-size: 1.5rem;
+        line-height: 21px;
+        flex: 1 0 auto;
+    }
+}

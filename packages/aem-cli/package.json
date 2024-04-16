@@ -1,0 +1,21 @@
+{
+    "name": "@blueacorn/aem-cli",
+    "version": "1.0.0",
+    "private": true,
+    "type": "module",
+    "author": "BlueAcorn iCi",
+    "description": "",
+    "keywords": [],
+    "bin": {
+        "aem": "./src/index.js",
+        "hlx": "./src/index.js"
+    },
+    "main": "src/index.js",
+    "dependencies": {
+        "@adobe/aem-cli": "^16.1.5",
+        "dotenv": "^16.3.1"
+    },
+    "peerDependencies": {
+        "vite": "*"
+    }
+}

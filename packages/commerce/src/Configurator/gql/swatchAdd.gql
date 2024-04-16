@@ -1,0 +1,19 @@
+# @package     BlueAcorn/Configurator
+# @author      Blue Acorn iCi <code@blueacorn.com>
+# @copyright   Copyright © Blue Acorn iCi. All Rights Reserved.
+
+mutation SwatchAdd($fabricId: Int!) {
+    swatchAdd(fabricId: $fabricId) {
+        success
+        message
+        listId
+        items {
+            itemId
+            fabricId
+            productId
+            image
+            name
+            url
+        }
+    }
+}

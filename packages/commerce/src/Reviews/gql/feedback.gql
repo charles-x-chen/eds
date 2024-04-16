@@ -1,0 +1,6 @@
+mutation Feedback($id: String, $vote: Boolean) {
+    postHelpfulnessFeedback(contentId: $id, vote: $vote) {
+        success
+        message
+    }
+}

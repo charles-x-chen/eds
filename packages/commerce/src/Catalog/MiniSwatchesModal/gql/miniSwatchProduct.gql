@@ -1,0 +1,20 @@
+query MiniSwatchProduct($sku: String!) {
+    products(filter: { sku: { eq: $sku } }) {
+        items {
+            sku
+            name
+            image {
+                url
+            }
+            coverAttributes {
+                coverFeatures {
+                    image
+                    title
+                }
+                colorFamilyLabel
+                composition
+                featuresDescription
+            }
+        }
+    }
+}

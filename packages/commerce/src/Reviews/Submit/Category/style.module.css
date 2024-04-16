@@ -1,0 +1,22 @@
+/**
+ * @package     BlueAcorn/Reviews
+ * @author      Blue Acorn iCi <code@blueacorn.com>
+ * @copyright   Copyright © Blue Acorn iCi. All Rights Reserved.
+ */
+
+.root {
+    display: flex;
+    flex-flow: column nowrap;
+    row-gap: 10px;
+
+    & button {
+        background: var(--c-color-white);
+        border: 1px solid var(--c-secondary-color);
+        padding: 8px 15px;
+
+        &:hover,
+        &:focus {
+            border: 1px solid var(--c-secondary-color);
+        }
+    }
+}

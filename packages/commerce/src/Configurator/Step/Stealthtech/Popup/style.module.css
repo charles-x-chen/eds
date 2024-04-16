@@ -1,0 +1,127 @@
+/**
+ * @package     BlueAcorn/Configurator
+ * @author      Blue Acorn iCi <code@blueacorn.com>
+ * @copyright   Copyright © Blue Acorn iCi. All Rights Reserved.
+ */
+
+.warningModalWrapper {
+    bottom: 0;
+    position: fixed;
+    width: 100%;
+    height: 100vh;
+    right: 0;
+    top: 0;
+    transition:
+        visibility 0s 0.3s,
+        opacity 0.3s;
+    background: rgb(0 0 0 / 55%);
+}
+
+.warningModalInnerWrapper {
+    margin: 35vh auto;
+    width: 75%;
+    box-sizing: border-box;
+    height: auto;
+    left: 0;
+    position: absolute;
+    right: 0;
+    max-width: 335px;
+    border-radius: 8px;
+    background: var(--c-color-white);
+}
+
+.actionClose {
+    padding: 0;
+
+    span {
+        display: none;
+    }
+
+    svg {
+        font-size: 2.4rem;
+    }
+}
+
+.modalHeader {
+    text-align: right;
+}
+
+.content {
+    padding-top: 0;
+    text-align: center;
+    padding-left: 25px;
+    padding-right: 25px;
+    color: var(--c-secondary-color);
+
+    p {
+        font-weight: var(--c-font-weight-light);
+        font-size: 1.4rem;
+        line-height: 20px;
+        margin-bottom: 3rem;
+        margin-top: 1rem;
+    }
+}
+
+.footer {
+    padding: 0 2.5rem 3.5rem;
+
+    button {
+        font-size: 1.4rem;
+        font-weight: var(--c-font-weight-bold);
+        letter-spacing: 1px;
+    }
+}
+
+.dismiss {
+    border: none;
+    width: 45%;
+    padding: 0;
+    font-weight: var(--c-font-weight-semibold);
+}
+
+.accept {
+    background: var(--c-color-blue-green-2);
+    border: none;
+    color: var(--c-color-white);
+    cursor: pointer;
+    display: inline-block;
+    font-weight: var(--c-font-weight-bold);
+    padding: 1rem 2.1rem;
+    font-size: 1.4rem;
+    box-sizing: border-box;
+    vertical-align: middle;
+}
+
+@media only screen and (width <= 1023px) {
+    .modalDetails {
+        height: 500px;
+        overflow-y: auto;
+    }
+
+    .detailsTop {
+        padding-left: 2.6rem;
+        padding-right: 2.6rem;
+        margin-bottom: 0;
+    }
+
+    .accept {
+        padding: 1rem 0;
+    }
+
+    .footer {
+        align-items: center;
+        display: flex;
+        flex-direction: column;
+
+        button {
+            margin: 1rem 0;
+            width: 100%;
+        }
+    }
+}
+
+@media only screen and (width > 1023px) {
+    .warningModalInnerWrapper {
+        margin-top: 35vh;
+    }
+}

@@ -1,0 +1,110 @@
+/**
+ * @package     BlueAcorn/MyHub
+ * @author      Blue Acorn iCi <code@blueacorn.com>
+ * @copyright   Copyright © Blue Acorn iCi. All Rights Reserved.
+ */
+
+.accountCmsWrapper :global h3 {
+    margin: 0 0 2rem 0;
+    font-family: var(--c-title-font);
+    font-size: 28px;
+    font-weight: 400;
+    line-height: 36px;
+    letter-spacing: -0.02em;
+    text-align: left;
+}
+
+.accountCmsWrapper :global h3 a {
+    font-family: var(--c-primary-font);
+    font-size: 1.6rem;
+    font-weight: var(--c-font-weight-regular);
+    line-height: 28px;
+    letter-spacing: 0;
+    padding-left: 5px;
+    text-align: left;
+    color: var(--c-primary-color);
+    text-decoration: underline;
+}
+
+.accountCmsWrapper :global .content-slider-link-container a {
+    text-decoration: underline;
+    color: var(--c-primary-color);
+}
+
+.accountCmsWrapper :global .content-slider-link-container p {
+    font-size: 1.8rem;
+    font-weight: var(--c-font-weight-regular);
+    margin-bottom: 1rem;
+    line-height: 28px;
+    text-align: center;
+    padding-top: 2rem;
+}
+
+.accountCmsWrapper :global button:disabled {
+    display: inline-block;
+}
+
+.videoContainer {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+    padding-top: 56.25%;
+}
+
+.videoIframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+    border: none;
+}
+
+@media only screen and (max-width: 1023px) {
+    .accountCmsWrapper {
+        margin-bottom: 6.4rem;
+    }
+
+    .accountCmsWrapper > div {
+        margin-bottom: 6.4rem;
+    }
+
+    .accountCmsWrapper :global div[class*='inner'] {
+        min-height: 60%;
+    }
+
+    .accountCmsWrapper > div[class*='modal'] {
+        margin: 0;
+    }
+
+    .accountCmsWrapper :global h3 {
+        text-align: center;
+    }
+
+    .accountCmsWrapper :global h3 a {
+        display: block;
+        width: 100%;
+        text-align: center;
+        margin-top: 1rem;
+    }
+
+    .accountCmsWrapper :global .content-slider-link-container img {
+        width: 100%;
+    }
+}
+
+@media only screen and (min-width: 1024px) {
+    .accountCmsWrapper {
+        margin-bottom: 8rem;
+    }
+
+    .accountCmsWrapper > div {
+        margin-bottom: 8rem;
+    }
+
+    .accountCmsWrapper :global .content-slider-link-container {
+        margin-right: 2rem;
+    }
+}

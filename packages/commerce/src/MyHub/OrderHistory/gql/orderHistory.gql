@@ -1,0 +1,50 @@
+# @package     BlueAcorn/MyHub
+# @author      Blue Acorn iCi <code@blueacorn.com>
+# @copyright   Copyright © Blue Acorn iCi. All Rights Reserved.
+
+query OrderDetails($cmsBlocks: [String], $page: Int) {
+    customer {
+        email
+        orders(pageSize: 3, currentPage: $page, sort: { sort_field: CREATED_AT, sort_direction: DESC }) {
+            items {
+                id
+                orderDate: order_date
+                number
+                status
+                netsuite {
+                    orderId
+                }
+                items {
+                    id
+                    name: product_name
+                    sku: product_sku
+                    product {
+                        name
+                        categories {
+                            uid
+                            name
+                        }
+                        related: crosssell_products {
+                            sku
+                        }
+                    }
+                }
+                total {
+                    grandTotal: grand_total {
+                        value
+                    }
+                }
+            }
+            pageInfo: page_info {
+                total: total_pages
+            }
+        }
+    }
+    cmsBlocks(identifiers: $cmsBlocks) {
+        items {
+            identifier
+            title
+            content
+        }
+    }
+}

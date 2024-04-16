@@ -1,0 +1,99 @@
+/**
+ * @package     BlueAcorn/Configurator
+ * @author      Blue Acorn iCi <code@blueacorn.com>
+ * @copyright   Copyright © Blue Acorn iCi. All Rights Reserved.
+ */
+
+.priceContainer {
+    flex-direction: column;
+    min-width: 40%;
+}
+
+.value {
+    display: flex;
+    align-items: baseline;
+    justify-content: center;
+
+    span {
+        &::after {
+            content: '*';
+            vertical-align: super;
+        }
+    }
+
+    s {
+        span {
+            font-weight: var(--c-font-weight-light);
+            padding-right: 0.5rem;
+
+            &::after {
+                display: none;
+            }
+        }
+    }
+}
+
+.text {
+    display: flex;
+    justify-content: center;
+    font-size: 1.4rem;
+    line-height: 1;
+    font-style: italic;
+    font-weight: var(--c-font-weight-light);
+
+    &::before {
+        content: '*';
+        vertical-align: super;
+    }
+}
+
+@media only screen and (width < 1024px) {
+    .priceContainer {
+        width: 40%;
+        padding: 1.4rem 0;
+        text-align: center;
+        display: flex;
+        align-items: baseline;
+        font-size: 1.6rem;
+        margin: 0 auto 1rem 0;
+        justify-content: flex-start;
+    }
+
+    .value {
+        s {
+            margin-right: 5px;
+        }
+
+        span {
+            order: 2;
+            font-weight: var(--c-font-weight-semibold);
+            font-size: 1.6rem;
+
+            &::after {
+                display: none;
+            }
+        }
+    }
+}
+
+@media only screen and (width > 1024px) {
+    .priceContainer {
+        width: 50%;
+        font-size: 2.4rem;
+        letter-spacing: -0.02em;
+        padding-left: 2rem;
+    }
+
+    .value {
+        s {
+            font-size: 2.4rem;
+            line-height: 32px;
+        }
+
+        span {
+            font-weight: var(--c-font-weight-semibold);
+            font-size: 2.4rem;
+            line-height: 32px;
+        }
+    }
+}

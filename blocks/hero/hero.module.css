@@ -1,0 +1,188 @@
+.root {
+    position: relative;
+    overflow: hidden;
+
+    @media (width <= 900px) {
+        display: flex;
+        flex-direction: column;
+    }
+}
+
+.slider {
+    display: flex;
+    flex-flow: row nowrap;
+    width: 100%;
+    position: relative;
+    transition: transform 0.5s ease-in-out;
+
+    & > div {
+        min-width: 100%;
+    }
+
+    p {
+        margin-bottom: 0;
+    }
+}
+
+.overlay {
+    position: absolute;
+    left: 8rem;
+    bottom: 8.8rem;
+    text-align: left;
+    color: var(--c-color-white);
+    z-index: 1;
+
+    @media (width <= 900px) {
+        order: 2;
+    }
+
+    & > div {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+
+        @media (width >= 900px) {
+            display: block;
+        }
+    }
+
+    & > div > p {
+        margin-bottom: 0;
+    }
+
+    & > div > p:has(a) {
+        display: block;
+        margin: 0;
+
+        a {
+            color: var(--c-primary-color);
+        }
+
+        & > a:any-link:not(:has(ul)) {
+            font-weight: 700;
+            letter-spacing: 0.1rem;
+            text-align: center;
+            padding: 1.3rem 3.2rem;
+            background-color: var(--c-primary-color);
+            margin-top: 1.9rem;
+        }
+
+        & > a:any-link:has(ul) {
+            color: unset;
+            text-decoration: underline;
+        }
+
+        sub {
+            white-space: nowrap;
+            color: var(--text-color);
+
+            @media (width >= 900px) {
+                color: var(--c-color-white);
+            }
+        }
+
+        &:first-of-type {
+            order: 3;
+
+            svg {
+                fill: var(--link-color);
+            }
+
+            @media (width >= 900px) {
+                order: initial;
+
+                svg {
+                    fill: var(--c-color-white);
+                }
+            }
+        }
+    }
+
+    h1 {
+        font-size: 4.4rem;
+        font-weight: 400;
+        line-height: 4.8rem;
+        letter-spacing: -0.02em;
+        text-align: left;
+        margin: 0 0 0.7rem;
+    }
+
+    h3 {
+        font-size: 1.8rem;
+        font-weight: 400;
+        line-height: 2.8rem;
+        letter-spacing: 0;
+        text-align: left;
+        margin: 0 0 0.7rem;
+    }
+
+    h4,
+    h6 {
+        font-weight: 300;
+        line-height: 2rem;
+        letter-spacing: 0;
+        text-align: left;
+        margin: 0;
+    }
+
+    h4 {
+        font-size: 1.4rem;
+    }
+
+    h6 {
+        font-size: 1rem;
+    }
+}
+
+:global .section.hero-container {
+    padding: 0;
+
+    & > div {
+        max-width: unset;
+    }
+}
+
+@media only screen and (width <= 1023px) {
+    .overlay {
+        position: unset;
+        padding: 4rem 1.6rem 6.4rem;
+        text-align: center;
+
+        & > p {
+            margin-bottom: 0;
+        }
+
+        & > p:has(a) {
+            & > a:any-link:not(:has(ul)) {
+                margin-top: 1.9rem;
+            }
+        }
+
+        h1,
+        h3,
+        h4,
+        h6 {
+            color: var(--c-secondary-color);
+            text-align: center;
+            margin: 0;
+        }
+
+        h1 {
+            font-size: 3.6rem;
+            line-height: 4.4rem;
+        }
+    }
+}
+
+@media only screen and (width <= 768px) {
+    .overlay {
+        display: flex;
+        flex-direction: column;
+
+        & > p:has(ul) {
+            order: 1;
+            margin-top: 1.6rem;
+            align-self: center;
+        }
+    }
+}

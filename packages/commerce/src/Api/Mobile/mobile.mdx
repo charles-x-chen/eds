@@ -1,0 +1,15 @@
+# Is Mobile Signal
+
+It's a preact signal that is true when screen side less than 1024px.
+It automatically re-renders preact components that read that value when screen is resized.
+
+## Usage
+
+```jsx
+import mobileSignal from '~/Api/Mobile';
+
+function Component() {
+    const mobile = mobileSignal.value;
+    return <div>{mobile ? <p>mobile</p> : <p>desktop</p>}</div>;
+}
+```

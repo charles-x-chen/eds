@@ -1,0 +1,160 @@
+/**
+ * @package     BlueAcorn/Configurator
+ * @author      Blue Acorn iCi <code@blueacorn.com>
+ * @copyright   Copyright © Blue Acorn iCi. All Rights Reserved.
+ */
+
+.InfoModal {
+    > div {
+        &:first-child {
+            background: none;
+        }
+    }
+}
+
+.details {
+    padding: 4rem 1rem 2rem 4rem;
+}
+
+.title {
+    font-family: var(--heading-font-family);
+    font-weight: var(--c-font-weight-regular);
+    word-break: break-word;
+    margin-bottom: 2rem;
+    margin-top: 0;
+    font-size: 2.8rem;
+    line-height: 36px;
+    letter-spacing: -0.02em;
+    max-width: 80%;
+    text-align: left;
+}
+
+.modalDesc {
+    font-weight: 300;
+    max-width: 80%;
+
+    h3 {
+        font-size: 2.4rem;
+        font-family: var(--heading-font-family);
+        font-weight: var(--c-font-weight-regular);
+        margin-bottom: 2rem;
+    }
+
+    p {
+        line-height: 1.5;
+        font-size: 1.6rem;
+    }
+
+    ul {
+        max-width: 80%;
+        padding-left: 19px;
+
+        li {
+            font-weight: var(--c-font-weight-light);
+        }
+    }
+}
+
+.listWrapper {
+    font-weight: var(--c-font-weight-light);
+    max-width: 80%;
+
+    h2 {
+        font-family: var(--heading-font-family);
+        font-weight: var(--c-font-weight-regular);
+        line-height: 1.2;
+        font-size: 2.2rem;
+        letter-spacing: -0.44px;
+        word-break: break-word;
+        margin-top: 2.5rem;
+        margin-bottom: 2rem;
+    }
+
+    p {
+        + p {
+            font-weight: var(--c-font-weight-bold);
+        }
+    }
+
+    ul {
+        padding-left: 1.9rem;
+
+        li {
+            font-weight: var(--c-font-weight-light);
+            margin-bottom: 1rem;
+
+            p {
+                margin: 0;
+            }
+        }
+    }
+}
+
+@media only screen and (width < 1024px) {
+    .InfoModal {
+        > div {
+            &:first-child {
+                button {
+                    right: 1rem;
+                    left: auto;
+                    height: 32px;
+                    width: 32px;
+
+                    &::after {
+                        background: url('../../../icons/modal-close-white.svg') no-repeat;
+                        content: '';
+                        position: absolute;
+                        top: 0.4rem;
+                        left: 0.4rem;
+                        background-size: 2.4rem;
+                    }
+                }
+            }
+        }
+    }
+
+    .details {
+        overflow: scroll;
+        -ms-overflow-style: none;
+        scrollbar-width: none;
+        max-height: 367px;
+        padding-left: 1.6rem;
+        padding-right: 1.6rem;
+    }
+
+    .title {
+        max-width: 100%;
+    }
+
+    .listWrapper {
+        max-width: 100%;
+    }
+
+    .modalDesc {
+        max-width: 100%;
+
+        h3 {
+            font-size: 2.2rem;
+        }
+
+        ul {
+            max-width: 100%;
+        }
+    }
+}
+
+@media only screen and (width > 1024px) {
+    .InfoModal {
+        z-index: 1;
+
+        + div {
+            display: none;
+        }
+    }
+
+    .listWrapper {
+        h2 {
+            font-size: 2.4rem;
+        }
+    }
+}

@@ -1,0 +1,32 @@
+/**
+ * @package     BlueAcorn/View
+ * @author      Blue Acorn iCi <code@blueacorn.com>
+ * @copyright   Copyright © Blue Acorn iCi. All Rights Reserved.
+ */
+
+.error {
+    display: flex;
+    flex-flow: row wrap;
+    column-gap: 20px;
+    align-items: center;
+    font-size: 16px;
+
+    button {
+        font-size: 1.4rem;
+        color: var(--c-color-white);
+        font-weight: 700;
+        line-height: 20px;
+        letter-spacing: 1px;
+        text-align: center;
+        padding: 8px 18px;
+        background: var(--c-primary-color);
+        border: 2px solid var(--c-primary-color);
+        text-transform: uppercase;
+        text-decoration: none;
+
+        &:hover,
+        &:focus {
+            border: 2px solid var(--c-primary-color);
+        }
+    }
+}

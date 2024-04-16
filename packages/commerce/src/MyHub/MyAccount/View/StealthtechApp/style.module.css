@@ -1,0 +1,101 @@
+/**
+ * @package     BlueAcorn/MyHub
+ * @author      Blue Acorn iCi <code@blueacorn.com>
+ * @copyright   Copyright © Blue Acorn iCi. All Rights Reserved.
+ */
+
+.steathAppBlock {
+    margin-bottom: 4rem;
+}
+
+.steathAppBlock :global .pagebuilder-column-line {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.steathAppBlock :global .stealthtech-image {
+    position: relative;
+}
+
+.steathAppBlock :global figcaption {
+    font-size: 2rem;
+    font-weight: var(--c-font-weight-regular);
+    line-height: 32px;
+    letter-spacing: -0.02em;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1;
+}
+
+.steathAppBlock :global .steahthtech-text p {
+    margin: 0 auto;
+    max-width: 475px;
+}
+
+.steathAppBlock :global .steahthtech-code [data-content-type='buttons'] {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+.steathAppBlock :global .steahthtech-code [data-content-type='button-item'] {
+    width: 100%;
+    text-align: center;
+    max-width: 164px;
+}
+
+.steathAppBlock :global .steahthtech-code a.pagebuilder-button-primary {
+    margin-bottom: 2rem;
+    padding: 13px 0;
+    min-width: 157px;
+}
+
+.steathAppBlock :global .steahthtech-text p strong {
+    font-size: 1.8rem;
+    line-height: 32px;
+    letter-spacing: -0.02em;
+    display: block;
+    font-weight: var(--c-font-weight-regular);
+}
+
+@media only screen and (max-width: 1023px) {
+    .steathAppBlock {
+        border: 2px solid var(--c-configurator-dark-white-3);
+        padding: 6rem 0 1rem;
+        margin-bottom: 3rem;
+    }
+
+    .steathAppBlock > div {
+        max-width: 262px !important;
+        margin: 0 auto;
+    }
+
+    .steathAppBlock :global figcaption {
+        font-size: 16px;
+        font-weight: var(--c-font-weight-regular);
+        line-height: 32px;
+        letter-spacing: -0.02em;
+        text-align: center;
+        top: -4.5rem;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+
+    .steathAppBlock :global .steahthtech-text p {
+        text-align: center;
+        padding: 0 0 1rem;
+    }
+
+    .steathAppBlock :global .steahthtech-text p strong {
+        padding-top: 2rem;
+    }
+}
+
+@media only screen and (min-width: 1024px) {
+    .steathAppBlock :global .steahthtech-text p strong {
+        font-size: 2rem;
+        margin-bottom: 1.2rem;
+    }
+}

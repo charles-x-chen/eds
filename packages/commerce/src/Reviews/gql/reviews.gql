@@ -1,0 +1,50 @@
+query Reviews($filter: BAReviewFilterInput, $sort: BAReviewSortInput, $page: Int) {
+    getBAReviews(filter: $filter, sort: $sort, currentPage: $page) {
+        totalCount
+        reviews {
+            id
+            rating
+            text
+            title
+            username
+            submissionTime
+            verifiedPurchaser
+            attributes {
+                label
+                valueLabel
+            }
+            photos {
+                label
+                thumbnail
+                large
+            }
+            feedback {
+                positive
+                negative
+            }
+        }
+        stats {
+            ratingDistribution
+            reviewCount
+            rating
+            comfortRating
+            filterAttributes {
+                id
+                label
+                values {
+                    count
+                    value
+                    label
+                }
+            }
+            tagDistribution {
+                id
+                label
+                values {
+                    count
+                    value
+                }
+            }
+        }
+    }
+}

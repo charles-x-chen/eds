@@ -1,0 +1,191 @@
+/**
+ * @package     BlueAcorn/Configurator
+ * @author      Blue Acorn iCi <code@blueacorn.com>
+ * @copyright   Copyright © Blue Acorn iCi. All Rights Reserved.
+ */
+.saveModal {
+    svg {
+        color: var(--text-color);
+        font-weight: var(--c-font-weight-bold);
+    }
+
+    > div {
+        max-width: 611px;
+
+        > div {
+            &:last-child {
+                padding: 0;
+            }
+        }
+    }
+}
+
+.modalBody {
+    display: flex;
+    justify-content: space-between;
+    max-width: 611px;
+}
+
+.createAccount {
+    flex-basis: 50%;
+    border-right: 0.1rem solid var(--c-configurator-dark-white-3);
+    padding: 4rem 2.6rem 15.1rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    span {
+        font-weight: var(--c-font-weight-regular);
+        font-size: 1.8rem;
+        line-height: 2.8rem;
+        color: var(--text-color);
+    }
+
+    .createAccountLink {
+        padding: 1.4rem 3.6rem;
+        color: var(--c-color-white);
+        background: var(--c-color-blue-green-2);
+        max-width: 268px;
+        letter-spacing: 0.1rem;
+        text-transform: uppercase;
+        margin-top: 2.4rem;
+        font-weight: var(--c-font-weight-bold);
+        font-size: 1.4rem;
+        line-height: 2rem;
+    }
+}
+
+.login {
+    flex-basis: 50%;
+    padding: 4rem 2.6rem 15.1rem;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+
+    form {
+        text-align: left;
+        display: flex;
+        width: 100%;
+    }
+
+    button {
+        margin-top: 2.6rem;
+        padding: 1.4rem 3.6rem;
+        border: 0.2rem solid var(--c-color-blue-green-2);
+        text-transform: uppercase;
+        font-weight: var(--c-font-weight-bold);
+        font-size: 1.4rem;
+        line-height: 2rem;
+        letter-spacing: 0.1rem;
+        width: 100%;
+    }
+
+    a.forgotPassword {
+        font-weight: var(--c-font-weight-regular);
+        font-size: 1.4rem;
+        line-height: 2rem;
+        color: var(--c-color-blue-green-2);
+        margin-top: 2.4rem;
+        align-self: center;
+    }
+}
+
+.fieldset {
+    border: 0;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+
+    legend {
+        font-weight: var(--c-font-weight-semibold);
+        font-size: 1.8rem;
+        line-height: 2.8rem;
+        color: var(--text-color);
+        align-self: center;
+    }
+
+    label {
+        margin-top: 2.4rem;
+        font-weight: var(--c-font-weight-regular);
+        font-size: 1.4rem;
+        line-height: 2rem;
+    }
+
+    input {
+        padding: 1rem 1.2rem;
+        background: padding-box var(--light-color);
+        border: 1px solid var(--c-color-grey-1);
+        border-radius: 0;
+        font-size: 1.4rem;
+        height: 4rem;
+        line-height: 1.4286;
+        vertical-align: baseline;
+        width: 100%;
+        box-sizing: border-box;
+    }
+}
+
+.field {
+    position: relative;
+
+    svg {
+        position: absolute;
+        right: 1rem;
+        top: 1.2rem;
+        color: var(--c-color-black);
+        font-weight: var(--c-font-weight-bold);
+    }
+}
+
+.password {
+    position: relative;
+
+    &::before {
+        content: url('icons/icon-lock-small.svg');
+        height: 14px;
+        width: 14px;
+        display: inline-block;
+        position: absolute;
+        right: 1rem;
+        top: 1rem;
+    }
+}
+
+@media only screen and (width < 1024px) {
+    .modalBody {
+        flex-direction: column;
+    }
+
+    .createAccount {
+        display: flex;
+        flex-direction: column;
+        border-bottom: 0.1rem solid var(--c-configurator-dark-white-3);
+        border-right: 0;
+        padding: 0 2.4rem 4.8rem;
+    }
+
+    .login {
+        display: flex;
+        flex-direction: column;
+        text-align: left;
+        padding: 0 2.4rem 5.3rem;
+
+        > div {
+            width: 100%;
+            box-sizing: border-box;
+
+            button {
+                box-sizing: border-box;
+            }
+        }
+    }
+
+    .fieldset {
+        display: flex;
+        flex-direction: column;
+        margin-top: 2.4rem;
+        margin-bottom: 2rem;
+    }
+}

@@ -1,0 +1,30 @@
+# GraphQL hooks
+
+Runs GraphQL queries
+
+## Query
+
+```jsx
+import useQuery from '~/hooks/useQuery';
+import QUERY from './gql/myQuery.gql';
+
+function Component() {
+    const [{ data, fetching, error }, reload] = useQuery({ query: QUERY, variables: variables, pause: loading });
+    // ...
+}
+```
+
+## Mutation
+
+```jsx
+import useMutation from '~/hooks/useMutation';
+import MUTATION from './gql/myMutation.gql';
+
+function Component () {
+    const [{ data, fetching, error }, runMutation] = useQuery(MUTATION);
+
+    // ...
+
+    const data = await runMutation(variables);
+}
+```

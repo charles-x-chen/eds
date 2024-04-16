@@ -1,0 +1,492 @@
+/**
+ * @package     BlueAcorn/Configurator
+ * @author      Blue Acorn iCi <code@blueacorn.com>
+ * @copyright   Copyright © Blue Acorn iCi. All Rights Reserved.
+ */
+
+/* stylelint-disable no-descending-specificity */
+
+.stepWrapper {
+    background: var(--c-color-white);
+    position: relative;
+    display: flex;
+    flex-direction: column;
+}
+
+.playerWrapper {
+    width: 100%;
+    background: var(--c-color-white);
+}
+
+.stepAccordionWrapper {
+    max-width: 649px;
+    margin-top: 4rem;
+}
+
+.header {
+    padding: 1.5rem 0 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+
+    + div {
+        background: var(--c-color-white);
+        margin: 0 1.6rem;
+    }
+}
+
+.reviews {
+    order: 2;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row-reverse;
+    padding-top: 1.75rem;
+    padding-bottom: 2rem;
+    border-top: 1px solid var(--c-configurator-dark-white-3);
+    margin: 0;
+
+    button {
+        text-decoration: underline;
+        color: var(--c-color-blue-green-2);
+        font-weight: var(--c-font-weight-bold);
+        padding-right: 1rem;
+    }
+}
+
+.summaryAtc {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.6rem 2rem;
+    border-top: 1px solid var(--c-configurator-dark-white-3);
+    border-bottom: 1px solid var(--c-configurator-dark-white-3);
+    max-width: 375px;
+    margin: 0 auto;
+    width: 100%;
+    flex-wrap: wrap;
+
+    > div {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        width: 100%;
+
+        button {
+            margin: 0;
+            font-size: 1.4rem;
+            text-transform: uppercase;
+            width: 50%;
+            padding: 1.4rem 1.6rem;
+            background: var(--c-color-blue-green-2);
+            border: none;
+            color: var(--c-color-white);
+            cursor: pointer;
+            display: inline-block;
+            box-sizing: border-box;
+            vertical-align: middle;
+            font-weight: var(--c-font-weight-bold);
+        }
+    }
+}
+
+.sidebarWrapper {
+    width: 100%;
+    flex-flow: column nowrap;
+    position: relative;
+}
+
+.financing {
+    order: 2;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-weight: var(--c-font-weight-light);
+
+    a {
+        font-weight: var(--c-font-weight-bold);
+        text-decoration: underline;
+        color: var(--c-color-blue-green-2);
+    }
+}
+
+.headerTitle {
+    font-weight: var(--c-font-weight-light);
+    font-size: 3.6rem;
+    line-height: 44px;
+    font-family: var(--heading-font-family);
+    text-align: center;
+    letter-spacing: -0.02em;
+}
+
+.sizeWrapper {
+    display: flex;
+    align-items: center;
+    max-width: 408px;
+    margin: 0 auto;
+    width: 100%;
+    border: none;
+    padding: 2.5rem 0 0;
+}
+
+.sizeLabel {
+    display: block;
+    background: var(--text-color);
+    color: var(--c-color-white);
+    padding: 1rem 1.8rem;
+    font-weight: var(--c-font-weight-semibold);
+    font-size: 1.4rem;
+    line-height: 20px;
+    max-height: 48px;
+    border: 2px solid var(--text-color);
+}
+
+.sizeSelect {
+    width: 100%;
+    display: block;
+    border: 2px solid var(--text-color);
+    height: 44px;
+    background: url('/packages/commerce/src/Configurator/icons/throwpillow-select.svg') 101% no-repeat;
+    padding-left: 1rem;
+}
+
+.summaryActions {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.6rem 2rem;
+    border-top: 1px solid var(--c-configurator-dark-white-3);
+    border-bottom: 1px solid var(--c-configurator-dark-white-3);
+    max-width: 375px;
+    margin: 0 auto;
+    width: 100%;
+    flex-wrap: wrap;
+}
+
+.actionsWrapper {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.benefitsBlock {
+    picture {
+        img {
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+            height: 48px;
+            width: 48px;
+        }
+    }
+
+    h3 {
+        font-size: 2rem;
+        text-align: center;
+        font-weight: var(--c-font-weight-regular);
+        line-height: 1.2;
+        letter-spacing: normal;
+        word-break: break-word;
+    }
+
+    p {
+        font-size: 1.4rem;
+        font-weight: var(--c-font-weight-light);
+        line-height: 1.5;
+        text-align: center;
+        margin: 0;
+    }
+}
+
+.shipping {
+    [data-item='title'] {
+        &::before {
+            content: url('/packages/commerce/src/Configurator/icons/shipping-icon.svg');
+            height: 22px;
+            width: 24px;
+            position: absolute;
+            display: inline-block;
+            margin-right: 5px;
+            left: -7rem;
+            top: 0;
+        }
+    }
+}
+
+.dimensions {
+    [data-item='title'] {
+        &::before {
+            content: url('/packages/commerce/src/Configurator/icons/dimensions-icon.svg');
+            height: 22px;
+            width: 24px;
+            position: absolute;
+            display: inline-block;
+            margin-right: 5px;
+            left: -7rem;
+            top: 0;
+        }
+    }
+}
+
+div.benefitsBlockWrapper {
+    flex-flow: row nowrap;
+
+    > div {
+        display: flex;
+    }
+}
+
+.descriptionBlockWrapper {
+    margin-bottom: 5rem;
+
+    h2 {
+        margin-top: 0;
+    }
+
+    p {
+        font-weight: var(--c-font-weight-light);
+    }
+}
+
+@media only screen and (width < 1024px) {
+    .stepWrapper {
+        margin-bottom: 6.4rem;
+    }
+
+    .playerWrapper {
+        order: 1;
+        padding-left: 1.6rem;
+        padding-right: 1.6rem;
+        box-sizing: border-box;
+    }
+
+    .sidebarWrapper {
+        background: var(--c-color-white);
+        height: 100%;
+    }
+
+    .header {
+        background: var(--c-color-white);
+        position: fixed;
+        width: 100%;
+        z-index: 2;
+        padding-top: 0;
+
+        + div {
+            margin: 0;
+        }
+    }
+
+    .sizeWrapper {
+        max-width: 306px;
+        margin-bottom: 2rem;
+    }
+
+    .summaryActions {
+        position: fixed;
+        flex-flow: column nowrap;
+        max-height: 100%;
+        padding: 1.6rem 2rem 0;
+        bottom: 0;
+        box-sizing: border-box;
+        width: 100%;
+        background-color: var(--c-color-white);
+        z-index: 3;
+        max-width: 100%;
+    }
+
+    .summaryAtc {
+        border: none;
+        width: auto;
+        margin-right: 0;
+        padding: 0;
+
+        > div {
+            button {
+                width: 100%;
+                margin: 0 0 1rem 2rem;
+                padding: 1.2rem 1.6rem;
+                font-size: 1.4rem;
+            }
+        }
+    }
+
+    .benefitsBlock {
+        img {
+            margin-bottom: 6px;
+        }
+    }
+}
+
+@media only screen and (width < 768px) {
+    .sidebarHeader {
+        position: fixed;
+        z-index: 5;
+    }
+
+    .player {
+        position: fixed;
+        z-index: 15;
+        top: 17rem;
+        margin-top: calc(170px + 42.4vw);
+    }
+
+    div.benefitsBlockWrapper {
+        display: flex;
+        flex-direction: row;
+        width: 100%;
+        box-sizing: border-box;
+        overflow-x: auto;
+
+        > div {
+            width: 100%;
+
+            &:first-child {
+                padding-right: 10rem;
+            }
+
+            > div {
+                width: 100%;
+                padding: 4.4rem 2.5rem 4.7rem;
+                flex: 1 0 50%;
+            }
+        }
+    }
+
+    .header {
+        top: 4.6rem;
+        height: 139px;
+
+        + div:not([data-modalactive='true']) {
+            background: var(--c-color-white);
+            position: fixed;
+            z-index: 15;
+            top: 17rem;
+
+            + div {
+                margin-top: calc(170px + 42.4vw);
+            }
+
+            > div:first-child {
+                height: 42.4vw;
+            }
+        }
+    }
+
+    .headerSubTitle {
+        font-size: 1.5rem;
+        font-weight: var(--light-color);
+    }
+}
+
+@media only screen and (width > 1024px) {
+    .stepWrapper {
+        margin-bottom: 10rem;
+        flex-direction: row;
+        justify-content: space-between;
+        max-height: 100%;
+    }
+
+    .header {
+        padding: 1.5rem 0;
+
+        + div:not([data-modalactive='true']) {
+            height: 100%;
+            max-height: 55vh;
+            overflow-y: auto;
+        }
+    }
+
+    .summaryAtc {
+        width: 100%;
+        padding: 0;
+        border: none;
+
+        > div {
+            justify-content: flex-end;
+
+            button {
+                width: 100%;
+                max-width: 185px;
+                margin-left: 2rem;
+            }
+        }
+    }
+
+    .benefitsBlockWrapper {
+        margin-bottom: 2rem;
+
+        > div {
+            > div {
+                box-sizing: border-box;
+                padding: 3rem 1rem;
+                position: relative;
+                transition: background-color 0.5s;
+                flex-wrap: wrap;
+            }
+        }
+    }
+
+    .playerWrapper {
+        max-width: 65%;
+        order: 0;
+
+        > div:first-child {
+            max-width: 100%;
+            height: 100vh;
+        }
+    }
+
+    .stepAccordionWrapper {
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .sidebarWrapper {
+        flex-direction: column;
+        max-width: 35%;
+        display: flex;
+        padding-right: 3rem;
+        background: var(--light-color);
+        height: 100%;
+        max-height: 100%;
+        z-index: 1;
+    }
+
+    .sizeWrapper {
+        order: 2;
+    }
+
+    .summaryActions {
+        flex-flow: column nowrap;
+        align-items: flex-start;
+        padding-left: 0;
+        padding-right: 0;
+        max-width: 409px;
+        border-top: none;
+        order: 2;
+    }
+
+    .financing {
+        margin: 0 5.4rem;
+    }
+
+    .benefitsBlock {
+        picture {
+            padding-left: 3rem;
+            padding-right: 3rem;
+        }
+
+        h3 {
+            margin-top: 0;
+            margin-bottom: 0.9rem;
+
+            + p {
+                padding-left: 3rem;
+                padding-right: 3rem;
+            }
+        }
+    }
+}

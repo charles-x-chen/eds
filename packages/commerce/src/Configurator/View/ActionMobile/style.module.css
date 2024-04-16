@@ -1,0 +1,58 @@
+/**
+ * @package     BlueAcorn/Configurator
+ * @author      Blue Acorn iCi <code@blueacorn.com>
+ * @copyright   Copyright © Blue Acorn iCi. All Rights Reserved.
+ */
+
+.actionMobile {
+    margin: 1.8rem 0 0;
+    display: flex;
+    justify-content: space-between;
+    text-align: center;
+    column-gap: 0.8rem;
+    color: var(--c-color-blue-green-2);
+}
+
+.action {
+    margin-right: 0;
+    flex-basis: 50%;
+    border: 2px solid var(--c-color-blue-green-2);
+    padding: 0.8rem 0;
+
+    button {
+        text-transform: uppercase;
+    }
+}
+
+.disabled {
+    pointer-events: none;
+    opacity: 0.6;
+}
+
+.save {
+    &::before {
+        display: inline-block;
+        vertical-align: middle;
+        content: url('../../icons/save-icon.svg');
+        margin-right: 0.5rem;
+        height: 20px;
+        width: 20px;
+    }
+}
+
+.share {
+    &::before {
+        display: inline-block;
+        vertical-align: middle;
+        content: url('../../icons/share-icon.svg');
+        margin-right: 0.5rem;
+        height: 20px;
+        width: 20px;
+    }
+}
+
+@media only screen and (width > 1024px) {
+    .actionMobile {
+        display: none;
+    }
+}

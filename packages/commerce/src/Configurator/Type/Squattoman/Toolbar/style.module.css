@@ -1,0 +1,93 @@
+/**
+ * @package     BlueAcorn/Configurator
+ * @author      Blue Acorn iCi <code@blueacorn.com>
+ * @copyright   Copyright © Blue Acorn iCi. All Rights Reserved.
+ */
+
+.playerToolbar {
+    position: absolute;
+    top: 0.8rem;
+    z-index: 1;
+}
+
+.playerButton span {
+    display: none;
+}
+
+.playerButton {
+    background: var(--c-color-white);
+    box-sizing: content-box;
+    border: 2px solid var(--c-configurator-dark-white-3);
+    box-shadow: none;
+    line-height: inherit;
+    margin: 0 0 0.2rem;
+    padding: 0;
+    text-decoration: none;
+    text-shadow: none;
+    font-weight: var(--c-font-weight-regular);
+    height: 35px;
+    width: 35px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+
+    &::before {
+        display: inline-block;
+        content: '';
+    }
+
+    &:focus,
+    &:active {
+        background: var(--c-color-white);
+        border: 2px solid var(--c-configurator-dark-white-3);
+    }
+
+    &:hover {
+        opacity: 0.9;
+        background: var(--c-color-white);
+        border: 2px solid var(--c-configurator-dark-white-3);
+
+        span {
+            position: absolute;
+            top: -0.2rem;
+            left: 102%;
+            height: 40px;
+            width: auto;
+            background: var(--c-color-white);
+            color: var(--text-color);
+            display: flex;
+            align-items: center;
+            white-space: nowrap;
+            font-size: 1.4rem;
+            padding: 0 2rem 0 0;
+        }
+    }
+}
+
+@media only screen and (width <= 1023px) {
+    .playerToolbar {
+        display: grid;
+        grid-template-columns: 1fr 6fr 1fr 1fr;
+        grid-column-gap: 0.4rem;
+        padding: 0 1.6rem;
+    }
+
+    .playerButton {
+        &:hover {
+            > span {
+                display: none;
+            }
+        }
+    }
+}
+
+@media only screen and (width >= 1024px) {
+    .playerToolbar {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        left: 1.2rem;
+        top: 1.2rem;
+    }
+}

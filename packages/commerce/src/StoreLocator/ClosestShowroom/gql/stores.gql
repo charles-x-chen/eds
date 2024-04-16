@@ -1,0 +1,12 @@
+# @package     BlueAcorn/StoreLocator
+# @author      Blue Acorn iCi <code@blueacorn.com>
+# @copyright   Copyright © Blue Acorn iCi. All Rights Reserved.
+
+query Stores($lat: Float!, $long: Float!, $radius: Int!) {
+    stores: ba_stores(pageSize: 1, distance: { latitude: $lat, longitude: $long, radius: $radius }) {
+        items {
+            id: store_id
+            name
+        }
+    }
+}

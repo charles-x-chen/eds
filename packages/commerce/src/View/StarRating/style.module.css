@@ -1,0 +1,21 @@
+/**
+ * @package     BlueAcorn/View
+ * @author      Blue Acorn iCi <code@blueacorn.com>
+ * @copyright   Copyright © Blue Acorn iCi. All Rights Reserved.
+ */
+
+.starRating {
+    display: inline;
+    margin: 0;
+    padding: 0;
+
+    & > li {
+        display: inline;
+    }
+}
+
+@media only screen and (width <= 1023px) {
+    .starRating {
+        color: var(--c-primary-color);
+    }
+}

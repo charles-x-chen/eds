@@ -1,0 +1,70 @@
+# @package     BlueAcorn/Catalog
+# @author      Blue Acorn iCi <code@blueacorn.com>
+# @copyright   Copyright © Blue Acorn iCi. All Rights Reserved.
+
+query ProductSearch(
+    $phrase: String!
+    $pageSize: Int = 10
+    $currentPage: Int = 1
+    $filter: [SearchClauseInput!]
+    $sort: [ProductSearchSortInput!]
+    $context: QueryContextInput
+) {
+    products: productSearch(
+        phrase: $phrase
+        page_size: $pageSize
+        current_page: $currentPage
+        filter: $filter
+        sort: $sort
+        context: $context
+    ) {
+        total: total_count
+        suggestions
+        items {
+            productView {
+                sku
+                name
+                url
+                images(roles: ["thumbnail"]) {
+                    label
+                    url
+                }
+                ... on ComplexProductView {
+                    priceRange {
+                        maximum {
+                            ...ProductPrice
+                        }
+                        minimum {
+                            ...ProductPrice
+                        }
+                    }
+                }
+                ... on SimpleProductView {
+                    price {
+                        ...ProductPrice
+                    }
+                }
+            }
+        }
+        page: page_info {
+            current: current_page
+            size: page_size
+            total: total_pages
+        }
+    }
+}
+
+fragment ProductPrice on ProductViewPrice {
+    final {
+        amount {
+            value
+            currency
+        }
+    }
+    regular {
+        amount {
+            value
+            currency
+        }
+    }
+}

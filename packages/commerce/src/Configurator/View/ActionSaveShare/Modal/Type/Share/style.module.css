@@ -1,0 +1,64 @@
+/**
+ * @package     BlueAcorn/Configurator
+ * @author      Blue Acorn iCi <code@blueacorn.com>
+ * @copyright   Copyright © Blue Acorn iCi. All Rights Reserved.
+ */
+
+.text {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 2.9rem;
+}
+
+.title {
+    font-weight: 400;
+    font-size: 2.4rem;
+    line-height: 3.2rem;
+    letter-spacing: -0.02em;
+    font-family: var(--c-title-font);
+    margin-bottom: 0.7rem;
+}
+
+.option {
+    font-weight: 400;
+    font-size: 1.6rem;
+    line-height: 2.4rem;
+    margin-top: 0.7rem;
+}
+
+.social {
+    margin-bottom: 2.7rem;
+}
+
+.image {
+    margin: 0 auto;
+}
+
+.shareModal {
+    svg {
+        color: var(--text-color);
+        font-weight: var(--c-font-weight-bold);
+    }
+
+    > div {
+        min-width: 511px;
+
+        > div {
+            &:last-child {
+                padding: 0;
+            }
+        }
+    }
+}
+
+@media only screen and (width >= 1024px) and (height <= 900px) {
+    .image img {
+        max-width: 55vh;
+    }
+}
+
+@media only screen and (width >= 1024px) and (height <= 700px) {
+    .image img {
+        max-width: 33vh;
+    }
+}

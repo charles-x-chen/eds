@@ -1,0 +1,25 @@
+/**
+ * @package     BlueAcorn/View
+ * @author      Blue Acorn iCi <code@blueacorn.com>
+ * @copyright   Copyright © Blue Acorn iCi. All Rights Reserved.
+ */
+
+.items {
+    display: flex;
+    flex-flow: row wrap;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    gap: 0.5em;
+
+    svg {
+        margin-left: 0.5em;
+    }
+
+    li {
+        margin: 0;
+        display: flex;
+        flex-flow: row nowrap;
+        align-items: center;
+    }
+}

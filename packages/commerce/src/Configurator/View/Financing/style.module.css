@@ -1,0 +1,39 @@
+/**
+ * @package     BlueAcorn/Configurator
+ * @author      Blue Acorn iCi <code@blueacorn.com>
+ * @copyright   Copyright © Blue Acorn iCi. All Rights Reserved.
+ */
+
+.financing {
+    padding: 2.6rem 3.2rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+    background: var(--light-color);
+}
+
+div.affirmImage {
+    display: inline-block;
+    margin: 0 0.5rem;
+
+    &::before {
+        content: url('../../icons/financing-affirm.jpg');
+        width: 41px;
+        height: 16px;
+        vertical-align: middle;
+    }
+}
+
+.link {
+    text-decoration: underline;
+}
+
+@media only screen and (width > 1024px) {
+    .financing {
+        max-width: 70%;
+        margin-left: auto;
+        margin-right: auto;
+    }
+}

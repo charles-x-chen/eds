@@ -1,0 +1,106 @@
+# @package     BlueAcorn/Configurator
+# @author      Blue Acorn iCi <code@blueacorn.com>
+# @copyright   Copyright © Blue Acorn iCi. All Rights Reserved.
+
+query Configurator {
+    options: configurator(type: "sac") {
+        priceRules {
+            name
+            priority
+            action
+            skus
+            minQty
+            discount
+            categoryIds
+        }
+        sacSizes {
+            code
+            name
+            image
+        }
+        pieceInfo {
+            key
+            type
+            name
+            description
+            includes
+            vrayId
+        }
+        inserts {
+            code
+            pieces {
+                ...Piece
+            }
+        }
+        accessories {
+            piece {
+                ...Piece
+            }
+            name
+            description
+            images
+            group
+            swatch
+        }
+        fabrics {
+            code
+            name
+            description
+            shipping
+            groups {
+                name
+                items {
+                    id
+                    name
+                    image
+                    color
+                    fabric
+                    composition
+                    description
+                    features {
+                        name
+                        image
+                    }
+                    pieces {
+                        ...Piece
+                    }
+                }
+            }
+        }
+        assets {
+            label
+            large
+            thumb
+            tags
+        }
+    }
+    squattoman: configurator(type: "squattoman") {
+        inserts {
+            code
+            pieces {
+                ...Piece
+            }
+        }
+        fabrics {
+            code
+            groups {
+                items {
+                    id
+                    pieces {
+                        ...Piece
+                    }
+                }
+            }
+        }
+    }
+}
+
+fragment Piece on C_Piece {
+    key
+    type
+    categoryIds
+    leadTime
+    price
+    msrp
+    sku
+}

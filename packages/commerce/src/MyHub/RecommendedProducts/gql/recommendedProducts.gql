@@ -1,0 +1,28 @@
+# @package     BlueAcorn/MyHub
+# @author      Blue Acorn iCi <code@blueacorn.com>
+# @copyright   Copyright © Blue Acorn iCi. All Rights Reserved.
+
+query RecommendedProducts($skus: [String]) {
+    products(filter: { sku: { in: $skus } }, sort: { price: DESC }) {
+        items {
+            sku
+            image {
+                url
+            }
+            name
+            canonicalUrl: canonical_url
+            priceRange: price_range {
+                minimumPrice: minimum_price {
+                    finalPrice: final_price {
+                        currency
+                        value
+                    }
+                    regularPrice: regular_price {
+                        currency
+                        value
+                    }
+                }
+            }
+        }
+    }
+}

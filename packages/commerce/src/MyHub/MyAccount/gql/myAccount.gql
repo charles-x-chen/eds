@@ -1,0 +1,63 @@
+# @package     BlueAcorn/MyHub
+# @author      Blue Acorn iCi <code@blueacorn.com>
+# @copyright   Copyright © Blue Acorn iCi. All Rights Reserved.
+
+query MyAccount($cmsBlocks: [String]) {
+    customer {
+        email
+        firstname
+        lastname
+        refer {
+            partnerUserId: partner_user_id
+            jwt
+        }
+        orders(pageSize: 2, sort: { sort_field: CREATED_AT, sort_direction: DESC }) {
+            items {
+                id
+                orderDate: order_date
+                number
+                status
+                netsuite {
+                    orderId
+                }
+                configurators {
+                    guide
+                }
+                items {
+                    id
+                    name: product_name
+                    sku: product_sku
+                    product {
+                        name
+                        categories {
+                            uid
+                            name
+                            urlPath: url_path
+                        }
+                        related: crosssell_products {
+                            sku
+                        }
+                    }
+                }
+                total {
+                    grandTotal: grand_total {
+                        currency
+                        value
+                    }
+                }
+            }
+        }
+    }
+    cmsBlocks(identifiers: $cmsBlocks) {
+        items {
+            identifier
+            title
+            content
+        }
+    }
+    customerPaymentTokens {
+        items {
+            details
+        }
+    }
+}

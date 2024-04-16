@@ -1,0 +1,66 @@
+# @package     BlueAcorn/Configurator
+# @author      Blue Acorn iCi <code@blueacorn.com>
+# @copyright   Copyright © Blue Acorn iCi. All Rights Reserved.
+
+query Configurator {
+    options: configurator(type: "sactionalCovers") {
+        priceRules {
+            name
+            priority
+            action
+            skus
+            minQty
+            discount
+            categoryIds
+        }
+        pieceInfo {
+            key
+            type
+            name
+            description
+            includes
+            vrayId
+        }
+        fabrics {
+            code
+            name
+            description
+            shipping
+            groups {
+                name
+                items {
+                    id
+                    name
+                    image
+                    color
+                    fabric
+                    composition
+                    description
+                    features {
+                        name
+                        image
+                    }
+                    pieces {
+                        ...Piece
+                    }
+                }
+            }
+        }
+        assets {
+            label
+            large
+            thumb
+            tags
+        }
+    }
+}
+
+fragment Piece on C_Piece {
+    key
+    type
+    categoryIds
+    leadTime
+    price
+    msrp
+    sku
+}

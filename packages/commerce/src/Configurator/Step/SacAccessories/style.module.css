@@ -1,0 +1,186 @@
+/**
+ * @package     BlueAcorn/Configurator
+ * @author      Blue Acorn iCi <code@blueacorn.com>
+ * @copyright   Copyright © Blue Acorn iCi. All Rights Reserved.
+ */
+
+.contentWrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.titleWrapper {
+    margin: 1.8rem 0 0.8rem;
+}
+
+.title {
+    font-family: var(--heading-font-family);
+    font-style: normal;
+    font-weight: var(--c-font-weight-regular);
+    font-size: 2.8rem;
+    line-height: 36px;
+    letter-spacing: -0.02em;
+    color: var(--text-color);
+}
+
+.subtitleWrapper {
+    margin: 0 7.5rem;
+    text-align: center;
+}
+
+.subtitle {
+    font-style: normal;
+    font-weight: var(--c-font-weight-light);
+    font-size: 1.6rem;
+    line-height: 24px;
+    text-align: center;
+    color: var(--text-color);
+}
+
+.accessoryContentWrapper {
+    display: flex;
+    flex-direction: column;
+    margin: 0 10%;
+}
+
+.accessory {
+    display: flex;
+    align-items: center;
+    flex-flow: column nowrap;
+    background: var(--light-color);
+    margin: 1.2rem 0;
+    max-width: 343px;
+    width: 100%;
+}
+
+.qtyInput {
+    display: flex;
+    flex-flow: row nowrap;
+    width: 100px;
+
+    button {
+        padding: 0;
+        height: 26px;
+        width: 30px;
+        color: var(--c-color-blue-green-2);
+        font-size: 1.8rem;
+        line-height: 1;
+    }
+
+    input {
+        height: 24px;
+        width: calc(36%);
+        background: var(--c-color-blue-green-2);
+        color: var(--c-color-white);
+        letter-spacing: -0.25px;
+        font-weight: var(--c-font-weight-semibold);
+        font-size: 1.4rem;
+        line-height: 18px;
+        text-align: center;
+        outline: 0;
+        border: 2px solid var(--c-color-blue-green-2);
+        border-radius: unset;
+        padding: 1px 2px;
+    }
+}
+
+.variants {
+    margin: 2.2rem 0 0 2rem;
+
+    > div {
+        margin-bottom: 0;
+    }
+}
+
+.image {
+    flex-basis: unset;
+    width: 100%;
+    min-width: 210px;
+    min-height: 210px;
+
+    > div {
+        margin: 0 auto;
+
+        img {
+            /* max-height: 210px !important;
+            max-width: 210px !important;
+            object-fit: contain; */
+            min-height: 210px !important;
+            object-fit: cover !important;
+        }
+    }
+}
+
+.content {
+    display: flex;
+    flex-flow: row wrap;
+    text-align: left;
+    flex-basis: unset;
+    width: 100%;
+    margin-bottom: 2.2rem;
+    border-top: 1px solid var(--c-configurator-dark-white-3);
+}
+
+.contentColumns {
+    flex-basis: 100%;
+    display: flex;
+    margin: 1.2rem 2rem 0;
+    padding-bottom: 1.2rem;
+    border-bottom: 1px solid var(--c-configurator-dark-white-3);
+}
+
+.contentCol1 {
+    flex-basis: 50%;
+}
+
+.accessoryTitle {
+    margin: 0;
+}
+
+.accessoryDetailsLink {
+    font-style: normal;
+    font-weight: var(--c-font-weight-semibold);
+    font-size: 1.4rem;
+    line-height: 20px;
+    color: var(--text-color);
+    text-align: left;
+}
+
+.actions {
+    display: flex;
+    flex-flow: row wrap;
+    flex-basis: 100%;
+    justify-content: end;
+    margin: 0;
+}
+
+.price {
+    flex-basis: auto;
+    font-style: normal;
+    font-weight: var(--c-font-weight-regular);
+    font-size: 1.4rem;
+    line-height: 24px;
+    color: var(--text-color);
+    align-self: center;
+}
+
+.decrease {
+    border-top: 2px solid var(--c-color-blue-green-2);
+    border-left: 2px solid var(--c-color-blue-green-2);
+    border-bottom: 2px solid var(--c-color-blue-green-2);
+    border-right: 0;
+}
+
+.increase {
+    border-top: 2px solid var(--c-color-blue-green-2);
+    border-left: 0;
+    border-bottom: 2px solid var(--c-color-blue-green-2);
+    border-right: 2px solid var(--c-color-blue-green-2);
+}
+
+@media only screen and (width < 1024px) {
+    .accessoryContentWrapper {
+        margin: 0 5%;
+    }
+}

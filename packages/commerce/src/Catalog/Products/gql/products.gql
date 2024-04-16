@@ -1,0 +1,47 @@
+# @package     BlueAcorn/Catalog
+# @author      Blue Acorn iCi <code@blueacorn.com>
+# @copyright   Copyright © Blue Acorn iCi. All Rights Reserved.
+
+query Products($skus: [String]) {
+    products: products(skus: $skus) {
+        __typename
+        sku
+        name
+        urlKey
+        addToCartAllowed
+        images(roles: ["small_image"]) {
+            label
+            url
+        }
+        ... on ComplexProductView {
+            priceRange {
+                maximum {
+                    ...ProductPrice
+                }
+                minimum {
+                    ...ProductPrice
+                }
+            }
+        }
+        ... on SimpleProductView {
+            price {
+                ...ProductPrice
+            }
+        }
+    }
+}
+
+fragment ProductPrice on ProductViewPrice {
+    final {
+        amount {
+            value
+            currency
+        }
+    }
+    regular {
+        amount {
+            value
+            currency
+        }
+    }
+}
